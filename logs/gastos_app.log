@@ -1,0 +1,617 @@
+2025-07-09 17:06:38,262 - INFO - Aplicación iniciada.
+2025-07-09 17:06:41,408 - INFO - Archivo seleccionado: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx, banco: BBVA
+2025-07-09 17:06:41,408 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-09 17:06:41,408 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: BBVA
+2025-07-09 17:06:41,409 - ERROR - Error leyendo archivo Excel: [Errno 13] Permission denied: 'C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx'
+2025-07-09 17:06:41,412 - INFO - Cargando reglas de categorización desde: gastos\categorization_rules.xlsx
+2025-07-09 17:06:41,562 - INFO - Reglas de categorización cargadas correctamente (11 reglas).
+2025-07-09 17:06:44,964 - INFO - Registros existentes en Notion leídos.
+2025-07-09 17:06:44,964 - WARNING - No se encontraron registros en el archivo.
+2025-07-09 17:07:12,938 - INFO - Archivo seleccionado: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx, banco: BBVA
+2025-07-09 17:07:12,938 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-09 17:07:12,939 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: BBVA
+2025-07-09 17:07:13,189 - INFO - Procesando columnas Gasto/Ingreso
+2025-07-09 17:07:13,189 - INFO - Archivo de BBVA leído correctamente con 126 registros.
+2025-07-09 17:07:13,189 - INFO - Cargando reglas de categorización desde: gastos\categorization_rules.xlsx
+2025-07-09 17:07:13,192 - INFO - Reglas de categorización cargadas correctamente (11 reglas).
+2025-07-09 17:07:14,867 - INFO - Registros existentes en Notion leídos.
+2025-07-09 17:07:15,536 - INFO - Registro insertado: Adeudo de vodafone, 2025-07-09 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:07:16,075 - INFO - Registro insertado: Primaprix gijon schultz  gijon        es, 2025-07-08 00:00:00, BBVA, gasto=8.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:07:25,992 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-07-04 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 17:07:32,299 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-06-27 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:07:34,992 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-26 00:00:00, BBVA, gasto=9.8, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:07:55,562 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-10 00:00:00, BBVA, gasto=5.35, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:07:58,981 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-10 00:00:00, BBVA, gasto=3.1, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:07:59,561 - INFO - Registro insertado: Adeudo de vodafone, 2025-06-10 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:08:03,618 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-04 00:00:00, BBVA, gasto=7.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:08:06,399 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-06-03 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 17:08:10,827 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-05-29 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:08:20,782 - INFO - Registro insertado: Primaprix gijon schultz, 2025-05-20 00:00:00, BBVA, gasto=14.5, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:08:30,424 - INFO - Registro insertado: Adeudo de vodafone, 2025-05-08 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:08:31,648 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-05-07 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 17:08:43,558 - INFO - Registro insertado: Primaprix gijon schultz, 2025-04-30 00:00:00, BBVA, gasto=7.4, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:08:44,251 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-04-29 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:08:45,636 - INFO - Registro insertado: Alimerka viesques, 2025-04-23 00:00:00, BBVA, gasto=6.45, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:08:45,637 - INFO - Registro repetido (no insertado): Amazon ufg*ra77l9gx4, 2025-04-21 00:00:00, BBVA, gasto=91.66, ingreso=None
+2025-07-09 17:08:45,637 - INFO - Insertados exitosos por mes: {'2025-07': 3, '2025-06': 7, '2025-05': 4, '2025-04': 3}
+2025-07-09 17:08:45,637 - INFO - Registros repetidos por mes: {'2025-04': 1}
+2025-07-09 17:12:40,438 - INFO - Aplicación iniciada.
+2025-07-09 17:12:43,954 - INFO - Archivo seleccionado: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx, banco: BBVA
+2025-07-09 17:12:43,954 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-09 17:12:43,955 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: BBVA
+2025-07-09 17:12:44,433 - INFO - Procesando columnas Gasto/Ingreso
+2025-07-09 17:12:44,433 - INFO - Archivo de BBVA leído correctamente con 126 registros.
+2025-07-09 17:12:44,433 - INFO - Cargando reglas de categorización desde: gastos\categorization_rules.xlsx
+2025-07-09 17:12:44,443 - INFO - Reglas de categorización cargadas correctamente (11 reglas).
+2025-07-09 17:12:46,299 - INFO - Registros existentes en Notion leídos.
+2025-07-09 17:12:46,916 - INFO - Registro insertado: Adeudo de vodafone, 2025-07-09 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:12:47,883 - INFO - Registro insertado: Primaprix gijon schultz  gijon        es, 2025-07-08 00:00:00, BBVA, gasto=8.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:12:48,633 - WARNING - No se pudo insertar el registro: Amazon* rg14v1r34, 2025-07-02 00:00:00, BBVA, gasto=22.75, ingreso=None, subcategoria=
+2025-07-09 17:12:49,088 - WARNING - No se pudo insertar el registro: Tib bus tren metro, 2025-07-07 00:00:00, BBVA, gasto=5.2, ingreso=None, subcategoria=
+2025-07-09 17:12:50,025 - WARNING - No se pudo insertar el registro: Aeropuerto palma mallorca, 2025-07-06 00:00:00, BBVA, gasto=1.99, ingreso=None, subcategoria=
+2025-07-09 17:12:50,337 - WARNING - No se pudo insertar el registro: Ssp s.a. - aeropuerto de, 2025-07-06 00:00:00, BBVA, gasto=26.04, ingreso=None, subcategoria=
+2025-07-09 17:12:50,625 - WARNING - No se pudo insertar el registro: Disashop                 abogadas, lases, 2025-07-06 00:00:00, BBVA, gasto=5.0, ingreso=None, subcategoria=
+2025-07-09 17:12:50,893 - WARNING - No se pudo insertar el registro: Disashop                 abogadas, lases, 2025-07-06 00:00:00, BBVA, gasto=5.0, ingreso=None, subcategoria=
+2025-07-09 17:12:52,772 - WARNING - No se pudo insertar el registro: Ice friends palma, 2025-07-06 00:00:00, BBVA, gasto=9.6, ingreso=None, subcategoria=
+2025-07-09 17:12:53,593 - WARNING - No se pudo insertar el registro: Es trasto, 2025-07-06 00:00:00, BBVA, gasto=6.0, ingreso=None, subcategoria=
+2025-07-09 17:12:53,873 - WARNING - No se pudo insertar el registro: Farmacia plaza de espaãa, 2025-07-06 00:00:00, BBVA, gasto=3.95, ingreso=None, subcategoria=
+2025-07-09 17:12:55,693 - WARNING - No se pudo insertar el registro: Hotel barcelo cala viãas, 2025-07-06 00:00:00, BBVA, gasto=None, ingreso=30.0, subcategoria=
+2025-07-09 17:12:56,013 - WARNING - No se pudo insertar el registro: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=30.0, ingreso=None, subcategoria=
+2025-07-09 17:12:56,753 - WARNING - No se pudo insertar el registro: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=None, ingreso=17.03, subcategoria=
+2025-07-09 17:12:58,239 - WARNING - No se pudo insertar el registro: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=13.2, ingreso=None, subcategoria=
+2025-07-09 17:12:58,493 - WARNING - No se pudo insertar el registro: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=17.03, ingreso=None, subcategoria=
+2025-07-09 17:13:00,503 - WARNING - No se pudo insertar el registro: Familia schultz-gijon, 2025-07-04 00:00:00, BBVA, gasto=7.67, ingreso=None, subcategoria=
+2025-07-09 17:13:01,070 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-07-04 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 17:13:01,559 - WARNING - No se pudo insertar el registro: Transferencia recibida, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=20.0, subcategoria=
+2025-07-09 17:13:01,850 - WARNING - No se pudo insertar el registro: Transferencia recibida, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=235.0, subcategoria=
+2025-07-09 17:13:02,133 - WARNING - No se pudo insertar el registro: Transferencia recibida, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=400.0, subcategoria=
+2025-07-09 17:13:04,506 - WARNING - No se pudo insertar el registro: Transferencia realizada, 2025-07-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=
+2025-07-09 17:14:29,691 - INFO - Aplicación iniciada.
+2025-07-09 17:14:32,988 - INFO - Archivo seleccionado: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx, banco: BBVA
+2025-07-09 17:14:32,988 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-09 17:14:32,988 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: BBVA
+2025-07-09 17:14:33,408 - INFO - Procesando columnas Gasto/Ingreso
+2025-07-09 17:14:33,410 - INFO - Archivo de BBVA leído correctamente con 126 registros.
+2025-07-09 17:14:33,410 - INFO - Cargando reglas de categorización desde: gastos\categorization_rules.xlsx
+2025-07-09 17:14:33,416 - INFO - Reglas de categorización cargadas correctamente (11 reglas).
+2025-07-09 17:14:34,849 - INFO - Registros existentes en Notion leídos.
+2025-07-09 17:14:49,753 - INFO - Aplicación iniciada.
+2025-07-09 17:14:52,985 - INFO - Archivo seleccionado: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx, banco: BBVA
+2025-07-09 17:14:52,985 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-09 17:14:52,986 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: BBVA
+2025-07-09 17:14:53,388 - INFO - Procesando columnas Gasto/Ingreso
+2025-07-09 17:14:53,388 - INFO - Archivo de BBVA leído correctamente con 126 registros.
+2025-07-09 17:14:53,388 - INFO - Cargando reglas de categorización desde: gastos\categorization_rules.xlsx
+2025-07-09 17:14:53,395 - INFO - Reglas de categorización cargadas correctamente (11 reglas).
+2025-07-09 17:14:54,663 - INFO - Registros existentes en Notion leídos.
+2025-07-09 17:17:06,457 - INFO - Aplicación iniciada.
+2025-07-09 17:17:09,439 - INFO - Archivo seleccionado: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx, banco: BBVA
+2025-07-09 17:17:09,439 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-09 17:17:09,439 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: BBVA
+2025-07-09 17:17:09,843 - INFO - Procesando columnas Gasto/Ingreso
+2025-07-09 17:17:09,843 - INFO - Archivo de BBVA leído correctamente con 126 registros.
+2025-07-09 17:17:09,843 - INFO - Cargando reglas de categorización desde: gastos\categorization_rules.xlsx
+2025-07-09 17:17:09,849 - INFO - Reglas de categorización cargadas correctamente (11 reglas).
+2025-07-09 17:17:11,133 - INFO - Registros existentes en Notion leídos.
+2025-07-09 17:19:14,154 - INFO - Aplicación iniciada.
+2025-07-09 17:19:16,853 - INFO - Archivo seleccionado: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx, banco: BBVA
+2025-07-09 17:19:16,853 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-09 17:19:16,854 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: BBVA
+2025-07-09 17:19:17,255 - INFO - Procesando columnas Gasto/Ingreso
+2025-07-09 17:19:17,255 - INFO - Archivo de BBVA leído correctamente con 126 registros.
+2025-07-09 17:19:17,255 - INFO - Cargando reglas de categorización desde: gastos\categorization_rules.xlsx
+2025-07-09 17:19:17,264 - INFO - Reglas de categorización cargadas correctamente (11 reglas).
+2025-07-09 17:19:18,536 - INFO - Registros existentes en Notion leídos.
+2025-07-09 17:19:22,474 - INFO - Registro insertado: Adeudo de vodafone, 2025-07-09 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:19:23,502 - INFO - Registro insertado: Primaprix gijon schultz  gijon        es, 2025-07-08 00:00:00, BBVA, gasto=8.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:19:25,155 - INFO - Registro insertado: Amazon* rg14v1r34, 2025-07-02 00:00:00, BBVA, gasto=22.75, ingreso=None, subcategoria=None
+2025-07-09 17:19:30,752 - INFO - Registro insertado: Tib bus tren metro, 2025-07-07 00:00:00, BBVA, gasto=5.2, ingreso=None, subcategoria=None
+2025-07-09 17:19:31,643 - INFO - Registro insertado: Aeropuerto palma mallorca, 2025-07-06 00:00:00, BBVA, gasto=1.99, ingreso=None, subcategoria=None
+2025-07-09 17:19:36,224 - INFO - Registro insertado: Ssp s.a. - aeropuerto de, 2025-07-06 00:00:00, BBVA, gasto=26.04, ingreso=None, subcategoria=None
+2025-07-09 17:19:38,956 - INFO - Registro insertado: Disashop                 abogadas, lases, 2025-07-06 00:00:00, BBVA, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-09 17:19:52,329 - INFO - Registro insertado: Disashop                 abogadas, lases, 2025-07-06 00:00:00, BBVA, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-09 17:19:52,943 - INFO - Registro insertado: Ice friends palma, 2025-07-06 00:00:00, BBVA, gasto=9.6, ingreso=None, subcategoria=None
+2025-07-09 17:19:53,425 - INFO - Registro insertado: Es trasto, 2025-07-06 00:00:00, BBVA, gasto=6.0, ingreso=None, subcategoria=None
+2025-07-09 17:19:53,894 - INFO - Registro insertado: Farmacia plaza de espaãa, 2025-07-06 00:00:00, BBVA, gasto=3.95, ingreso=None, subcategoria=None
+2025-07-09 17:19:54,505 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-06 00:00:00, BBVA, gasto=None, ingreso=30.0, subcategoria=None
+2025-07-09 17:19:55,519 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=30.0, ingreso=None, subcategoria=None
+2025-07-09 17:19:57,314 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=None, ingreso=17.03, subcategoria=None
+2025-07-09 17:20:03,164 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=13.2, ingreso=None, subcategoria=None
+2025-07-09 17:20:03,719 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=17.03, ingreso=None, subcategoria=None
+2025-07-09 17:20:04,684 - INFO - Registro insertado: Familia schultz-gijon, 2025-07-04 00:00:00, BBVA, gasto=7.67, ingreso=None, subcategoria=None
+2025-07-09 17:20:09,604 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-07-04 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 17:20:14,029 - INFO - Registro insertado: Transferencia recibida, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=20.0, subcategoria=None
+2025-07-09 17:20:15,257 - INFO - Registro insertado: Transferencia recibida, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=235.0, subcategoria=None
+2025-07-09 17:20:16,239 - INFO - Registro insertado: Transferencia recibida, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=400.0, subcategoria=None
+2025-07-09 17:20:17,015 - INFO - Registro insertado: Transferencia realizada, 2025-07-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-07-09 17:20:17,608 - INFO - Registro insertado: Transferencia recibida, 2025-06-28 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-07-09 17:20:18,278 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-06-27 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:20:18,970 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-26 00:00:00, BBVA, gasto=9.8, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:20:20,755 - INFO - Registro insertado: Bizum, 2025-06-25 00:00:00, BBVA, gasto=12.6, ingreso=None, subcategoria=None
+2025-07-09 17:20:22,044 - INFO - Registro insertado: The lovely meatballs, s, 2025-06-22 00:00:00, BBVA, gasto=5.2, ingreso=None, subcategoria=None
+2025-07-09 17:20:22,597 - INFO - Registro insertado: Amazon ufg, 2025-06-22 00:00:00, BBVA, gasto=None, ingreso=0.84, subcategoria=None
+2025-07-09 17:20:23,501 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-23 00:00:00, BBVA, gasto=4.44, ingreso=None, subcategoria=None
+2025-07-09 17:20:24,615 - INFO - Registro insertado: Www.amazon.* kx0pp6bp5, 2025-06-21 00:00:00, BBVA, gasto=16.6, ingreso=None, subcategoria=None
+2025-07-09 17:20:25,164 - INFO - Registro insertado: Www.groupon.es, 2025-06-20 00:00:00, BBVA, gasto=52.49, ingreso=None, subcategoria=None
+2025-07-09 17:20:26,327 - INFO - Registro insertado: Amazon ufg, 2025-06-19 00:00:00, BBVA, gasto=None, ingreso=2.7, subcategoria=None
+2025-07-09 17:20:29,114 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-06-23 00:00:00, BBVA, gasto=30.48, ingreso=None, subcategoria=None
+2025-07-09 17:20:29,752 - INFO - Registro insertado: Amazon ufg*fe3z66sw5, 2025-06-18 00:00:00, BBVA, gasto=92.03, ingreso=None, subcategoria=None
+2025-07-09 17:20:30,392 - INFO - Registro insertado: Amazon ufg, 2025-06-18 00:00:00, BBVA, gasto=None, ingreso=7.13, subcategoria=None
+2025-07-09 17:20:33,259 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-20 00:00:00, BBVA, gasto=4.98, ingreso=None, subcategoria=None
+2025-07-09 17:20:33,786 - INFO - Registro insertado: Pan de ibias schultz 128, 2025-06-19 00:00:00, BBVA, gasto=7.11, ingreso=None, subcategoria=None
+2025-07-09 17:20:34,330 - INFO - Registro insertado: Just eat spain, s.l., 2025-06-17 00:00:00, BBVA, gasto=27.75, ingreso=None, subcategoria=None
+2025-07-09 17:20:34,914 - INFO - Registro insertado: Www.amazon.* b42rm4v05, 2025-06-16 00:00:00, BBVA, gasto=52.71, ingreso=None, subcategoria=None
+2025-07-09 17:20:37,495 - INFO - Registro insertado: Bizum, 2025-06-16 00:00:00, BBVA, gasto=None, ingreso=108.0, subcategoria=None
+2025-07-09 17:20:43,908 - INFO - Registro insertado: Bico de xeado lugo, 2025-06-15 00:00:00, BBVA, gasto=8.6, ingreso=None, subcategoria=None
+2025-07-09 17:20:44,544 - INFO - Registro insertado: Forno de lugo, 2025-06-15 00:00:00, BBVA, gasto=11.0, ingreso=None, subcategoria=None
+2025-07-09 17:20:45,494 - INFO - Registro insertado: Bizum, 2025-06-15 00:00:00, BBVA, gasto=None, ingreso=46.0, subcategoria=None
+2025-07-09 17:20:46,491 - INFO - Registro insertado: Daniel romay piãeiro, 2025-06-15 00:00:00, BBVA, gasto=137.9, ingreso=None, subcategoria=None
+2025-07-09 17:20:47,001 - INFO - Registro insertado: Taberna terra, 2025-06-15 00:00:00, BBVA, gasto=6.8, ingreso=None, subcategoria=None
+2025-07-09 17:20:47,545 - INFO - Registro insertado: Sanchez rivas taxi, 2025-06-14 00:00:00, BBVA, gasto=13.8, ingreso=None, subcategoria=None
+2025-07-09 17:20:48,144 - INFO - Registro insertado: Meson o castelo, 2025-06-14 00:00:00, BBVA, gasto=47.0, ingreso=None, subcategoria=None
+2025-07-09 17:20:53,169 - INFO - Registro insertado: La capital, 2025-06-14 00:00:00, BBVA, gasto=18.0, ingreso=None, subcategoria=None
+2025-07-09 17:20:53,758 - INFO - Registro insertado: Hotel mercure lugo, 2025-06-14 00:00:00, BBVA, gasto=123.2, ingreso=None, subcategoria=None
+2025-07-09 17:20:54,737 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-10 00:00:00, BBVA, gasto=5.35, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:20:55,827 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-10 00:00:00, BBVA, gasto=3.1, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:20:56,401 - INFO - Registro insertado: Adeudo de vodafone, 2025-06-10 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:20:57,459 - INFO - Registro insertado: Amazon ufg*hd13n80z5, 2025-06-06 00:00:00, BBVA, gasto=92.43, ingreso=None, subcategoria=None
+2025-07-09 17:20:59,958 - INFO - Registro insertado: Farmacia carlos checa pov, 2025-06-09 00:00:00, BBVA, gasto=41.96, ingreso=None, subcategoria=None
+2025-07-09 17:21:01,064 - INFO - Registro insertado: Fiestas meres, 2025-06-07 00:00:00, BBVA, gasto=6.3, ingreso=None, subcategoria=None
+2025-07-09 17:21:01,829 - INFO - Registro insertado: Mercadona viesques, 2025-06-07 00:00:00, BBVA, gasto=14.0, ingreso=None, subcategoria=None
+2025-07-09 17:21:04,851 - INFO - Registro insertado: Yelmofilmsapp, 2025-06-07 00:00:00, BBVA, gasto=8.8, ingreso=None, subcategoria=None
+2025-07-09 17:21:07,962 - INFO - Registro insertado: Farmacia carlos checa pov, 2025-06-06 00:00:00, BBVA, gasto=12.72, ingreso=None, subcategoria=None
+2025-07-09 17:21:08,484 - INFO - Registro insertado: Adeudo totalenergies clientessau, 2025-06-06 00:00:00, BBVA, gasto=14.75, ingreso=None, subcategoria=None
+2025-07-09 17:21:09,012 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-04 00:00:00, BBVA, gasto=7.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:21:09,590 - INFO - Registro insertado: Mistertransfer.com, 2025-06-01 00:00:00, BBVA, gasto=56.4, ingreso=None, subcategoria=None
+2025-07-09 17:21:10,162 - INFO - Registro insertado: Cp plus parking españa. o, 2025-06-03 00:00:00, BBVA, gasto=2.55, ingreso=None, subcategoria=None
+2025-07-09 17:21:10,652 - INFO - Registro insertado: Transferencia recibida, 2025-06-03 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-07-09 17:21:13,320 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-06-03 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 17:21:16,871 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-02 00:00:00, BBVA, gasto=8.57, ingreso=None, subcategoria=None
+2025-07-09 17:21:17,416 - INFO - Registro insertado: Transferencia recibida, 2025-06-02 00:00:00, BBVA, gasto=None, ingreso=635.0, subcategoria=None
+2025-07-09 17:21:17,928 - INFO - Registro insertado: Transferencia realizada, 2025-06-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-07-09 17:21:18,434 - INFO - Registro insertado: Panaderia tino, 2025-06-01 00:00:00, BBVA, gasto=9.5, ingreso=None, subcategoria=None
+2025-07-09 17:21:18,998 - INFO - Registro insertado: Parking salesas, 2025-05-31 00:00:00, BBVA, gasto=3.3, ingreso=None, subcategoria=None
+2025-07-09 17:21:23,994 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-05-29 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:21:27,225 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-05-28 00:00:00, BBVA, gasto=40.76, ingreso=None, subcategoria=None
+2025-07-09 17:21:28,037 - INFO - Registro insertado: Bizum, 2025-05-27 00:00:00, BBVA, gasto=11.98, ingreso=None, subcategoria=None
+2025-07-09 17:21:28,624 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-26 00:00:00, BBVA, gasto=103.73, ingreso=None, subcategoria=None
+2025-07-09 17:21:29,120 - INFO - Registro insertado: Sala albeniz, 2025-05-24 00:00:00, BBVA, gasto=23.0, ingreso=None, subcategoria=None
+2025-07-09 17:21:29,837 - INFO - Registro insertado: Bizum, 2025-05-24 00:00:00, BBVA, gasto=18.0, ingreso=None, subcategoria=None
+2025-07-09 17:21:31,103 - INFO - Registro insertado: Bizum, 2025-05-24 00:00:00, BBVA, gasto=49.2, ingreso=None, subcategoria=None
+2025-07-09 17:21:32,009 - INFO - Registro insertado: Cafe bar tapikin, 2025-05-23 00:00:00, BBVA, gasto=9.0, ingreso=None, subcategoria=None
+2025-07-09 17:21:32,673 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-23 00:00:00, BBVA, gasto=10.67, ingreso=None, subcategoria=None
+2025-07-09 17:21:33,226 - INFO - Registro insertado: Transferencia realizada, 2025-05-22 00:00:00, BBVA, gasto=2885.61, ingreso=None, subcategoria=None
+2025-07-09 17:21:33,912 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-05-21 00:00:00, BBVA, gasto=30.9, ingreso=None, subcategoria=None
+2025-07-09 17:21:34,503 - INFO - Registro insertado: Primaprix gijon schultz, 2025-05-20 00:00:00, BBVA, gasto=14.5, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:21:36,226 - INFO - Registro insertado: Amazon* mu8tr5ad5, 2025-05-18 00:00:00, BBVA, gasto=6.34, ingreso=None, subcategoria=None
+2025-07-09 17:21:36,789 - INFO - Registro insertado: Amzn mktp es, 2025-05-18 00:00:00, BBVA, gasto=None, ingreso=7.99, subcategoria=None
+2025-07-09 17:21:41,623 - INFO - Registro insertado: Tpv, 2025-05-20 00:00:00, BBVA, gasto=21.1, ingreso=None, subcategoria=None
+2025-07-09 17:21:42,514 - INFO - Registro insertado: Tpv, 2025-05-20 00:00:00, BBVA, gasto=79.2, ingreso=None, subcategoria=None
+2025-07-09 17:21:43,509 - INFO - Registro insertado: Amzn mktp es*z93uh9hw5, 2025-05-16 00:00:00, BBVA, gasto=7.99, ingreso=None, subcategoria=None
+2025-07-09 17:21:45,325 - INFO - Registro insertado: Amazon ufg, 2025-05-15 00:00:00, BBVA, gasto=None, ingreso=1.39, subcategoria=None
+2025-07-09 17:21:45,931 - INFO - Registro insertado: E.s. pumarin, 2025-05-18 00:00:00, BBVA, gasto=1.65, ingreso=None, subcategoria=None
+2025-07-09 17:21:46,952 - INFO - Registro insertado: La tahona de luanco, 2025-05-17 00:00:00, BBVA, gasto=9.6, ingreso=None, subcategoria=None
+2025-07-09 17:21:48,528 - INFO - Registro insertado: Amazon ufg*na1m01in5, 2025-05-14 00:00:00, BBVA, gasto=105.66, ingreso=None, subcategoria=None
+2025-07-09 17:21:49,044 - INFO - Registro insertado: Amazon* 212105245, 2025-05-14 00:00:00, BBVA, gasto=18.99, ingreso=None, subcategoria=None
+2025-07-09 17:21:49,667 - INFO - Registro insertado: Amazon ufg, 2025-05-14 00:00:00, BBVA, gasto=None, ingreso=6.87, subcategoria=None
+2025-07-09 17:21:50,188 - INFO - Registro insertado: Familia schultz-gijon, 2025-05-15 00:00:00, BBVA, gasto=10.45, ingreso=None, subcategoria=None
+2025-07-09 17:21:50,778 - INFO - Registro insertado: Peces de madera, 2025-05-13 00:00:00, BBVA, gasto=16.0, ingreso=None, subcategoria=None
+2025-07-09 17:21:51,368 - INFO - Registro insertado: Volotea.com o3jb4l, 2025-05-08 00:00:00, BBVA, gasto=164.46, ingreso=None, subcategoria=None
+2025-07-09 17:21:52,345 - INFO - Registro insertado: Confiteria la real, 2025-05-11 00:00:00, BBVA, gasto=7.6, ingreso=None, subcategoria=None
+2025-07-09 17:21:53,374 - INFO - Registro insertado: Moris beach club, 2025-05-10 00:00:00, BBVA, gasto=15.4, ingreso=None, subcategoria=None
+2025-07-09 17:22:03,061 - INFO - Registro insertado: Yelmo cines ocimax gijon, 2025-05-09 00:00:00, BBVA, gasto=7.4, ingreso=None, subcategoria=None
+2025-07-09 17:22:06,376 - INFO - Registro insertado: Farmacia carlos checa pov, 2025-05-09 00:00:00, BBVA, gasto=6.37, ingreso=None, subcategoria=None
+2025-07-09 17:22:07,640 - INFO - Registro insertado: Exprycajal, 2025-05-09 00:00:00, BBVA, gasto=9.55, ingreso=None, subcategoria=None
+2025-07-09 17:22:08,164 - INFO - Registro insertado: Vueling airlines, 2025-05-08 00:00:00, BBVA, gasto=39.98, ingreso=None, subcategoria=None
+2025-07-09 17:22:08,701 - INFO - Registro insertado: Adeudo de vodafone, 2025-05-08 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:22:09,248 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-07 00:00:00, BBVA, gasto=7.16, ingreso=None, subcategoria=None
+2025-07-09 17:22:10,204 - INFO - Registro insertado: Btn concerts, 2025-05-07 00:00:00, BBVA, gasto=63.8, ingreso=None, subcategoria=None
+2025-07-09 17:22:10,797 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-05-07 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 17:22:11,669 - INFO - Registro insertado: Transferencia recibida, 2025-05-06 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-07-09 17:22:12,485 - INFO - Registro insertado: Amazon ufg*kn9is7zs5, 2025-05-02 00:00:00, BBVA, gasto=91.76, ingreso=None, subcategoria=None
+2025-07-09 17:22:14,586 - INFO - Registro insertado: Manolo bakes menen perez, 2025-05-03 00:00:00, BBVA, gasto=6.8, ingreso=None, subcategoria=None
+2025-07-09 17:22:15,149 - INFO - Registro insertado: Panris centro, 2025-05-03 00:00:00, BBVA, gasto=1.2, ingreso=None, subcategoria=None
+2025-07-09 17:22:18,443 - INFO - Registro insertado: Zara home, 2025-05-03 00:00:00, BBVA, gasto=21.97, ingreso=None, subcategoria=None
+2025-07-09 17:22:19,314 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=15.0, ingreso=None, subcategoria=None
+2025-07-09 17:22:21,178 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=25.0, subcategoria=None
+2025-07-09 17:22:23,741 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 17:22:24,279 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=25.0, subcategoria=None
+2025-07-09 17:22:24,767 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 17:22:25,411 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 17:22:25,957 - INFO - Registro insertado: Bizum, 2025-05-02 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 17:22:26,515 - INFO - Registro insertado: Los agaves, 2025-05-02 00:00:00, BBVA, gasto=197.4, ingreso=None, subcategoria=None
+2025-07-09 17:22:27,219 - INFO - Registro insertado: Transferencia recibida, 2025-05-02 00:00:00, BBVA, gasto=None, ingreso=635.0, subcategoria=None
+2025-07-09 17:22:29,401 - INFO - Registro insertado: Transferencia realizada, 2025-05-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-07-09 17:22:29,985 - INFO - Registro insertado: Primaprix gijon schultz, 2025-04-30 00:00:00, BBVA, gasto=7.4, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:22:30,551 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-04-29 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:22:31,039 - INFO - Registro insertado: Ikea asturias food, 2025-04-26 00:00:00, BBVA, gasto=3.49, ingreso=None, subcategoria=None
+2025-07-09 17:22:31,555 - INFO - Registro insertado: Ikea asturias hfb, 2025-04-26 00:00:00, BBVA, gasto=58.45, ingreso=None, subcategoria=None
+2025-07-09 17:22:32,232 - INFO - Registro insertado: Alimerka viesques, 2025-04-23 00:00:00, BBVA, gasto=6.45, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:22:32,232 - INFO - Registro repetido (no insertado): Amazon ufg*ra77l9gx4, 2025-04-21 00:00:00, BBVA, gasto=91.66, ingreso=None
+2025-07-09 17:22:32,233 - INFO - Insertados exitosos por mes: {'2025-07': 22, '2025-06': 46, '2025-05': 52, '2025-04': 5}
+2025-07-09 17:22:32,233 - INFO - Registros repetidos por mes: {'2025-04': 1}
+2025-07-09 17:32:49,626 - INFO - Aplicación iniciada.
+2025-07-09 17:32:52,409 - INFO - Archivo seleccionado: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx, banco: BBVA
+2025-07-09 17:32:52,409 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-09 17:32:52,410 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: BBVA
+2025-07-09 17:32:52,805 - INFO - Procesando columnas Gasto/Ingreso
+2025-07-09 17:32:52,815 - INFO - Archivo de BBVA leído correctamente con 126 registros.
+2025-07-09 17:32:52,815 - INFO - Cargando reglas de categorización desde: gastos\categorization_rules.xlsx
+2025-07-09 17:32:52,815 - INFO - Reglas de categorización cargadas correctamente (11 reglas).
+2025-07-09 17:32:54,407 - INFO - Registros existentes en Notion leídos.
+2025-07-09 17:32:56,593 - INFO - Registro insertado: Adeudo de vodafone, 2025-07-09 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:32:57,205 - INFO - Registro insertado: Primaprix gijon schultz  gijon        es, 2025-07-08 00:00:00, BBVA, gasto=8.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:32:59,179 - INFO - Registro insertado: Amazon* rg14v1r34, 2025-07-02 00:00:00, BBVA, gasto=22.75, ingreso=None, subcategoria=None
+2025-07-09 17:32:59,785 - INFO - Registro insertado: Tib bus tren metro, 2025-07-07 00:00:00, BBVA, gasto=5.2, ingreso=None, subcategoria=None
+2025-07-09 17:33:00,691 - INFO - Registro insertado: Aeropuerto palma mallorca, 2025-07-06 00:00:00, BBVA, gasto=1.99, ingreso=None, subcategoria=None
+2025-07-09 17:33:03,615 - INFO - Registro insertado: Ssp s.a. - aeropuerto de, 2025-07-06 00:00:00, BBVA, gasto=26.04, ingreso=None, subcategoria=None
+2025-07-09 17:33:04,259 - INFO - Registro insertado: Disashop                 abogadas, lases, 2025-07-06 00:00:00, BBVA, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-09 17:33:04,867 - INFO - Registro insertado: Disashop                 abogadas, lases, 2025-07-06 00:00:00, BBVA, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-09 17:33:05,535 - INFO - Registro insertado: Ice friends palma, 2025-07-06 00:00:00, BBVA, gasto=9.6, ingreso=None, subcategoria=None
+2025-07-09 17:33:07,070 - INFO - Registro insertado: Es trasto, 2025-07-06 00:00:00, BBVA, gasto=6.0, ingreso=None, subcategoria=None
+2025-07-09 17:33:07,745 - INFO - Registro insertado: Farmacia plaza de espaãa, 2025-07-06 00:00:00, BBVA, gasto=3.95, ingreso=None, subcategoria=None
+2025-07-09 17:33:10,859 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-06 00:00:00, BBVA, gasto=None, ingreso=30.0, subcategoria=None
+2025-07-09 17:33:12,155 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=30.0, ingreso=None, subcategoria=None
+2025-07-09 17:33:12,829 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=None, ingreso=17.03, subcategoria=None
+2025-07-09 17:33:14,210 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=13.2, ingreso=None, subcategoria=None
+2025-07-09 17:33:14,788 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=17.03, ingreso=None, subcategoria=None
+2025-07-09 17:33:15,407 - INFO - Registro insertado: Familia schultz-gijon, 2025-07-04 00:00:00, BBVA, gasto=7.67, ingreso=None, subcategoria=None
+2025-07-09 17:33:18,937 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-07-04 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 17:33:20,061 - INFO - Registro insertado: Transferencia recibida, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=20.0, subcategoria=None
+2025-07-09 17:33:24,053 - INFO - Registro insertado: Transferencia recibida, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=235.0, subcategoria=None
+2025-07-09 17:33:24,557 - INFO - Registro insertado: Transferencia recibida, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=400.0, subcategoria=None
+2025-07-09 17:33:25,139 - INFO - Registro insertado: Transferencia realizada, 2025-07-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-07-09 17:33:25,677 - INFO - Registro insertado: Transferencia recibida, 2025-06-28 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-07-09 17:33:29,056 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-06-27 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:33:29,830 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-26 00:00:00, BBVA, gasto=9.8, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:33:32,129 - INFO - Registro insertado: Bizum, 2025-06-25 00:00:00, BBVA, gasto=12.6, ingreso=None, subcategoria=None
+2025-07-09 17:33:34,195 - INFO - Registro insertado: The lovely meatballs, s, 2025-06-22 00:00:00, BBVA, gasto=5.2, ingreso=None, subcategoria=None
+2025-07-09 17:33:34,748 - INFO - Registro insertado: Amazon ufg, 2025-06-22 00:00:00, BBVA, gasto=None, ingreso=0.84, subcategoria=None
+2025-07-09 17:33:39,595 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-23 00:00:00, BBVA, gasto=4.44, ingreso=None, subcategoria=None
+2025-07-09 17:33:40,243 - INFO - Registro insertado: Www.amazon.* kx0pp6bp5, 2025-06-21 00:00:00, BBVA, gasto=16.6, ingreso=None, subcategoria=None
+2025-07-09 17:33:41,139 - INFO - Registro insertado: Www.groupon.es, 2025-06-20 00:00:00, BBVA, gasto=52.49, ingreso=None, subcategoria=None
+2025-07-09 17:33:41,670 - INFO - Registro insertado: Amazon ufg, 2025-06-19 00:00:00, BBVA, gasto=None, ingreso=2.7, subcategoria=None
+2025-07-09 17:33:43,935 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-06-23 00:00:00, BBVA, gasto=30.48, ingreso=None, subcategoria=None
+2025-07-09 17:33:45,227 - INFO - Registro insertado: Amazon ufg*fe3z66sw5, 2025-06-18 00:00:00, BBVA, gasto=92.03, ingreso=None, subcategoria=None
+2025-07-09 17:33:50,560 - INFO - Registro insertado: Amazon ufg, 2025-06-18 00:00:00, BBVA, gasto=None, ingreso=7.13, subcategoria=None
+2025-07-09 17:33:51,410 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-20 00:00:00, BBVA, gasto=4.98, ingreso=None, subcategoria=None
+2025-07-09 17:33:51,864 - INFO - Registro insertado: Pan de ibias schultz 128, 2025-06-19 00:00:00, BBVA, gasto=7.11, ingreso=None, subcategoria=None
+2025-07-09 17:33:52,418 - INFO - Registro insertado: Just eat spain, s.l., 2025-06-17 00:00:00, BBVA, gasto=27.75, ingreso=None, subcategoria=None
+2025-07-09 17:33:53,050 - INFO - Registro insertado: Www.amazon.* b42rm4v05, 2025-06-16 00:00:00, BBVA, gasto=52.71, ingreso=None, subcategoria=None
+2025-07-09 17:33:58,045 - INFO - Registro insertado: Bizum, 2025-06-16 00:00:00, BBVA, gasto=None, ingreso=108.0, subcategoria=None
+2025-07-09 17:33:58,804 - INFO - Registro insertado: Bico de xeado lugo, 2025-06-15 00:00:00, BBVA, gasto=8.6, ingreso=None, subcategoria=None
+2025-07-09 17:33:59,355 - INFO - Registro insertado: Forno de lugo, 2025-06-15 00:00:00, BBVA, gasto=11.0, ingreso=None, subcategoria=None
+2025-07-09 17:34:00,880 - INFO - Registro insertado: Bizum, 2025-06-15 00:00:00, BBVA, gasto=None, ingreso=46.0, subcategoria=None
+2025-07-09 17:34:01,445 - INFO - Registro insertado: Daniel romay piãeiro, 2025-06-15 00:00:00, BBVA, gasto=137.9, ingreso=None, subcategoria=None
+2025-07-09 17:34:02,571 - INFO - Registro insertado: Taberna terra, 2025-06-15 00:00:00, BBVA, gasto=6.8, ingreso=None, subcategoria=None
+2025-07-09 17:34:04,515 - INFO - Registro insertado: Sanchez rivas taxi, 2025-06-14 00:00:00, BBVA, gasto=13.8, ingreso=None, subcategoria=None
+2025-07-09 17:34:09,844 - INFO - Registro insertado: Meson o castelo, 2025-06-14 00:00:00, BBVA, gasto=47.0, ingreso=None, subcategoria=None
+2025-07-09 17:34:10,446 - INFO - Registro insertado: La capital, 2025-06-14 00:00:00, BBVA, gasto=18.0, ingreso=None, subcategoria=None
+2025-07-09 17:34:11,035 - INFO - Registro insertado: Hotel mercure lugo, 2025-06-14 00:00:00, BBVA, gasto=123.2, ingreso=None, subcategoria=None
+2025-07-09 17:34:11,722 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-10 00:00:00, BBVA, gasto=5.35, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:34:13,459 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-10 00:00:00, BBVA, gasto=3.1, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:34:14,350 - INFO - Registro insertado: Adeudo de vodafone, 2025-06-10 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:34:14,856 - INFO - Registro insertado: Amazon ufg*hd13n80z5, 2025-06-06 00:00:00, BBVA, gasto=92.43, ingreso=None, subcategoria=None
+2025-07-09 17:34:17,542 - INFO - Registro insertado: Farmacia carlos checa pov, 2025-06-09 00:00:00, BBVA, gasto=41.96, ingreso=None, subcategoria=None
+2025-07-09 17:34:18,103 - INFO - Registro insertado: Fiestas meres, 2025-06-07 00:00:00, BBVA, gasto=6.3, ingreso=None, subcategoria=None
+2025-07-09 17:34:19,333 - INFO - Registro insertado: Mercadona viesques, 2025-06-07 00:00:00, BBVA, gasto=14.0, ingreso=None, subcategoria=None
+2025-07-09 17:34:24,610 - INFO - Registro insertado: Yelmofilmsapp, 2025-06-07 00:00:00, BBVA, gasto=8.8, ingreso=None, subcategoria=None
+2025-07-09 17:34:25,156 - INFO - Registro insertado: Farmacia carlos checa pov, 2025-06-06 00:00:00, BBVA, gasto=12.72, ingreso=None, subcategoria=None
+2025-07-09 17:34:25,745 - INFO - Registro insertado: Adeudo totalenergies clientessau, 2025-06-06 00:00:00, BBVA, gasto=14.75, ingreso=None, subcategoria=None
+2025-07-09 17:34:26,267 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-04 00:00:00, BBVA, gasto=7.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:34:26,873 - INFO - Registro insertado: Mistertransfer.com, 2025-06-01 00:00:00, BBVA, gasto=56.4, ingreso=None, subcategoria=None
+2025-07-09 17:34:27,355 - INFO - Registro insertado: Cp plus parking españa. o, 2025-06-03 00:00:00, BBVA, gasto=2.55, ingreso=None, subcategoria=None
+2025-07-09 17:34:28,213 - INFO - Registro insertado: Transferencia recibida, 2025-06-03 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-07-09 17:34:29,708 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-06-03 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 17:34:30,204 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-02 00:00:00, BBVA, gasto=8.57, ingreso=None, subcategoria=None
+2025-07-09 17:34:30,978 - INFO - Registro insertado: Transferencia recibida, 2025-06-02 00:00:00, BBVA, gasto=None, ingreso=635.0, subcategoria=None
+2025-07-09 17:34:31,498 - INFO - Registro insertado: Transferencia realizada, 2025-06-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-07-09 17:34:33,805 - INFO - Registro insertado: Panaderia tino, 2025-06-01 00:00:00, BBVA, gasto=9.5, ingreso=None, subcategoria=None
+2025-07-09 17:34:34,388 - INFO - Registro insertado: Parking salesas, 2025-05-31 00:00:00, BBVA, gasto=3.3, ingreso=None, subcategoria=None
+2025-07-09 17:34:38,223 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-05-29 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:34:43,301 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-05-28 00:00:00, BBVA, gasto=40.76, ingreso=None, subcategoria=None
+2025-07-09 17:34:45,195 - INFO - Registro insertado: Bizum, 2025-05-27 00:00:00, BBVA, gasto=11.98, ingreso=None, subcategoria=None
+2025-07-09 17:34:47,826 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-26 00:00:00, BBVA, gasto=103.73, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:34:50,915 - INFO - Registro insertado: Sala albeniz, 2025-05-24 00:00:00, BBVA, gasto=23.0, ingreso=None, subcategoria=None
+2025-07-09 17:34:51,897 - INFO - Registro insertado: Bizum, 2025-05-24 00:00:00, BBVA, gasto=18.0, ingreso=None, subcategoria=None
+2025-07-09 17:34:52,496 - INFO - Registro insertado: Bizum, 2025-05-24 00:00:00, BBVA, gasto=49.2, ingreso=None, subcategoria=None
+2025-07-09 17:34:57,170 - INFO - Registro insertado: Cafe bar tapikin, 2025-05-23 00:00:00, BBVA, gasto=9.0, ingreso=None, subcategoria=None
+2025-07-09 17:34:57,967 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-23 00:00:00, BBVA, gasto=10.67, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:34:58,726 - INFO - Registro insertado: Transferencia realizada, 2025-05-22 00:00:00, BBVA, gasto=2885.61, ingreso=None, subcategoria=None
+2025-07-09 17:34:59,433 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-05-21 00:00:00, BBVA, gasto=30.9, ingreso=None, subcategoria=None
+2025-07-09 17:35:00,609 - INFO - Registro insertado: Primaprix gijon schultz, 2025-05-20 00:00:00, BBVA, gasto=14.5, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:35:01,195 - INFO - Registro insertado: Amazon* mu8tr5ad5, 2025-05-18 00:00:00, BBVA, gasto=6.34, ingreso=None, subcategoria=None
+2025-07-09 17:35:05,057 - INFO - Registro insertado: Amzn mktp es, 2025-05-18 00:00:00, BBVA, gasto=None, ingreso=7.99, subcategoria=None
+2025-07-09 17:35:08,469 - INFO - Registro insertado: Tpv, 2025-05-20 00:00:00, BBVA, gasto=21.1, ingreso=None, subcategoria=None
+2025-07-09 17:35:09,281 - INFO - Registro insertado: Tpv, 2025-05-20 00:00:00, BBVA, gasto=79.2, ingreso=None, subcategoria=None
+2025-07-09 17:35:09,864 - INFO - Registro insertado: Amzn mktp es*z93uh9hw5, 2025-05-16 00:00:00, BBVA, gasto=7.99, ingreso=None, subcategoria=None
+2025-07-09 17:35:12,315 - INFO - Registro insertado: Amazon ufg, 2025-05-15 00:00:00, BBVA, gasto=None, ingreso=1.39, subcategoria=None
+2025-07-09 17:35:13,669 - INFO - Registro insertado: E.s. pumarin, 2025-05-18 00:00:00, BBVA, gasto=1.65, ingreso=None, subcategoria=None
+2025-07-09 17:35:17,502 - INFO - Registro insertado: La tahona de luanco, 2025-05-17 00:00:00, BBVA, gasto=9.6, ingreso=None, subcategoria=None
+2025-07-09 17:35:18,109 - INFO - Registro insertado: Amazon ufg*na1m01in5, 2025-05-14 00:00:00, BBVA, gasto=105.66, ingreso=None, subcategoria=None
+2025-07-09 17:35:19,691 - INFO - Registro insertado: Amazon* 212105245, 2025-05-14 00:00:00, BBVA, gasto=18.99, ingreso=None, subcategoria=None
+2025-07-09 17:35:20,441 - INFO - Registro insertado: Amazon ufg, 2025-05-14 00:00:00, BBVA, gasto=None, ingreso=6.87, subcategoria=None
+2025-07-09 17:35:21,051 - INFO - Registro insertado: Familia schultz-gijon, 2025-05-15 00:00:00, BBVA, gasto=10.45, ingreso=None, subcategoria=None
+2025-07-09 17:35:26,174 - INFO - Registro insertado: Peces de madera, 2025-05-13 00:00:00, BBVA, gasto=16.0, ingreso=None, subcategoria=None
+2025-07-09 17:35:27,270 - INFO - Registro insertado: Volotea.com o3jb4l, 2025-05-08 00:00:00, BBVA, gasto=164.46, ingreso=None, subcategoria=None
+2025-07-09 17:35:27,860 - INFO - Registro insertado: Confiteria la real, 2025-05-11 00:00:00, BBVA, gasto=7.6, ingreso=None, subcategoria=None
+2025-07-09 17:35:30,789 - INFO - Registro insertado: Moris beach club, 2025-05-10 00:00:00, BBVA, gasto=15.4, ingreso=None, subcategoria=None
+2025-07-09 17:35:31,267 - INFO - Registro insertado: Yelmo cines ocimax gijon, 2025-05-09 00:00:00, BBVA, gasto=7.4, ingreso=None, subcategoria=None
+2025-07-09 17:35:31,886 - INFO - Registro insertado: Farmacia carlos checa pov, 2025-05-09 00:00:00, BBVA, gasto=6.37, ingreso=None, subcategoria=None
+2025-07-09 17:35:32,448 - INFO - Registro insertado: Exprycajal, 2025-05-09 00:00:00, BBVA, gasto=9.55, ingreso=None, subcategoria=None
+2025-07-09 17:35:33,115 - INFO - Registro insertado: Vueling airlines, 2025-05-08 00:00:00, BBVA, gasto=39.98, ingreso=None, subcategoria=None
+2025-07-09 17:35:33,690 - INFO - Registro insertado: Adeudo de vodafone, 2025-05-08 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:35:34,349 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-07 00:00:00, BBVA, gasto=7.16, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:35:34,865 - INFO - Registro insertado: Btn concerts, 2025-05-07 00:00:00, BBVA, gasto=63.8, ingreso=None, subcategoria=None
+2025-07-09 17:35:36,076 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-05-07 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 17:35:37,133 - INFO - Registro insertado: Transferencia recibida, 2025-05-06 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-07-09 17:35:37,692 - INFO - Registro insertado: Amazon ufg*kn9is7zs5, 2025-05-02 00:00:00, BBVA, gasto=91.76, ingreso=None, subcategoria=None
+2025-07-09 17:35:39,310 - INFO - Registro insertado: Manolo bakes menen perez, 2025-05-03 00:00:00, BBVA, gasto=6.8, ingreso=None, subcategoria=None
+2025-07-09 17:35:40,017 - INFO - Registro insertado: Panris centro, 2025-05-03 00:00:00, BBVA, gasto=1.2, ingreso=None, subcategoria=None
+2025-07-09 17:35:40,724 - INFO - Registro insertado: Zara home, 2025-05-03 00:00:00, BBVA, gasto=21.97, ingreso=None, subcategoria=None
+2025-07-09 17:35:41,443 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=15.0, ingreso=None, subcategoria=None
+2025-07-09 17:35:41,968 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=25.0, subcategoria=None
+2025-07-09 17:35:42,476 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 17:35:43,053 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=25.0, subcategoria=None
+2025-07-09 17:35:43,741 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 17:35:44,880 - INFO - Registro insertado: Bizum, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 17:35:48,173 - INFO - Registro insertado: Bizum, 2025-05-02 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 17:35:48,767 - INFO - Registro insertado: Los agaves, 2025-05-02 00:00:00, BBVA, gasto=197.4, ingreso=None, subcategoria=None
+2025-07-09 17:35:49,505 - INFO - Registro insertado: Transferencia recibida, 2025-05-02 00:00:00, BBVA, gasto=None, ingreso=635.0, subcategoria=None
+2025-07-09 17:35:50,228 - INFO - Registro insertado: Transferencia realizada, 2025-05-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-07-09 17:35:50,760 - INFO - Registro insertado: Primaprix gijon schultz, 2025-04-30 00:00:00, BBVA, gasto=7.4, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:35:51,439 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-04-29 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 17:35:52,201 - INFO - Registro insertado: Ikea asturias food, 2025-04-26 00:00:00, BBVA, gasto=3.49, ingreso=None, subcategoria=None
+2025-07-09 17:35:52,702 - INFO - Registro insertado: Ikea asturias hfb, 2025-04-26 00:00:00, BBVA, gasto=58.45, ingreso=None, subcategoria=None
+2025-07-09 17:35:54,612 - INFO - Registro insertado: Alimerka viesques, 2025-04-23 00:00:00, BBVA, gasto=6.45, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 17:35:54,613 - INFO - Registro repetido (no insertado): Amazon ufg*ra77l9gx4, 2025-04-21 00:00:00, BBVA, gasto=91.66, ingreso=None
+2025-07-09 17:35:54,613 - INFO - Insertados exitosos por mes: {'2025-07': 22, '2025-06': 46, '2025-05': 52, '2025-04': 5}
+2025-07-09 17:35:54,613 - INFO - Registros repetidos por mes: {'2025-04': 1}
+2025-07-09 17:59:54,119 - INFO - Aplicación iniciada.
+2025-07-09 17:59:57,283 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-09 17:59:57,283 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: BBVA
+2025-07-09 17:59:57,679 - INFO - Procesando columnas Gasto/Ingreso
+2025-07-09 17:59:57,679 - INFO - Archivo de BBVA leído correctamente con 126 registros.
+2025-07-09 17:59:57,679 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-09 17:59:57,689 - INFO - Reglas de categorización cargadas correctamente (12 reglas).
+2025-07-09 17:59:58,840 - INFO - Registros existentes en Notion leídos.
+2025-07-09 18:00:00,979 - INFO - Registro insertado: Adeudo de vodafone, 2025-07-09 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 18:00:02,051 - INFO - Registro insertado: Primaprix gijon schultz  gijon        es, 2025-07-08 00:00:00, BBVA, gasto=8.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:00:02,358 - WARNING - No se pudo insertar el registro: Amazon* rg14v1r34, 2025-07-02 00:00:00, BBVA, gasto=22.75, ingreso=None, subcategoria=
+2025-07-09 18:00:02,661 - WARNING - No se pudo insertar el registro: Tib bus tren metro, 2025-07-07 00:00:00, BBVA, gasto=5.2, ingreso=None, subcategoria=
+2025-07-09 18:00:02,969 - WARNING - No se pudo insertar el registro: Aeropuerto palma mallorca, 2025-07-06 00:00:00, BBVA, gasto=1.99, ingreso=None, subcategoria=
+2025-07-09 18:00:03,229 - WARNING - No se pudo insertar el registro: Ssp s.a. - aeropuerto de, 2025-07-06 00:00:00, BBVA, gasto=26.04, ingreso=None, subcategoria=
+2025-07-09 18:00:03,523 - WARNING - No se pudo insertar el registro: Disashop                 abogadas, lases, 2025-07-06 00:00:00, BBVA, gasto=5.0, ingreso=None, subcategoria=
+2025-07-09 18:00:03,911 - WARNING - No se pudo insertar el registro: Disashop                 abogadas, lases, 2025-07-06 00:00:00, BBVA, gasto=5.0, ingreso=None, subcategoria=
+2025-07-09 18:00:04,199 - WARNING - No se pudo insertar el registro: Ice friends palma, 2025-07-06 00:00:00, BBVA, gasto=9.6, ingreso=None, subcategoria=
+2025-07-09 18:00:04,517 - WARNING - No se pudo insertar el registro: Es trasto, 2025-07-06 00:00:00, BBVA, gasto=6.0, ingreso=None, subcategoria=
+2025-07-09 18:00:04,864 - WARNING - No se pudo insertar el registro: Farmacia plaza de espaãa, 2025-07-06 00:00:00, BBVA, gasto=3.95, ingreso=None, subcategoria=
+2025-07-09 18:00:05,649 - WARNING - No se pudo insertar el registro: Hotel barcelo cala viãas, 2025-07-06 00:00:00, BBVA, gasto=None, ingreso=30.0, subcategoria=
+2025-07-09 18:00:07,589 - WARNING - No se pudo insertar el registro: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=30.0, ingreso=None, subcategoria=
+2025-07-09 18:00:07,889 - WARNING - No se pudo insertar el registro: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=None, ingreso=17.03, subcategoria=
+2025-07-09 18:00:08,219 - WARNING - No se pudo insertar el registro: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=13.2, ingreso=None, subcategoria=
+2025-07-09 18:00:08,508 - WARNING - No se pudo insertar el registro: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=17.03, ingreso=None, subcategoria=
+2025-07-09 18:00:09,066 - INFO - Registro insertado: Familia schultz-gijon, 2025-07-04 00:00:00, BBVA, gasto=7.67, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:00:09,644 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-07-04 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 18:00:09,934 - WARNING - No se pudo insertar el registro: Transferencia: Casco bici, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=20.0, subcategoria=
+2025-07-09 18:00:10,728 - WARNING - No se pudo insertar el registro: Transferencia: Parte 2 Sarai julio, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=235.0, subcategoria=
+2025-07-09 18:00:11,072 - WARNING - No se pudo insertar el registro: Transferencia: Parte 1 Sarai Julio, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=400.0, subcategoria=
+2025-07-09 18:00:11,378 - WARNING - No se pudo insertar el registro: Transferencia: CUOTA LUIS MILLaN Y SARAI BONILLA, 2025-07-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=
+2025-07-09 18:00:11,660 - WARNING - No se pudo insertar el registro: Transferencia: Julio Luis, 2025-06-28 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=
+2025-07-09 18:00:12,266 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-06-27 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 18:00:12,880 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-26 00:00:00, BBVA, gasto=9.8, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:00:13,489 - WARNING - No se pudo insertar el registro: Bizum: ENVIADO: Cerves Luis y Sarai, 2025-06-25 00:00:00, BBVA, gasto=12.6, ingreso=None, subcategoria=
+2025-07-09 18:00:13,829 - WARNING - No se pudo insertar el registro: The lovely meatballs, s, 2025-06-22 00:00:00, BBVA, gasto=5.2, ingreso=None, subcategoria=
+2025-07-09 18:00:14,199 - WARNING - No se pudo insertar el registro: Amazon ufg, 2025-06-22 00:00:00, BBVA, gasto=None, ingreso=0.84, subcategoria=
+2025-07-09 18:00:17,920 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-23 00:00:00, BBVA, gasto=4.44, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:00:18,299 - WARNING - No se pudo insertar el registro: Www.amazon.* kx0pp6bp5, 2025-06-21 00:00:00, BBVA, gasto=16.6, ingreso=None, subcategoria=
+2025-07-09 18:00:18,569 - WARNING - No se pudo insertar el registro: Www.groupon.es, 2025-06-20 00:00:00, BBVA, gasto=52.49, ingreso=None, subcategoria=
+2025-07-09 18:00:19,438 - WARNING - No se pudo insertar el registro: Amazon ufg, 2025-06-19 00:00:00, BBVA, gasto=None, ingreso=2.7, subcategoria=
+2025-07-09 18:00:19,739 - WARNING - No se pudo insertar el registro: Adeudo baser comer. refer. sa, 2025-06-23 00:00:00, BBVA, gasto=30.48, ingreso=None, subcategoria=
+2025-07-09 18:00:20,051 - WARNING - No se pudo insertar el registro: Amazon ufg*fe3z66sw5, 2025-06-18 00:00:00, BBVA, gasto=92.03, ingreso=None, subcategoria=
+2025-07-09 18:00:20,889 - WARNING - No se pudo insertar el registro: Amazon ufg, 2025-06-18 00:00:00, BBVA, gasto=None, ingreso=7.13, subcategoria=
+2025-07-09 18:00:33,793 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-20 00:00:00, BBVA, gasto=4.98, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:00:34,757 - WARNING - No se pudo insertar el registro: Pan de ibias schultz 128, 2025-06-19 00:00:00, BBVA, gasto=7.11, ingreso=None, subcategoria=
+2025-07-09 18:00:35,030 - WARNING - No se pudo insertar el registro: Just eat spain, s.l., 2025-06-17 00:00:00, BBVA, gasto=27.75, ingreso=None, subcategoria=
+2025-07-09 18:00:35,304 - WARNING - No se pudo insertar el registro: Www.amazon.* b42rm4v05, 2025-06-16 00:00:00, BBVA, gasto=52.71, ingreso=None, subcategoria=
+2025-07-09 18:00:35,629 - WARNING - No se pudo insertar el registro: Bizum: RECIBIDO: Lucus, 2025-06-16 00:00:00, BBVA, gasto=None, ingreso=108.0, subcategoria=
+2025-07-09 18:00:35,969 - WARNING - No se pudo insertar el registro: Bico de xeado lugo, 2025-06-15 00:00:00, BBVA, gasto=8.6, ingreso=None, subcategoria=
+2025-07-09 18:00:36,507 - WARNING - No se pudo insertar el registro: Forno de lugo, 2025-06-15 00:00:00, BBVA, gasto=11.0, ingreso=None, subcategoria=
+2025-07-09 18:00:36,824 - WARNING - No se pudo insertar el registro: Bizum: RECIBIDO: Sin concepto, 2025-06-15 00:00:00, BBVA, gasto=None, ingreso=46.0, subcategoria=
+2025-07-09 18:00:37,604 - WARNING - No se pudo insertar el registro: Daniel romay piãeiro, 2025-06-15 00:00:00, BBVA, gasto=137.9, ingreso=None, subcategoria=
+2025-07-09 18:00:37,909 - WARNING - No se pudo insertar el registro: Taberna terra, 2025-06-15 00:00:00, BBVA, gasto=6.8, ingreso=None, subcategoria=
+2025-07-09 18:00:38,299 - WARNING - No se pudo insertar el registro: Sanchez rivas taxi, 2025-06-14 00:00:00, BBVA, gasto=13.8, ingreso=None, subcategoria=
+2025-07-09 18:00:39,161 - WARNING - No se pudo insertar el registro: Meson o castelo, 2025-06-14 00:00:00, BBVA, gasto=47.0, ingreso=None, subcategoria=
+2025-07-09 18:00:39,474 - WARNING - No se pudo insertar el registro: La capital, 2025-06-14 00:00:00, BBVA, gasto=18.0, ingreso=None, subcategoria=
+2025-07-09 18:00:39,809 - WARNING - No se pudo insertar el registro: Hotel mercure lugo, 2025-06-14 00:00:00, BBVA, gasto=123.2, ingreso=None, subcategoria=
+2025-07-09 18:00:40,419 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-10 00:00:00, BBVA, gasto=5.35, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:00:40,988 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-10 00:00:00, BBVA, gasto=3.1, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:00:42,199 - INFO - Registro insertado: Adeudo de vodafone, 2025-06-10 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 18:00:42,511 - WARNING - No se pudo insertar el registro: Amazon ufg*hd13n80z5, 2025-06-06 00:00:00, BBVA, gasto=92.43, ingreso=None, subcategoria=
+2025-07-09 18:00:42,872 - WARNING - No se pudo insertar el registro: Farmacia carlos checa pov, 2025-06-09 00:00:00, BBVA, gasto=41.96, ingreso=None, subcategoria=
+2025-07-09 18:00:43,369 - WARNING - No se pudo insertar el registro: Fiestas meres, 2025-06-07 00:00:00, BBVA, gasto=6.3, ingreso=None, subcategoria=
+2025-07-09 18:00:43,638 - WARNING - No se pudo insertar el registro: Mercadona viesques, 2025-06-07 00:00:00, BBVA, gasto=14.0, ingreso=None, subcategoria=
+2025-07-09 18:00:43,979 - WARNING - No se pudo insertar el registro: Yelmofilmsapp, 2025-06-07 00:00:00, BBVA, gasto=8.8, ingreso=None, subcategoria=
+2025-07-09 18:00:44,344 - WARNING - No se pudo insertar el registro: Farmacia carlos checa pov, 2025-06-06 00:00:00, BBVA, gasto=12.72, ingreso=None, subcategoria=
+2025-07-09 18:00:44,649 - WARNING - No se pudo insertar el registro: Adeudo totalenergies clientessau, 2025-06-06 00:00:00, BBVA, gasto=14.75, ingreso=None, subcategoria=
+2025-07-09 18:00:46,771 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-04 00:00:00, BBVA, gasto=7.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:00:47,081 - WARNING - No se pudo insertar el registro: Mistertransfer.com, 2025-06-01 00:00:00, BBVA, gasto=56.4, ingreso=None, subcategoria=
+2025-07-09 18:00:47,361 - WARNING - No se pudo insertar el registro: Cp plus parking españa. o, 2025-06-03 00:00:00, BBVA, gasto=2.55, ingreso=None, subcategoria=
+2025-07-09 18:00:47,809 - WARNING - No se pudo insertar el registro: Transferencia: Junio Luis, 2025-06-03 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=
+2025-07-09 18:00:58,698 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-06-03 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 18:00:59,768 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-02 00:00:00, BBVA, gasto=8.57, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:01:00,334 - WARNING - No se pudo insertar el registro: Transferencia: Junio Sarai, 2025-06-02 00:00:00, BBVA, gasto=None, ingreso=635.0, subcategoria=
+2025-07-09 18:01:01,370 - WARNING - No se pudo insertar el registro: Transferencia: CUOTA LUIS MILLaN Y SARAI BONILLA, 2025-06-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=
+2025-07-09 18:01:02,207 - WARNING - No se pudo insertar el registro: Panaderia tino, 2025-06-01 00:00:00, BBVA, gasto=9.5, ingreso=None, subcategoria=
+2025-07-09 18:01:02,479 - WARNING - No se pudo insertar el registro: Parking salesas, 2025-05-31 00:00:00, BBVA, gasto=3.3, ingreso=None, subcategoria=
+2025-07-09 18:01:03,229 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-05-29 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 18:01:03,593 - WARNING - No se pudo insertar el registro: Adeudo baser comer. refer. sa, 2025-05-28 00:00:00, BBVA, gasto=40.76, ingreso=None, subcategoria=
+2025-07-09 18:01:03,928 - WARNING - No se pudo insertar el registro: Bizum: COMPRA: PEDIDO 251475687171, 2025-05-27 00:00:00, BBVA, gasto=11.98, ingreso=None, subcategoria=
+2025-07-09 18:01:04,473 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-26 00:00:00, BBVA, gasto=103.73, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:01:04,777 - WARNING - No se pudo insertar el registro: Sala albeniz, 2025-05-24 00:00:00, BBVA, gasto=23.0, ingreso=None, subcategoria=
+2025-07-09 18:01:05,979 - WARNING - No se pudo insertar el registro: Bizum: ENVIADO: Kfc Luis y Sarai, 2025-05-24 00:00:00, BBVA, gasto=18.0, ingreso=None, subcategoria=
+2025-07-09 18:01:06,274 - WARNING - No se pudo insertar el registro: Bizum: ENVIADO: Pizzas Luis y Sarai, 2025-05-24 00:00:00, BBVA, gasto=49.2, ingreso=None, subcategoria=
+2025-07-09 18:01:06,589 - WARNING - No se pudo insertar el registro: Cafe bar tapikin, 2025-05-23 00:00:00, BBVA, gasto=9.0, ingreso=None, subcategoria=
+2025-07-09 18:01:08,909 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-23 00:00:00, BBVA, gasto=10.67, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:01:09,639 - WARNING - No se pudo insertar el registro: Transferencia: PAGO FINAL DE CALLE NIORT 14 1B, 2025-05-22 00:00:00, BBVA, gasto=2885.61, ingreso=None, subcategoria=
+2025-07-09 18:01:09,949 - WARNING - No se pudo insertar el registro: Adeudo baser comer. refer. sa, 2025-05-21 00:00:00, BBVA, gasto=30.9, ingreso=None, subcategoria=
+2025-07-09 18:01:11,522 - INFO - Registro insertado: Primaprix gijon schultz, 2025-05-20 00:00:00, BBVA, gasto=14.5, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:01:11,838 - WARNING - No se pudo insertar el registro: Amazon* mu8tr5ad5, 2025-05-18 00:00:00, BBVA, gasto=6.34, ingreso=None, subcategoria=
+2025-07-09 18:01:12,126 - WARNING - No se pudo insertar el registro: Amzn mktp es, 2025-05-18 00:00:00, BBVA, gasto=None, ingreso=7.99, subcategoria=
+2025-07-09 18:01:12,455 - WARNING - No se pudo insertar el registro: Tpv, 2025-05-20 00:00:00, BBVA, gasto=21.1, ingreso=None, subcategoria=
+2025-07-09 18:01:12,972 - WARNING - No se pudo insertar el registro: Tpv, 2025-05-20 00:00:00, BBVA, gasto=79.2, ingreso=None, subcategoria=
+2025-07-09 18:01:13,241 - WARNING - No se pudo insertar el registro: Amzn mktp es*z93uh9hw5, 2025-05-16 00:00:00, BBVA, gasto=7.99, ingreso=None, subcategoria=
+2025-07-09 18:01:13,961 - WARNING - No se pudo insertar el registro: Amazon ufg, 2025-05-15 00:00:00, BBVA, gasto=None, ingreso=1.39, subcategoria=
+2025-07-09 18:01:14,339 - WARNING - No se pudo insertar el registro: E.s. pumarin, 2025-05-18 00:00:00, BBVA, gasto=1.65, ingreso=None, subcategoria=
+2025-07-09 18:01:14,658 - WARNING - No se pudo insertar el registro: La tahona de luanco, 2025-05-17 00:00:00, BBVA, gasto=9.6, ingreso=None, subcategoria=
+2025-07-09 18:01:15,778 - WARNING - No se pudo insertar el registro: Amazon ufg*na1m01in5, 2025-05-14 00:00:00, BBVA, gasto=105.66, ingreso=None, subcategoria=
+2025-07-09 18:01:16,469 - WARNING - No se pudo insertar el registro: Amazon* 212105245, 2025-05-14 00:00:00, BBVA, gasto=18.99, ingreso=None, subcategoria=
+2025-07-09 18:01:16,889 - WARNING - No se pudo insertar el registro: Amazon ufg, 2025-05-14 00:00:00, BBVA, gasto=None, ingreso=6.87, subcategoria=
+2025-07-09 18:01:18,040 - INFO - Registro insertado: Familia schultz-gijon, 2025-05-15 00:00:00, BBVA, gasto=10.45, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:01:18,612 - WARNING - No se pudo insertar el registro: Peces de madera, 2025-05-13 00:00:00, BBVA, gasto=16.0, ingreso=None, subcategoria=
+2025-07-09 18:01:18,906 - WARNING - No se pudo insertar el registro: Volotea.com o3jb4l, 2025-05-08 00:00:00, BBVA, gasto=164.46, ingreso=None, subcategoria=
+2025-07-09 18:01:19,944 - WARNING - No se pudo insertar el registro: Confiteria la real, 2025-05-11 00:00:00, BBVA, gasto=7.6, ingreso=None, subcategoria=
+2025-07-09 18:01:20,262 - WARNING - No se pudo insertar el registro: Moris beach club, 2025-05-10 00:00:00, BBVA, gasto=15.4, ingreso=None, subcategoria=
+2025-07-09 18:01:21,929 - WARNING - No se pudo insertar el registro: Yelmo cines ocimax gijon, 2025-05-09 00:00:00, BBVA, gasto=7.4, ingreso=None, subcategoria=
+2025-07-09 18:01:24,229 - WARNING - No se pudo insertar el registro: Farmacia carlos checa pov, 2025-05-09 00:00:00, BBVA, gasto=6.37, ingreso=None, subcategoria=
+2025-07-09 18:01:24,542 - WARNING - No se pudo insertar el registro: Exprycajal, 2025-05-09 00:00:00, BBVA, gasto=9.55, ingreso=None, subcategoria=
+2025-07-09 18:01:24,799 - WARNING - No se pudo insertar el registro: Vueling airlines, 2025-05-08 00:00:00, BBVA, gasto=39.98, ingreso=None, subcategoria=
+2025-07-09 18:01:25,719 - INFO - Registro insertado: Adeudo de vodafone, 2025-05-08 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 18:01:26,733 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-07 00:00:00, BBVA, gasto=7.16, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:01:27,390 - WARNING - No se pudo insertar el registro: Btn concerts, 2025-05-07 00:00:00, BBVA, gasto=63.8, ingreso=None, subcategoria=
+2025-07-09 18:01:49,594 - INFO - Aplicación iniciada.
+2025-07-09 18:01:55,488 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-09 18:01:55,489 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: BBVA
+2025-07-09 18:01:55,879 - INFO - Procesando columnas Gasto/Ingreso
+2025-07-09 18:01:55,879 - INFO - Archivo de BBVA leído correctamente con 126 registros.
+2025-07-09 18:01:55,879 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-09 18:01:55,889 - INFO - Reglas de categorización cargadas correctamente (12 reglas).
+2025-07-09 18:01:57,050 - INFO - Registros existentes en Notion leídos.
+2025-07-09 18:01:58,091 - INFO - Registro insertado: Adeudo de vodafone, 2025-07-09 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 18:01:58,727 - INFO - Registro insertado: Primaprix gijon schultz  gijon        es, 2025-07-08 00:00:00, BBVA, gasto=8.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:01:59,254 - INFO - Registro insertado: Amazon* rg14v1r34, 2025-07-02 00:00:00, BBVA, gasto=22.75, ingreso=None, subcategoria=None
+2025-07-09 18:02:02,649 - INFO - Registro insertado: Tib bus tren metro, 2025-07-07 00:00:00, BBVA, gasto=5.2, ingreso=None, subcategoria=None
+2025-07-09 18:02:04,356 - INFO - Registro insertado: Aeropuerto palma mallorca, 2025-07-06 00:00:00, BBVA, gasto=1.99, ingreso=None, subcategoria=None
+2025-07-09 18:02:04,931 - INFO - Registro insertado: Ssp s.a. - aeropuerto de, 2025-07-06 00:00:00, BBVA, gasto=26.04, ingreso=None, subcategoria=None
+2025-07-09 18:02:05,596 - INFO - Registro insertado: Disashop                 abogadas, lases, 2025-07-06 00:00:00, BBVA, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-09 18:02:06,113 - INFO - Registro insertado: Disashop                 abogadas, lases, 2025-07-06 00:00:00, BBVA, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-09 18:02:06,732 - INFO - Registro insertado: Ice friends palma, 2025-07-06 00:00:00, BBVA, gasto=9.6, ingreso=None, subcategoria=None
+2025-07-09 18:02:09,072 - INFO - Registro insertado: Es trasto, 2025-07-06 00:00:00, BBVA, gasto=6.0, ingreso=None, subcategoria=None
+2025-07-09 18:02:09,662 - INFO - Registro insertado: Farmacia plaza de espaãa, 2025-07-06 00:00:00, BBVA, gasto=3.95, ingreso=None, subcategoria=None
+2025-07-09 18:02:10,173 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-06 00:00:00, BBVA, gasto=None, ingreso=30.0, subcategoria=None
+2025-07-09 18:02:11,961 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=30.0, ingreso=None, subcategoria=None
+2025-07-09 18:02:12,575 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=None, ingreso=17.03, subcategoria=None
+2025-07-09 18:02:13,146 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=13.2, ingreso=None, subcategoria=None
+2025-07-09 18:02:13,615 - INFO - Registro insertado: Hotel barcelo cala viãas, 2025-07-05 00:00:00, BBVA, gasto=17.03, ingreso=None, subcategoria=None
+2025-07-09 18:02:16,699 - INFO - Registro insertado: Familia schultz-gijon, 2025-07-04 00:00:00, BBVA, gasto=7.67, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:02:17,319 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-07-04 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 18:02:18,999 - INFO - Registro insertado: Transferencia: Casco bici, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=20.0, subcategoria=None
+2025-07-09 18:02:19,581 - INFO - Registro insertado: Transferencia: Parte 2 Sarai julio, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=235.0, subcategoria=None
+2025-07-09 18:02:20,270 - INFO - Registro insertado: Transferencia: Parte 1 Sarai Julio, 2025-07-02 00:00:00, BBVA, gasto=None, ingreso=400.0, subcategoria=None
+2025-07-09 18:02:20,839 - INFO - Registro insertado: Transferencia: CUOTA LUIS MILLaN Y SARAI BONILLA, 2025-07-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-07-09 18:02:21,369 - INFO - Registro insertado: Transferencia: Julio Luis, 2025-06-28 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-07-09 18:02:31,099 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-06-27 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 18:02:33,124 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-26 00:00:00, BBVA, gasto=9.8, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:02:33,679 - INFO - Registro insertado: Bizum: ENVIADO: Cerves Luis y Sarai, 2025-06-25 00:00:00, BBVA, gasto=12.6, ingreso=None, subcategoria=None
+2025-07-09 18:02:34,425 - INFO - Registro insertado: The lovely meatballs, s, 2025-06-22 00:00:00, BBVA, gasto=5.2, ingreso=None, subcategoria=None
+2025-07-09 18:02:35,483 - INFO - Registro insertado: Amazon ufg, 2025-06-22 00:00:00, BBVA, gasto=None, ingreso=0.84, subcategoria=None
+2025-07-09 18:02:36,345 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-23 00:00:00, BBVA, gasto=4.44, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:02:36,880 - INFO - Registro insertado: Www.amazon.* kx0pp6bp5, 2025-06-21 00:00:00, BBVA, gasto=16.6, ingreso=None, subcategoria=None
+2025-07-09 18:02:38,544 - INFO - Registro insertado: Www.groupon.es, 2025-06-20 00:00:00, BBVA, gasto=52.49, ingreso=None, subcategoria=None
+2025-07-09 18:02:41,135 - INFO - Registro insertado: Amazon ufg, 2025-06-19 00:00:00, BBVA, gasto=None, ingreso=2.7, subcategoria=None
+2025-07-09 18:02:42,181 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-06-23 00:00:00, BBVA, gasto=30.48, ingreso=None, subcategoria=None
+2025-07-09 18:02:42,696 - INFO - Registro insertado: Amazon ufg*fe3z66sw5, 2025-06-18 00:00:00, BBVA, gasto=92.03, ingreso=None, subcategoria=None
+2025-07-09 18:02:43,236 - INFO - Registro insertado: Amazon ufg, 2025-06-18 00:00:00, BBVA, gasto=None, ingreso=7.13, subcategoria=None
+2025-07-09 18:02:43,924 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-20 00:00:00, BBVA, gasto=4.98, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:02:49,023 - INFO - Registro insertado: Pan de ibias schultz 128, 2025-06-19 00:00:00, BBVA, gasto=7.11, ingreso=None, subcategoria=None
+2025-07-09 18:02:50,296 - INFO - Registro insertado: Just eat spain, s.l., 2025-06-17 00:00:00, BBVA, gasto=27.75, ingreso=None, subcategoria=None
+2025-07-09 18:02:50,892 - INFO - Registro insertado: Www.amazon.* b42rm4v05, 2025-06-16 00:00:00, BBVA, gasto=52.71, ingreso=None, subcategoria=None
+2025-07-09 18:02:51,501 - INFO - Registro insertado: Bizum: RECIBIDO: Lucus, 2025-06-16 00:00:00, BBVA, gasto=None, ingreso=108.0, subcategoria=None
+2025-07-09 18:02:52,116 - INFO - Registro insertado: Bico de xeado lugo, 2025-06-15 00:00:00, BBVA, gasto=8.6, ingreso=None, subcategoria=None
+2025-07-09 18:02:53,790 - INFO - Registro insertado: Forno de lugo, 2025-06-15 00:00:00, BBVA, gasto=11.0, ingreso=None, subcategoria=None
+2025-07-09 18:02:54,274 - INFO - Registro insertado: Bizum: RECIBIDO: Sin concepto, 2025-06-15 00:00:00, BBVA, gasto=None, ingreso=46.0, subcategoria=None
+2025-07-09 18:02:55,448 - INFO - Registro insertado: Daniel romay piãeiro, 2025-06-15 00:00:00, BBVA, gasto=137.9, ingreso=None, subcategoria=None
+2025-07-09 18:02:56,129 - INFO - Registro insertado: Taberna terra, 2025-06-15 00:00:00, BBVA, gasto=6.8, ingreso=None, subcategoria=None
+2025-07-09 18:02:56,888 - INFO - Registro insertado: Sanchez rivas taxi, 2025-06-14 00:00:00, BBVA, gasto=13.8, ingreso=None, subcategoria=None
+2025-07-09 18:02:57,471 - INFO - Registro insertado: Meson o castelo, 2025-06-14 00:00:00, BBVA, gasto=47.0, ingreso=None, subcategoria=None
+2025-07-09 18:02:58,455 - INFO - Registro insertado: La capital, 2025-06-14 00:00:00, BBVA, gasto=18.0, ingreso=None, subcategoria=None
+2025-07-09 18:02:59,570 - INFO - Registro insertado: Hotel mercure lugo, 2025-06-14 00:00:00, BBVA, gasto=123.2, ingreso=None, subcategoria=None
+2025-07-09 18:03:10,925 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-10 00:00:00, BBVA, gasto=5.35, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:03:12,088 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-10 00:00:00, BBVA, gasto=3.1, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:03:13,570 - INFO - Registro insertado: Adeudo de vodafone, 2025-06-10 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 18:03:17,348 - INFO - Registro insertado: Amazon ufg*hd13n80z5, 2025-06-06 00:00:00, BBVA, gasto=92.43, ingreso=None, subcategoria=None
+2025-07-09 18:03:19,853 - INFO - Registro insertado: Farmacia carlos checa pov, 2025-06-09 00:00:00, BBVA, gasto=41.96, ingreso=None, subcategoria=None
+2025-07-09 18:03:20,412 - INFO - Registro insertado: Fiestas meres, 2025-06-07 00:00:00, BBVA, gasto=6.3, ingreso=None, subcategoria=None
+2025-07-09 18:03:21,188 - INFO - Registro insertado: Mercadona viesques, 2025-06-07 00:00:00, BBVA, gasto=14.0, ingreso=None, subcategoria=None
+2025-07-09 18:03:21,750 - INFO - Registro insertado: Yelmofilmsapp, 2025-06-07 00:00:00, BBVA, gasto=8.8, ingreso=None, subcategoria=None
+2025-07-09 18:03:22,404 - INFO - Registro insertado: Farmacia carlos checa pov, 2025-06-06 00:00:00, BBVA, gasto=12.72, ingreso=None, subcategoria=None
+2025-07-09 18:03:22,981 - INFO - Registro insertado: Adeudo totalenergies clientessau, 2025-06-06 00:00:00, BBVA, gasto=14.75, ingreso=None, subcategoria=None
+2025-07-09 18:03:25,561 - INFO - Registro insertado: Primaprix gijon schultz, 2025-06-04 00:00:00, BBVA, gasto=7.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:03:26,145 - INFO - Registro insertado: Mistertransfer.com, 2025-06-01 00:00:00, BBVA, gasto=56.4, ingreso=None, subcategoria=None
+2025-07-09 18:03:27,038 - INFO - Registro insertado: Cp plus parking españa. o, 2025-06-03 00:00:00, BBVA, gasto=2.55, ingreso=None, subcategoria=None
+2025-07-09 18:03:27,651 - INFO - Registro insertado: Transferencia: Junio Luis, 2025-06-03 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-07-09 18:03:28,396 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-06-03 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 18:03:38,136 - INFO - Registro insertado: Familia schultz-gijon, 2025-06-02 00:00:00, BBVA, gasto=8.57, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:03:39,045 - INFO - Registro insertado: Transferencia: Junio Sarai, 2025-06-02 00:00:00, BBVA, gasto=None, ingreso=635.0, subcategoria=None
+2025-07-09 18:03:39,566 - INFO - Registro insertado: Transferencia: CUOTA LUIS MILLaN Y SARAI BONILLA, 2025-06-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-07-09 18:03:40,477 - INFO - Registro insertado: Panaderia tino, 2025-06-01 00:00:00, BBVA, gasto=9.5, ingreso=None, subcategoria=None
+2025-07-09 18:03:43,241 - INFO - Registro insertado: Parking salesas, 2025-05-31 00:00:00, BBVA, gasto=3.3, ingreso=None, subcategoria=None
+2025-07-09 18:03:44,084 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-05-29 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 18:03:45,429 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-05-28 00:00:00, BBVA, gasto=40.76, ingreso=None, subcategoria=None
+2025-07-09 18:03:46,921 - INFO - Registro insertado: Bizum: COMPRA: PEDIDO 251475687171, 2025-05-27 00:00:00, BBVA, gasto=11.98, ingreso=None, subcategoria=None
+2025-07-09 18:03:59,515 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-26 00:00:00, BBVA, gasto=103.73, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:04:01,444 - INFO - Registro insertado: Sala albeniz, 2025-05-24 00:00:00, BBVA, gasto=23.0, ingreso=None, subcategoria=None
+2025-07-09 18:04:01,999 - INFO - Registro insertado: Bizum: ENVIADO: Kfc Luis y Sarai, 2025-05-24 00:00:00, BBVA, gasto=18.0, ingreso=None, subcategoria=None
+2025-07-09 18:04:02,721 - INFO - Registro insertado: Bizum: ENVIADO: Pizzas Luis y Sarai, 2025-05-24 00:00:00, BBVA, gasto=49.2, ingreso=None, subcategoria=None
+2025-07-09 18:04:03,782 - INFO - Registro insertado: Cafe bar tapikin, 2025-05-23 00:00:00, BBVA, gasto=9.0, ingreso=None, subcategoria=None
+2025-07-09 18:04:04,335 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-23 00:00:00, BBVA, gasto=10.67, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:04:05,208 - INFO - Registro insertado: Transferencia: PAGO FINAL DE CALLE NIORT 14 1B, 2025-05-22 00:00:00, BBVA, gasto=2885.61, ingreso=None, subcategoria=None
+2025-07-09 18:04:06,363 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-05-21 00:00:00, BBVA, gasto=30.9, ingreso=None, subcategoria=None
+2025-07-09 18:04:07,068 - INFO - Registro insertado: Primaprix gijon schultz, 2025-05-20 00:00:00, BBVA, gasto=14.5, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:04:07,639 - INFO - Registro insertado: Amazon* mu8tr5ad5, 2025-05-18 00:00:00, BBVA, gasto=6.34, ingreso=None, subcategoria=None
+2025-07-09 18:04:09,081 - INFO - Registro insertado: Amzn mktp es, 2025-05-18 00:00:00, BBVA, gasto=None, ingreso=7.99, subcategoria=None
+2025-07-09 18:04:12,692 - INFO - Registro insertado: Tpv, 2025-05-20 00:00:00, BBVA, gasto=21.1, ingreso=None, subcategoria=None
+2025-07-09 18:04:13,270 - INFO - Registro insertado: Tpv, 2025-05-20 00:00:00, BBVA, gasto=79.2, ingreso=None, subcategoria=None
+2025-07-09 18:04:15,160 - INFO - Registro insertado: Amzn mktp es*z93uh9hw5, 2025-05-16 00:00:00, BBVA, gasto=7.99, ingreso=None, subcategoria=None
+2025-07-09 18:04:15,775 - INFO - Registro insertado: Amazon ufg, 2025-05-15 00:00:00, BBVA, gasto=None, ingreso=1.39, subcategoria=None
+2025-07-09 18:04:16,468 - INFO - Registro insertado: E.s. pumarin, 2025-05-18 00:00:00, BBVA, gasto=1.65, ingreso=None, subcategoria=None
+2025-07-09 18:04:18,560 - INFO - Registro insertado: La tahona de luanco, 2025-05-17 00:00:00, BBVA, gasto=9.6, ingreso=None, subcategoria=None
+2025-07-09 18:04:19,143 - INFO - Registro insertado: Amazon ufg*na1m01in5, 2025-05-14 00:00:00, BBVA, gasto=105.66, ingreso=None, subcategoria=None
+2025-07-09 18:04:19,758 - INFO - Registro insertado: Amazon* 212105245, 2025-05-14 00:00:00, BBVA, gasto=18.99, ingreso=None, subcategoria=None
+2025-07-09 18:04:20,244 - INFO - Registro insertado: Amazon ufg, 2025-05-14 00:00:00, BBVA, gasto=None, ingreso=6.87, subcategoria=None
+2025-07-09 18:04:20,861 - INFO - Registro insertado: Familia schultz-gijon, 2025-05-15 00:00:00, BBVA, gasto=10.45, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:04:21,426 - INFO - Registro insertado: Peces de madera, 2025-05-13 00:00:00, BBVA, gasto=16.0, ingreso=None, subcategoria=None
+2025-07-09 18:04:22,434 - INFO - Registro insertado: Volotea.com o3jb4l, 2025-05-08 00:00:00, BBVA, gasto=164.46, ingreso=None, subcategoria=None
+2025-07-09 18:04:25,262 - INFO - Registro insertado: Confiteria la real, 2025-05-11 00:00:00, BBVA, gasto=7.6, ingreso=None, subcategoria=None
+2025-07-09 18:04:25,831 - INFO - Registro insertado: Moris beach club, 2025-05-10 00:00:00, BBVA, gasto=15.4, ingreso=None, subcategoria=None
+2025-07-09 18:04:27,392 - INFO - Registro insertado: Yelmo cines ocimax gijon, 2025-05-09 00:00:00, BBVA, gasto=7.4, ingreso=None, subcategoria=None
+2025-07-09 18:04:27,982 - INFO - Registro insertado: Farmacia carlos checa pov, 2025-05-09 00:00:00, BBVA, gasto=6.37, ingreso=None, subcategoria=None
+2025-07-09 18:04:28,462 - INFO - Registro insertado: Exprycajal, 2025-05-09 00:00:00, BBVA, gasto=9.55, ingreso=None, subcategoria=None
+2025-07-09 18:04:29,229 - INFO - Registro insertado: Vueling airlines, 2025-05-08 00:00:00, BBVA, gasto=39.98, ingreso=None, subcategoria=None
+2025-07-09 18:04:29,807 - INFO - Registro insertado: Adeudo de vodafone, 2025-05-08 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 18:04:31,465 - INFO - Registro insertado: Lidl gijon viesques, 2025-05-07 00:00:00, BBVA, gasto=7.16, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:04:32,121 - INFO - Registro insertado: Btn concerts, 2025-05-07 00:00:00, BBVA, gasto=63.8, ingreso=None, subcategoria=None
+2025-07-09 18:04:32,625 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-05-07 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-07-09 18:04:33,117 - INFO - Registro insertado: Transferencia: Mayo Luis, 2025-05-06 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-07-09 18:04:33,768 - INFO - Registro insertado: Amazon ufg*kn9is7zs5, 2025-05-02 00:00:00, BBVA, gasto=91.76, ingreso=None, subcategoria=None
+2025-07-09 18:04:34,786 - INFO - Registro insertado: Manolo bakes menen perez, 2025-05-03 00:00:00, BBVA, gasto=6.8, ingreso=None, subcategoria=None
+2025-07-09 18:04:35,538 - INFO - Registro insertado: Panris centro, 2025-05-03 00:00:00, BBVA, gasto=1.2, ingreso=None, subcategoria=None
+2025-07-09 18:04:36,517 - INFO - Registro insertado: Zara home, 2025-05-03 00:00:00, BBVA, gasto=21.97, ingreso=None, subcategoria=None
+2025-07-09 18:04:37,155 - INFO - Registro insertado: Bizum: ENVIADO: Luis y Sarai bebidas, 2025-05-03 00:00:00, BBVA, gasto=15.0, ingreso=None, subcategoria=None
+2025-07-09 18:04:37,780 - INFO - Registro insertado: Bizum: RECIBIDO: Los agaves, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=25.0, subcategoria=None
+2025-07-09 18:04:46,881 - INFO - Registro insertado: Bizum: RECIBIDO: Sin concepto, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 18:04:53,660 - INFO - Registro insertado: Bizum: RECIBIDO: Sin concepto, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=25.0, subcategoria=None
+2025-07-09 18:04:54,602 - INFO - Registro insertado: Bizum: RECIBIDO: Mejicano, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 18:04:55,191 - INFO - Registro insertado: Bizum: RECIBIDO: Cena, 2025-05-03 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 18:05:01,835 - INFO - Registro insertado: Bizum: RECIBIDO: Los agaves, 2025-05-02 00:00:00, BBVA, gasto=None, ingreso=24.7, subcategoria=None
+2025-07-09 18:05:08,346 - INFO - Registro insertado: Los agaves, 2025-05-02 00:00:00, BBVA, gasto=197.4, ingreso=None, subcategoria=None
+2025-07-09 18:05:09,623 - INFO - Registro insertado: Transferencia: Mayo Sarai, 2025-05-02 00:00:00, BBVA, gasto=None, ingreso=635.0, subcategoria=None
+2025-07-09 18:05:10,276 - INFO - Registro insertado: Transferencia: CUOTA LUIS MILLaN Y SARAI BONILLA, 2025-05-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-07-09 18:05:11,624 - INFO - Registro insertado: Primaprix gijon schultz, 2025-04-30 00:00:00, BBVA, gasto=7.4, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:05:12,300 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-04-29 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-07-09 18:05:13,051 - INFO - Registro insertado: Ikea asturias food, 2025-04-26 00:00:00, BBVA, gasto=3.49, ingreso=None, subcategoria=None
+2025-07-09 18:05:15,279 - INFO - Registro insertado: Ikea asturias hfb, 2025-04-26 00:00:00, BBVA, gasto=58.45, ingreso=None, subcategoria=None
+2025-07-09 18:05:17,799 - INFO - Registro insertado: Alimerka viesques, 2025-04-23 00:00:00, BBVA, gasto=6.45, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-09 18:05:17,800 - INFO - Registro repetido (no insertado): Amazon ufg*ra77l9gx4, 2025-04-21 00:00:00, BBVA, gasto=91.66, ingreso=None
+2025-07-09 18:05:17,800 - INFO - Insertados exitosos por mes: {'2025-07': 22, '2025-06': 46, '2025-05': 52, '2025-04': 5}
+2025-07-09 18:05:17,800 - INFO - Registros repetidos por mes: {'2025-04': 1}

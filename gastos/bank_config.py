@@ -12,6 +12,6 @@ class BankConfig:
             self.column_names = ["Fecha valor", "Concepto", "Importe"]
         elif self.bank == "BBVA":
             self.file_format = "xlsx"
-            self.column_names = ["F.Valor", "Concepto", "Importe"]
+            self.column_names = ["F.Valor", "Concepto", "Importe", "Observaciones"]
         else:
             raise ValueError("Unsupported bank")

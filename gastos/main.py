@@ -1,126 +1,109 @@
+import os
+import logging
 import pandas as pd
 from bank_config import BankConfig
 from notion_api import insert_notion_record, read_notion_records, record_exists
-import tkinter as tk
-from tkinter import filedialog, messagebox
+from file_processing import read_bank_records
+from categorization import load_categorization_rules, categorize_record
+from gui import create_main_window
 
-def process_gasto_ingreso(df):
-    # Separate Gasto and Ingreso
-    df['Gasto'] = df['Gasto/Ingreso'].apply(lambda x: -x if x < 0 else None)
-    df['Ingreso'] = df['Gasto/Ingreso'].apply(lambda x: x if x > 0 else None)
-    
-    # Drop the temporary 'Gasto/Ingreso' column
-    df.drop(columns=['Gasto/Ingreso'], inplace=True)
-    return df
+# Crear carpeta logs si no existe
+os.makedirs("logs", exist_ok=True)
 
-def read_bank_records(bank_config, filename):
-    if bank_config.bank == "Laboral Kutxa":
-        df = pd.read_csv(filename, usecols=bank_config.column_names, delimiter=";", decimal=",")
-        df['Fecha valor'] = pd.to_datetime(df['Fecha valor'].str.split().str[0], format='%d/%m/%Y', errors='coerce')
-        df['Concepto'] = df['Concepto'].astype(str)
-        df['Importe'] = df['Importe'].astype(float)
-        df['Cuenta'] = "Laboral Kutxa"
-        
-        # Rename columns to match Notion
-        df.rename(columns={
-            'Fecha valor': 'Fecha',
-            'Concepto': 'Nombre',
-            'Importe': 'Gasto/Ingreso'
-        }, inplace=True)
-        
-        df = process_gasto_ingreso(df)
-        return df
-    elif bank_config.bank == "BBVA":
-        try:
-            df = pd.read_excel(filename, skiprows=4, usecols=bank_config.column_names)
-            df['F.Valor'] = pd.to_datetime(df['F.Valor'], format='%d/%m/%Y', errors='coerce')
-            df['Concepto'] = df['Concepto'].astype(str)
-            df['Importe'] = df['Importe'].astype(float)
-            df['Cuenta'] = "BBVA"
-            
-            # Rename columns to match Notion
-            df.rename(columns={
-                'F.Valor': 'Fecha',
-                'Concepto': 'Nombre',
-                'Importe': 'Gasto/Ingreso'
-            }, inplace=True)
-            
-            df = process_gasto_ingreso(df)
-            return df
-        except Exception as e:
-            print(f"Error reading Excel file: {e}")
-            return pd.DataFrame()  # Return an empty DataFrame in case of error
+# Configuración del logging
+logging.basicConfig(
+    filename='logs/gastos_app.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+def clean_amount(value):
+    return None if value is not None and pd.isna(value) else value
+
+def process_record(
+    record,
+    existing_records,
+    categorization_rules,
+    successful_inserts,
+    repeated_records
+):
+    nombre = record['Nombre']
+    fecha = record['Fecha']
+    cuenta = record['Cuenta']
+    gasto = clean_amount(record['Gasto'])
+    ingreso = clean_amount(record['Ingreso'])
+    month = fecha.strftime('%Y-%m') if fecha is not None else None
+    subcategoria = categorize_record(nombre, categorization_rules)
+
+    if month and not record_exists(existing_records, fecha.strftime('%Y-%m-%d'), cuenta, gasto, ingreso):
+        response = insert_notion_record(
+            nombre,
+            fecha.strftime('%Y-%m-%d'),
+            cuenta,
+            gasto=gasto,
+            ingreso=ingreso,
+            subcategoria=subcategoria
+        )
+        if response:
+            successful_inserts[month] = successful_inserts.get(month, 0) + 1
+            logging.info(f"Registro insertado: {nombre}, {fecha}, {cuenta}, gasto={gasto}, ingreso={ingreso}, subcategoria={subcategoria}")
+        else:
+            logging.warning(f"No se pudo insertar el registro: {nombre}, {fecha}, {cuenta}, gasto={gasto}, ingreso={ingreso}, subcategoria={subcategoria}")
     else:
-        raise ValueError("Unsupported bank or file format")
+        if month:
+            repeated_records[month] = repeated_records.get(month, 0) + 1
+            logging.info(f"Registro repetido (no insertado): {nombre}, {fecha}, {cuenta}, gasto={gasto}, ingreso={ingreso}")
 
-def process_file(bank_name, file_path):
-    bank = BankConfig(bank_name)
-    data = read_bank_records(bank, file_path)
-    
-    successful_inserts = {}
-    repeated_records = {}
+def process_file(bank_name: str, file_path: str, status_label=None) -> None:
+    try:
+        logging.info(f"Inicio de procesamiento para banco: {bank_name}, archivo: {file_path}")
+        if status_label:
+            status_label.config(text="Procesando...", fg="blue")
+            status_label.update_idletasks()
 
-    # Diccionario de subcategorías basado en el nombre
-    subcategoria_dict = {
-        "PRESTAMO 3634614742": "db27f81e-62df-40a7-b99e-fcecff99fd78",
-        "RBO CRUZ ROJA": "be124c3c-09b9-4976-b33c-f0ab61f52ab5",
-        "RBO ASOCIACION ESPANOLA CONTRA EL C": "be124c3c-09b9-4976-b33c-f0ab61f52ab5",
-        "REPSOL WAYLET": "b527caba-092d-4a6a-b29a-513dc6b20841",
-        "Adeudo medicos sin fronteras, espa/a": "be124c3c-09b9-4976-b33c-f0ab61f52ab5"
-    }
+        bank = BankConfig(bank_name)
+        data = read_bank_records(bank, file_path)
 
-    # Read existing records from Notion once
-    existing_records = read_notion_records()
+        categorization_rules = load_categorization_rules()
+        if categorization_rules.empty:
+            logging.warning("No se pudieron cargar las reglas de categorización.")
+            if status_label:
+                status_label.config(text="Error cargando reglas.", fg="red")
+            return
 
-    if not data.empty:
-        for index, record in data.iterrows():
-            nombre = record['Nombre']
-            fecha = record['Fecha']
-            cuenta = record['Cuenta']
-            gasto = record['Gasto']
-            ingreso = record['Ingreso']
-            month = fecha.strftime('%Y-%m') if not pd.isna(fecha) else None
+        successful_inserts = {}
+        repeated_records = {}
 
-            # Replace NaN values with None
-            if pd.isna(gasto):
-                gasto = None
-            if pd.isna(ingreso):
-                ingreso = None
+        existing_records = read_notion_records()
+        logging.info("Registros existentes en Notion leídos.")
 
-            # Asignar subcategoría basada en el nombre
-            subcategoria = subcategoria_dict.get(nombre, None)
+        if not data.empty:
+            for _, record in data.iterrows():
+                process_record(
+                    record,
+                    existing_records,
+                    categorization_rules,
+                    successful_inserts,
+                    repeated_records
+                )
 
-            if month and not record_exists(existing_records, fecha.strftime('%Y-%m-%d'), cuenta, gasto, ingreso):
-                response = insert_notion_record(nombre, fecha.strftime('%Y-%m-%d'), cuenta, gasto=gasto, ingreso=ingreso, subcategoria=subcategoria)
-                if response:
-                    successful_inserts[month] = successful_inserts.get(month, 0) + 1
-            else:
-                if month:
-                    repeated_records[month] = repeated_records.get(month, 0) + 1
-
-        print("Successful inserts per month:", successful_inserts)
-        print("Repeated records per month:", repeated_records)
-    else:
-        print("No records found in the file.")
-
-def select_file():
-    file_path = filedialog.askopenfilename()
-    if file_path:
-        bank_name = bank_var.get()
-        process_file(bank_name, file_path)
-    else:
-        messagebox.showwarning("No file selected", "Please select a file to process.")
+            logging.info(f"Insertados exitosos por mes: {successful_inserts}")
+            logging.info(f"Registros repetidos por mes: {repeated_records}")
+            if status_label:
+                status_label.config(
+                    text=f"¡Proceso terminado!\nInsertados: {successful_inserts}\nRepetidos: {repeated_records}",
+                    fg="green"
+                )
+        else:
+            logging.warning("No se encontraron registros en el archivo.")
+            if status_label:
+                status_label.config(text="No se encontraron registros.", fg="orange")
+    except Exception as e:
+        logging.error(f"Error inesperado en el procesamiento: {e}", exc_info=True)
+        if status_label:
+            status_label.config(text=f"Error inesperado: {e}", fg="red")
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    root.title("Bank Records Processor")
-    root.geometry("400x200")  # Set the window size
-
-    tk.Label(root, text="Select Bank:").pack(pady=10)
-    bank_var = tk.StringVar(value="BBVA")
-    bank_menu = tk.OptionMenu(root, bank_var, "BBVA", "Laboral Kutxa")
-    bank_menu.pack(pady=10)
-
-    tk.Button(root, text="Select File", command=select_file).pack(pady=20)
-
+    root = create_main_window(process_file)
+    logging.info("Aplicación iniciada.")
     root.mainloop()

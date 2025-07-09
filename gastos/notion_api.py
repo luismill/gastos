@@ -80,6 +80,7 @@ def insert_notion_record(nombre, fecha, cuenta, gasto=None, ingreso=None, subcat
         "properties": properties
     }
 
+    url = "https://api.notion.com/v1/pages"
     response = requests.post(url, headers=HEADERS, json=data)
     
     if response.status_code != 200:
