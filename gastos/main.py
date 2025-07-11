@@ -14,7 +14,8 @@ os.makedirs("logs", exist_ok=True)
 logging.basicConfig(
     filename='logs/gastos_app.log',
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
 )
 
 def clean_amount(value):

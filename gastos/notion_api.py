@@ -1,5 +1,5 @@
 import requests
-from config import NOTION_API_URL, DATABASE_ID, HEADERS
+from config_example import NOTION_API_URL, DATABASE_ID, HEADERS
 
 def read_notion_records():
     query_url = NOTION_API_URL + "databases/" + DATABASE_ID + "/query"
