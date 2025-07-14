@@ -1,12 +1,13 @@
 import requests
 from config_example import NOTION_API_URL, DATABASE_ID, HEADERS
+from tkinter import messagebox
 
 def read_notion_records():
     query_url = NOTION_API_URL + "databases/" + DATABASE_ID + "/query"
     response = requests.post(query_url, headers=HEADERS)
     
     if response.status_code != 200:
-        print("Error consulting Notion:", response.text)
+        messagebox.showerror("Error", f"Error consultando a Notion: {response.text}")
         return None
     
     data = response.json().get("results", [])
@@ -84,7 +85,7 @@ def insert_notion_record(nombre, fecha, cuenta, gasto=None, ingreso=None, subcat
     response = requests.post(url, headers=HEADERS, json=data)
     
     if response.status_code != 200:
-        print("Error inserting record into Notion:", response.text)
+        messagebox.showerror("Error", f"Error insertando registro en Notion: {response.text}")
         return None
     
     return response.json()
@@ -110,7 +111,7 @@ def get_category_ids(category_database_id):
     response = requests.post(url, headers=HEADERS)
     
     if response.status_code != 200:
-        print("Error consulting Notion:", response.text)
+        print("Error consulting categories:", response.text)
         return None
     
     data = response.json().get("results", [])
@@ -125,8 +126,6 @@ def get_category_ids(category_database_id):
     
     return category_ids
 
-# Example usage
 if __name__ == "__main__":
     category_database_id = "abffbb24f06342558161af5162c82630"
     category_ids = get_category_ids(category_database_id)
-    print(category_ids)

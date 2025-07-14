@@ -1,9 +1,8 @@
 import pandas as pd
 import logging
-from bank_config import BankConfig
+from tkinter import messagebox
 
 def process_gasto_ingreso(df):
-    logging.info("Procesando columnas Gasto/Ingreso")
     df['Gasto'] = df['Gasto/Ingreso'].apply(lambda x: -x if x < 0 else None)
     df['Ingreso'] = df['Gasto/Ingreso'].apply(lambda x: x if x > 0 else None)
     df.drop(columns=['Gasto/Ingreso'], inplace=True)
@@ -52,8 +51,9 @@ def read_bank_records(bank_config, filename):
             return df
         except Exception as e:
             logging.error(f"Error leyendo archivo Excel: {e}")
-            print(f"Error reading Excel file: {e}")
+            messagebox.showerror("Error", f"Error leyendo archivo Excel: {e}")
             return pd.DataFrame()
     else:
         logging.error("Banco o formato de archivo no soportado")
-        raise ValueError("Unsupported bank or file format")
+        messagebox.showerror("Error", f"Banco o formato de archivo no soportado: {bank_config.bank}")
+        return None
