@@ -3,3 +3,4 @@ config.py
 *.xlsx
 *.txt
 *.csv
+logs/
