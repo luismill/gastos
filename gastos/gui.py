@@ -11,7 +11,6 @@ def create_main_window(process_file_callback: callable) -> tk.Tk:
     style.configure("Title.TLabel", font=("Arial", 18, "bold"))
     style.configure("Status.TLabel", foreground="blue", wraplength=650, anchor="w", justify="left")
 
-
     # Título grande
     ttk.Label(root, text="Procesador de Gastos", style="Title.TLabel").pack(pady=10)
 

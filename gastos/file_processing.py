@@ -24,6 +24,20 @@ def read_bank_records(bank_config, filename):
         df = process_gasto_ingreso(df)
         logging.info(f"Archivo de Laboral Kutxa leído correctamente con {len(df)} registros.")
         return df
+    elif bank_config.bank == "Revolut":
+        df = pd.read_csv(filename, usecols=bank_config.column_names, delimiter=",")
+        df['Started Date'] = pd.to_datetime(df['Started Date'], format='%Y-%m-%d %H:%M:%S', errors='coerce').dt.date
+        df['Description'] = df['Description'].astype(str)
+        df['Amount'] = df['Amount'].astype(float) - df['Fee'].astype(float)
+        df['Cuenta'] = "Revolut"
+        df.rename(columns={
+            'Started Date': 'Fecha',
+            'Description': 'Nombre',
+            'Amount': 'Gasto/Ingreso'
+        }, inplace=True)
+        df = process_gasto_ingreso(df)
+        logging.info(f"Archivo de Revolut leído correctamente con {len(df)} registros.")
+        return df
     elif bank_config.bank == "BBVA":
         try:
             df = pd.read_excel(filename, skiprows=4, usecols=bank_config.column_names)

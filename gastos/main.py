@@ -28,38 +28,41 @@ def process_record(
     successful_inserts,
     repeated_records
 ):
-    nombre = record['Nombre']
-    fecha = record['Fecha']
-    cuenta = record['Cuenta']
-    gasto = clean_amount(record['Gasto'])
-    ingreso = clean_amount(record['Ingreso'])
-    month = fecha.strftime('%Y-%m') if fecha is not None else None
-    subcategoria = categorize_record(nombre, categorization_rules)
+    """Procesa un registro y lo inserta en Notion si no existe."""
+    try:
+        nombre = record['Nombre']
+        fecha = record['Fecha']
+        cuenta = record['Cuenta']
+        gasto = clean_amount(record['Gasto'])
+        ingreso = clean_amount(record['Ingreso'])
+        month = fecha.strftime('%Y-%m') if pd.notna(fecha) else None
+        subcategoria = categorize_record(nombre, categorization_rules)
 
-    if month and not record_exists(existing_records, fecha.strftime('%Y-%m-%d'), cuenta, gasto, ingreso):
-        response = insert_notion_record(
-            nombre,
-            fecha.strftime('%Y-%m-%d'),
-            cuenta,
-            gasto=gasto,
-            ingreso=ingreso,
-            subcategoria=subcategoria
-        )
-        if response:
-            successful_inserts[month] = successful_inserts.get(month, 0) + 1
-            logging.info(f"Registro insertado: {nombre}, {fecha}, {cuenta}, gasto={gasto}, ingreso={ingreso}, subcategoria={subcategoria}")
+        if month and not record_exists(existing_records, fecha.strftime('%Y-%m-%d'), cuenta, gasto, ingreso):
+            response = insert_notion_record(
+                nombre,
+                fecha.strftime('%Y-%m-%d'),
+                cuenta,
+                gasto=gasto,
+                ingreso=ingreso,
+                subcategoria=subcategoria
+            )
+            if response:
+                successful_inserts[month] = successful_inserts.get(month, 0) + 1
+                logging.info(f"Registro insertado: {nombre}, {fecha}, {cuenta}, gasto={gasto}, ingreso={ingreso}, subcategoria={subcategoria}")
+            else:
+                logging.warning(f"No se pudo insertar el registro: {nombre}, {fecha}, {cuenta}, gasto={gasto}, ingreso={ingreso}, subcategoria={subcategoria}")
         else:
-            logging.warning(f"No se pudo insertar el registro: {nombre}, {fecha}, {cuenta}, gasto={gasto}, ingreso={ingreso}, subcategoria={subcategoria}")
-    else:
-        if month:
-            repeated_records[month] = repeated_records.get(month, 0) + 1
-            logging.info(f"Registro repetido (no insertado): {nombre}, {fecha}, {cuenta}, gasto={gasto}, ingreso={ingreso}")
-
+            if month:
+                repeated_records[month] = repeated_records.get(month, 0) + 1
+                logging.info(f"Registro repetido (no insertado): {nombre}, {fecha}, {cuenta}, gasto={gasto}, ingreso={ingreso}")
+    except Exception as e:
+        logging.error(f"Error procesando el registro {record}: {e}", exc_info=True)
 def process_file(bank_name: str, file_path: str, status_label=None) -> None:
     try:
         logging.info(f"Inicio de procesamiento para banco: {bank_name}, archivo: {file_path}")
         if status_label:
-            status_label.config(text="Procesando...", fg="blue")
+            status_label.config(text="Procesando...")
             status_label.update_idletasks()
 
         bank = BankConfig(bank_name)
@@ -69,7 +72,7 @@ def process_file(bank_name: str, file_path: str, status_label=None) -> None:
         if categorization_rules.empty:
             logging.warning("No se pudieron cargar las reglas de categorización.")
             if status_label:
-                status_label.config(text="Error cargando reglas.", fg="red")
+                status_label.config(text="Error cargando reglas.")
             return
 
         successful_inserts = {}
@@ -92,17 +95,16 @@ def process_file(bank_name: str, file_path: str, status_label=None) -> None:
             logging.info(f"Registros repetidos por mes: {repeated_records}")
             if status_label:
                 status_label.config(
-                    text=f"¡Proceso terminado!\nInsertados: {successful_inserts}\nRepetidos: {repeated_records}",
-                    fg="green"
+                    text=f"¡Proceso terminado!\nInsertados: {successful_inserts}\nRepetidos: {repeated_records}"
                 )
         else:
             logging.warning("No se encontraron registros en el archivo.")
             if status_label:
-                status_label.config(text="No se encontraron registros.", fg="orange")
+                status_label.config(text="No se encontraron registros.")
     except Exception as e:
         logging.error(f"Error inesperado en el procesamiento: {e}", exc_info=True)
         if status_label:
-            status_label.config(text=f"Error inesperado: {e}", fg="red")
+            status_label.config(text=f"Error inesperado en el procesamiento: {e}")
 
 if __name__ == "__main__":
     root = create_main_window(process_file)

@@ -1,6 +1,7 @@
 import requests
-from config_example import NOTION_API_URL, DATABASE_ID, HEADERS
+from config import NOTION_API_URL, DATABASE_ID, HEADERS
 from tkinter import messagebox
+import pandas as pd
 
 def read_notion_records():
     query_url = NOTION_API_URL + "databases/" + DATABASE_ID + "/query"
@@ -8,6 +9,7 @@ def read_notion_records():
     
     if response.status_code != 200:
         messagebox.showerror("Error", f"Error consultando a Notion: {response.text}")
+        print(f"Error consultando a Notion: {response.text}")
         return None
     
     data = response.json().get("results", [])
@@ -105,7 +107,7 @@ def record_exists(records, fecha, cuenta, gasto=None, ingreso=None):
 
 def get_category_ids(category_database_id):
     """
-    Get the IDs of the categories from the related database.
+    Get the IDs of the categories from the related database and store them in a csv file.
     """
     url = NOTION_API_URL + "databases/" + category_database_id + "/query"
     response = requests.post(url, headers=HEADERS)
@@ -123,9 +125,12 @@ def get_category_ids(category_database_id):
         category_id = record.get("id")
         if name and category_id:
             category_ids[name] = category_id
+    df = pd.DataFrame(list(category_ids.items()), columns=['Categoria', 'ID'])
+    df.to_csv('subcategorias.csv', index=False)
     
     return category_ids
 
 if __name__ == "__main__":
     category_database_id = "abffbb24f06342558161af5162c82630"
     category_ids = get_category_ids(category_database_id)
+    print("Category IDs:", category_ids)

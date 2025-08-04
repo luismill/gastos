@@ -8,3 +8,724 @@
 2025-07-11 14:40:55 - INFO - Aplicación iniciada.
 2025-07-11 14:42:07 - INFO - Aplicación iniciada.
 2025-07-11 14:47:24 - INFO - Aplicación iniciada.
+2025-07-12 10:35:09 - INFO - Aplicación iniciada.
+2025-07-17 10:33:33 - INFO - Aplicación iniciada.
+2025-07-17 10:33:59 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 10:33:59 - ERROR - Error inesperado en el procesamiento: unknown option "-fg"
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 62, in process_file
+    status_label.config(text="Procesando...", fg="blue")
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\tkinter\__init__.py", line 1722, in configure
+    return self._configure('configure', cnf, kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\tkinter\__init__.py", line 1712, in _configure
+    self.tk.call(_flatten((self._w, cmd)) + self._options(cnf))
+_tkinter.TclError: unknown option "-fg"
+2025-07-17 10:37:17 - INFO - Aplicación iniciada.
+2025-07-17 10:37:22 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 10:37:22 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 10:37:22 - INFO - Archivo de Revolut leído correctamente con 27 registros.
+2025-07-17 10:37:22 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 10:37:23 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 10:38:12 - INFO - Registros existentes en Notion leídos.
+2025-07-17 10:38:12 - ERROR - Error inesperado en el procesamiento: NaTType does not support strftime
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 83, in process_file
+    process_record(
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 36, in process_record
+    month = fecha.strftime('%Y-%m') if fecha is not None else None
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "nattype.pyx", line 54, in pandas._libs.tslibs.nattype._make_error_func.f
+ValueError: NaTType does not support strftime
+2025-07-17 10:39:09 - INFO - Aplicación iniciada.
+2025-07-17 10:39:14 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 10:39:14 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 10:39:14 - INFO - Archivo de Revolut leído correctamente con 27 registros.
+2025-07-17 10:39:14 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 10:39:14 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 10:39:25 - INFO - Registros existentes en Notion leídos.
+2025-07-17 10:39:25 - ERROR - Error inesperado en el procesamiento: NaTType does not support strftime
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 83, in process_file
+    process_record(
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 36, in process_record
+    month = fecha.strftime('%Y-%m') if fecha is not None else None
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "nattype.pyx", line 54, in pandas._libs.tslibs.nattype._make_error_func.f
+ValueError: NaTType does not support strftime
+2025-07-17 10:46:38 - INFO - Aplicación iniciada.
+2025-07-17 10:46:53 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-17 10:46:53 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: BBVA
+2025-07-17 10:46:53 - INFO - Archivo de BBVA leído correctamente con 126 registros.
+2025-07-17 10:46:53 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 10:46:53 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 10:47:11 - INFO - Registros existentes en Notion leídos.
+2025-07-17 10:47:11 - ERROR - Error inesperado en el procesamiento: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 83, in process_file
+    process_record(
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 39, in process_record
+    if month and not record_exists(existing_records, fecha.strftime('%Y-%m-%d'), cuenta, gasto, ingreso):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\notion_api.py", line 98, in record_exists
+    for record in records:
+                  ^^^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-07-17 10:48:11 - INFO - Aplicación iniciada.
+2025-07-17 10:48:16 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx
+2025-07-17 10:48:16 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-07M-09D-16_47_04-Últimos movimientos.xlsx para banco: Revolut
+2025-07-17 10:48:16 - ERROR - Error inesperado en el procesamiento: 'utf-8' codec can't decode byte 0xac in position 22: invalid start byte
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 66, in process_file
+    data = read_bank_records(bank, file_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\file_processing.py", line 28, in read_bank_records
+    df = pd.read_csv(filename, usecols=bank_config.column_names, delimiter=",")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 574, in pandas._libs.parsers.TextReader.__cinit__
+  File "parsers.pyx", line 663, in pandas._libs.parsers.TextReader._get_header
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2053, in pandas._libs.parsers.raise_parser_error
+  File "c:\Users\Usuario\anaconda3\envs\gastosenv\Lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xac in position 22: invalid start byte
+2025-07-17 10:48:26 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 10:48:26 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 10:48:26 - INFO - Archivo de Revolut leído correctamente con 27 registros.
+2025-07-17 10:48:26 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 10:48:26 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 10:49:13 - INFO - Aplicación iniciada.
+2025-07-17 10:49:19 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 10:49:19 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 10:49:19 - INFO - Archivo de Revolut leído correctamente con 27 registros.
+2025-07-17 10:49:19 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 10:49:19 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 10:49:21 - INFO - Registros existentes en Notion leídos.
+2025-07-17 10:49:21 - ERROR - Error inesperado en el procesamiento: NaTType does not support strftime
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 83, in process_file
+    process_record(
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 36, in process_record
+    month = fecha.strftime('%Y-%m') if fecha is not None else None
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "nattype.pyx", line 54, in pandas._libs.tslibs.nattype._make_error_func.f
+ValueError: NaTType does not support strftime
+2025-07-17 10:52:08 - INFO - Aplicación iniciada.
+2025-07-17 10:52:13 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 10:52:13 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 10:52:13 - ERROR - Error inesperado en el procesamiento: 'Series' object has no attribute 'date'
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 66, in process_file
+    data = read_bank_records(bank, file_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\file_processing.py", line 29, in read_bank_records
+    df['Completed Date'] = pd.to_datetime(df['Completed Date'], format='%d/%m/%Y %H:%M:%S', errors='coerce').date()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Series' object has no attribute 'date'
+2025-07-17 10:53:20 - INFO - Aplicación iniciada.
+2025-07-17 10:53:24 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 10:53:24 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 10:53:24 - INFO - Archivo de Revolut leído correctamente con 27 registros.
+2025-07-17 10:53:24 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 10:53:24 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 10:53:26 - INFO - Registros existentes en Notion leídos.
+2025-07-17 10:53:26 - ERROR - Error inesperado en el procesamiento: NaTType does not support strftime
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 83, in process_file
+    process_record(
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 36, in process_record
+    month = fecha.strftime('%Y-%m') if fecha is not None else None
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "nattype.pyx", line 54, in pandas._libs.tslibs.nattype._make_error_func.f
+ValueError: NaTType does not support strftime
+2025-07-17 10:56:05 - INFO - Aplicación iniciada.
+2025-07-17 10:56:09 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 10:56:09 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 10:56:09 - INFO - Archivo de Revolut leído correctamente con 27 registros.
+2025-07-17 10:56:09 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 10:56:09 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 10:56:10 - INFO - Registros existentes en Notion leídos.
+2025-07-17 10:56:10 - ERROR - Error inesperado en el procesamiento: NaTType does not support strftime
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 84, in process_file
+    process_record(
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 37, in process_record
+    month = fecha.strftime('%Y-%m') if fecha is not None else None
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "nattype.pyx", line 54, in pandas._libs.tslibs.nattype._make_error_func.f
+ValueError: NaTType does not support strftime
+2025-07-17 10:57:50 - INFO - Aplicación iniciada.
+2025-07-17 10:57:54 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 10:57:54 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 10:57:54 - INFO - Archivo de Revolut leído correctamente con 27 registros.
+2025-07-17 10:57:54 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 10:57:54 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 10:57:56 - INFO - Registros existentes en Notion leídos.
+2025-07-17 10:57:56 - ERROR - Error inesperado en el procesamiento: NaTType does not support strftime
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 84, in process_file
+    process_record(
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 37, in process_record
+    month = fecha.strftime('%Y-%m') if fecha is not None else None
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "nattype.pyx", line 54, in pandas._libs.tslibs.nattype._make_error_func.f
+ValueError: NaTType does not support strftime
+2025-07-17 10:59:00 - INFO - Aplicación iniciada.
+2025-07-17 10:59:05 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 10:59:05 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 10:59:05 - INFO - Archivo de Revolut leído correctamente con 27 registros.
+2025-07-17 10:59:05 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 10:59:05 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 10:59:06 - INFO - Registros existentes en Notion leídos.
+2025-07-17 10:59:06 - ERROR - Error inesperado en el procesamiento: NaTType does not support strftime
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 84, in process_file
+    process_record(
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 37, in process_record
+    month = fecha.strftime('%Y-%m') if fecha is not None else None
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "nattype.pyx", line 54, in pandas._libs.tslibs.nattype._make_error_func.f
+ValueError: NaTType does not support strftime
+2025-07-17 11:00:46 - INFO - Aplicación iniciada.
+2025-07-17 11:00:53 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 11:00:53 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 11:00:53 - INFO - Archivo de Revolut leído correctamente con 27 registros.
+2025-07-17 11:00:53 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 11:00:54 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 11:00:56 - INFO - Registros existentes en Notion leídos.
+2025-07-17 11:00:56 - ERROR - Error inesperado en el procesamiento: NaTType does not support strftime
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 84, in process_file
+    process_record(
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 37, in process_record
+    month = fecha.strftime('%Y-%m') if fecha is not None else None
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "nattype.pyx", line 54, in pandas._libs.tslibs.nattype._make_error_func.f
+ValueError: NaTType does not support strftime
+2025-07-17 11:01:28 - INFO - Aplicación iniciada.
+2025-07-17 11:01:35 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 11:01:35 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 11:01:35 - INFO - Archivo de Revolut leído correctamente con 27 registros.
+2025-07-17 11:01:35 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 11:01:36 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 11:01:37 - INFO - Registros existentes en Notion leídos.
+2025-07-17 11:01:37 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-01, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:01:38 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-02, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:01:38 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-03, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:01:39 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-04, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:01:40 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-05, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:01:41 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-06, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:01:42 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-07, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:01:42 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-08, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:01:43 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-09, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:01:44 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-10, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:01:45 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-11, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:01:51 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-12, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:01:51 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-13, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:01:53 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-14, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:01:54 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-15, Revolut, gasto=None, ingreso=0.8200000000000001, subcategoria=None
+2025-07-17 11:01:59 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-16, Revolut, gasto=None, ingreso=0.8200000000000001, subcategoria=None
+2025-07-17 11:02:00 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-17, Revolut, gasto=None, ingreso=0.8200000000000001, subcategoria=None
+2025-07-17 11:02:11 - INFO - Registro insertado: Getyourguide, 2025-07-01, Revolut, gasto=152.05, ingreso=None, subcategoria=None
+2025-07-17 11:02:11 - INFO - Registro insertado: Steam, 2025-07-05, Revolut, gasto=7.79, ingreso=None, subcategoria=None
+2025-07-17 11:02:12 - INFO - Registro insertado: ZARA, 2025-07-09, Revolut, gasto=13.96, ingreso=None, subcategoria=None
+2025-07-17 11:02:13 - INFO - Registro insertado: Taxi 48 Gijon, 2025-07-11, Revolut, gasto=7.84, ingreso=None, subcategoria=None
+2025-07-17 11:02:14 - INFO - Registro insertado: Metro de Madrid, 2025-07-11, Revolut, gasto=4.3, ingreso=None, subcategoria=None
+2025-07-17 11:02:14 - INFO - Registro insertado: Serveo, 2025-07-11, Revolut, gasto=8.7, ingreso=None, subcategoria=None
+2025-07-17 11:02:15 - INFO - Registro insertado: Taxi Madrid Lc 7788, 2025-07-11, Revolut, gasto=33.0, ingreso=None, subcategoria=None
+2025-07-17 11:02:16 - INFO - Registro insertado: Aena, 2025-07-11, Revolut, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-17 11:02:17 - INFO - Registro insertado: Cafeteria Bulevar, 2025-07-11, Revolut, gasto=13.5, ingreso=None, subcategoria=None
+2025-07-17 11:02:18 - INFO - Registro insertado: Mercadona, 2025-07-13, Revolut, gasto=52.32, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-17 11:02:18 - INFO - Insertados exitosos por mes: {'2025-07': 27}
+2025-07-17 11:02:18 - INFO - Registros repetidos por mes: {}
+2025-07-17 11:02:18 - ERROR - Error inesperado en el procesamiento: unknown option "-fg"
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 95, in process_file
+    status_label.config(
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\tkinter\__init__.py", line 1722, in configure
+    return self._configure('configure', cnf, kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\tkinter\__init__.py", line 1712, in _configure
+    self.tk.call(_flatten((self._w, cmd)) + self._options(cnf))
+_tkinter.TclError: unknown option "-fg"
+2025-07-17 11:03:18 - INFO - Aplicación iniciada.
+2025-07-17 11:03:22 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv
+2025-07-17 11:03:22 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-07-17_es_cdd041.csv para banco: Revolut
+2025-07-17 11:03:22 - INFO - Archivo de Revolut leído correctamente con 27 registros.
+2025-07-17 11:03:22 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 11:03:22 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 11:03:24 - INFO - Registros existentes en Notion leídos.
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-01, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-02, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-03, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-04, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-05, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-06, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-07, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-08, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-09, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-10, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-11, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-12, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-13, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-14, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-15, Revolut, gasto=None, ingreso=0.8200000000000001
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-16, Revolut, gasto=None, ingreso=0.8200000000000001
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-17, Revolut, gasto=None, ingreso=0.8200000000000001
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Getyourguide, 2025-07-01, Revolut, gasto=152.05, ingreso=None
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Steam, 2025-07-05, Revolut, gasto=7.79, ingreso=None
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): ZARA, 2025-07-09, Revolut, gasto=13.96, ingreso=None
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Taxi 48 Gijon, 2025-07-11, Revolut, gasto=7.84, ingreso=None
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Metro de Madrid, 2025-07-11, Revolut, gasto=4.3, ingreso=None
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Serveo, 2025-07-11, Revolut, gasto=8.7, ingreso=None
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Taxi Madrid Lc 7788, 2025-07-11, Revolut, gasto=33.0, ingreso=None
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Aena, 2025-07-11, Revolut, gasto=5.0, ingreso=None
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Cafeteria Bulevar, 2025-07-11, Revolut, gasto=13.5, ingreso=None
+2025-07-17 11:03:24 - INFO - Registro repetido (no insertado): Mercadona, 2025-07-13, Revolut, gasto=52.32, ingreso=None
+2025-07-17 11:03:24 - INFO - Insertados exitosos por mes: {}
+2025-07-17 11:03:24 - INFO - Registros repetidos por mes: {'2025-07': 27}
+2025-07-17 11:04:08 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-04-01_2025-07-17_es_277bd9.csv
+2025-07-17 11:04:08 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-04-01_2025-07-17_es_277bd9.csv para banco: Revolut
+2025-07-17 11:04:08 - INFO - Archivo de Revolut leído correctamente con 163 registros.
+2025-07-17 11:04:08 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 11:04:08 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 11:04:09 - INFO - Registros existentes en Notion leídos.
+2025-07-17 11:04:11 - INFO - Registro insertado: To Cuenta Remunerada, 2025-04-10, Revolut, gasto=None, ingreso=2500.0, subcategoria=None
+2025-07-17 11:04:14 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-11, Revolut, gasto=None, ingreso=0.09000000000000001, subcategoria=None
+2025-07-17 11:04:18 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-12, Revolut, gasto=None, ingreso=0.08, subcategoria=None
+2025-07-17 11:04:20 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-13, Revolut, gasto=None, ingreso=0.08, subcategoria=None
+2025-07-17 11:04:22 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-14, Revolut, gasto=None, ingreso=0.09, subcategoria=None
+2025-07-17 11:04:24 - INFO - Registro insertado: To Cuenta Remunerada, 2025-04-14, Revolut, gasto=None, ingreso=15000.0, subcategoria=None
+2025-07-17 11:04:24 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-15, Revolut, gasto=None, ingreso=0.58, subcategoria=None
+2025-07-17 11:04:25 - INFO - Registro insertado: To Cuenta Remunerada, 2025-04-15, Revolut, gasto=None, ingreso=7900.0, subcategoria=None
+2025-07-17 11:04:26 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-16, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:04:27 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-17, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:30 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-18, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:30 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-19, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:04:31 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-20, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:04:32 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-21, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:33 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-22, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:04:36 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-23, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:37 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-24, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:37 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-25, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:38 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-26, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:04:39 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-27, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:04:39 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-28, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:40 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-29, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:04:40 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-30, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:41 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-01, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:44 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-02, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:45 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-03, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:04:45 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-04, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:04:58 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-05, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:59 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-06, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:04:59 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-07, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:05:01 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-08, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:05:02 - INFO - Registro insertado: To Cuenta Remunerada, 2025-05-08, Revolut, gasto=None, ingreso=3000.0, subcategoria=None
+2025-07-17 11:05:05 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-09, Revolut, gasto=None, ingreso=0.95, subcategoria=None
+2025-07-17 11:05:06 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-10, Revolut, gasto=None, ingreso=0.94, subcategoria=None
+2025-07-17 11:05:06 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-11, Revolut, gasto=None, ingreso=0.95, subcategoria=None
+2025-07-17 11:05:07 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-12, Revolut, gasto=None, ingreso=0.95, subcategoria=None
+2025-07-17 11:05:08 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-13, Revolut, gasto=None, ingreso=0.94, subcategoria=None
+2025-07-17 11:05:08 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-14, Revolut, gasto=None, ingreso=0.95, subcategoria=None
+2025-07-17 11:05:10 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-15, Revolut, gasto=None, ingreso=0.94, subcategoria=None
+2025-07-17 11:05:12 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-16, Revolut, gasto=None, ingreso=0.95, subcategoria=None
+2025-07-17 11:05:12 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-17, Revolut, gasto=None, ingreso=0.95, subcategoria=None
+2025-07-17 11:05:13 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-18, Revolut, gasto=None, ingreso=0.94, subcategoria=None
+2025-07-17 11:05:13 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-19, Revolut, gasto=None, ingreso=0.95, subcategoria=None
+2025-07-17 11:05:14 - INFO - Registro insertado: To Cuenta Remunerada, 2025-05-19, Revolut, gasto=None, ingreso=2500.0, subcategoria=None
+2025-07-17 11:05:15 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-20, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:15 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-21, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:20 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-22, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:20 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-23, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:21 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-24, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:24 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-25, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:24 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-26, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:25 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-27, Revolut, gasto=None, ingreso=1.02, subcategoria=None
+2025-07-17 11:05:26 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-28, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:27 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-29, Revolut, gasto=None, ingreso=1.04, subcategoria=None
+2025-07-17 11:05:31 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-30, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:32 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-31, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:33 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-01, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:34 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-02, Revolut, gasto=None, ingreso=1.02, subcategoria=None
+2025-07-17 11:05:34 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-03, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:35 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-04, Revolut, gasto=None, ingreso=1.04, subcategoria=None
+2025-07-17 11:05:37 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-05, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:38 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-06, Revolut, gasto=None, ingreso=1.03, subcategoria=None
+2025-07-17 11:05:38 - INFO - Registro insertado: From Cuenta Remunerada, 2025-06-06, Revolut, gasto=2500.0, ingreso=None, subcategoria=None
+2025-07-17 11:05:39 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-07, Revolut, gasto=None, ingreso=0.95, subcategoria=None
+2025-07-17 11:05:40 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-08, Revolut, gasto=None, ingreso=0.94, subcategoria=None
+2025-07-17 11:05:40 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-09, Revolut, gasto=None, ingreso=0.95, subcategoria=None
+2025-07-17 11:05:41 - INFO - Registro insertado: To Cuenta Remunerada, 2025-06-09, Revolut, gasto=None, ingreso=1100.0, subcategoria=None
+2025-07-17 11:05:45 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-10, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:05:45 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-11, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:05:46 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-12, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:05:46 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-13, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:05:47 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-14, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:05:47 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-15, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:05:48 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-16, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:05:49 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-17, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:05:50 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-18, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:05:50 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-19, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:05:51 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-20, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:05:51 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-21, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:05:52 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-22, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:05:53 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-23, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:05:58 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-24, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:05:59 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-25, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:05:59 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-26, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:06:00 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-27, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:06:01 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-28, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:06:02 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-29, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:06:03 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-06-30, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-01, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-02, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-03, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-04, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-05, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-06, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-07, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-08, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-09, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-10, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-11, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-12, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-13, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-14, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-15, Revolut, gasto=None, ingreso=0.8200000000000001
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-16, Revolut, gasto=None, ingreso=0.8200000000000001
+2025-07-17 11:06:03 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-07-17, Revolut, gasto=None, ingreso=0.8200000000000001
+2025-07-17 11:06:03 - INFO - Registro insertado: Top-Up by *1447, 2025-04-10, Revolut, gasto=None, ingreso=26.99, subcategoria=None
+2025-07-17 11:06:04 - INFO - Registro insertado: Card Delivery, 2025-04-10, Revolut, gasto=6.99, ingreso=None, subcategoria=None
+2025-07-17 11:06:05 - INFO - Registro insertado: Payment from Luis Millan Monte, 2025-04-10, Revolut, gasto=None, ingreso=3000.0, subcategoria=None
+2025-07-17 11:06:06 - INFO - Registro insertado: To Cuenta Remunerada, 2025-04-10, Revolut, gasto=2500.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:06 - INFO - Registro insertado: Itv Gijon Granda, 2025-04-11, Revolut, gasto=43.23, ingreso=None, subcategoria=None
+2025-07-17 11:06:07 - INFO - Registro insertado: Payment from Sarai Bonilla Perez, 2025-04-14, Revolut, gasto=None, ingreso=15000.0, subcategoria=None
+2025-07-17 11:06:10 - INFO - Registro insertado: To Cuenta Remunerada, 2025-04-14, Revolut, gasto=15000.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:11 - INFO - Registro insertado: Canivell Combustibles, 2025-04-14, Revolut, gasto=81.5, ingreso=None, subcategoria=None
+2025-07-17 11:06:11 - INFO - Registro insertado: Payment from Sarai Bonilla Perez, 2025-04-15, Revolut, gasto=None, ingreso=7900.0, subcategoria=None
+2025-07-17 11:06:12 - INFO - Registro insertado: To Cuenta Remunerada, 2025-04-15, Revolut, gasto=7900.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:12 - INFO - Registro insertado: Lamundi Cordoba, 2025-04-20, Revolut, gasto=49.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:16 - INFO - Registro insertado: Kebab Del Coto, 2025-04-26, Revolut, gasto=5.5, ingreso=None, subcategoria=None
+2025-07-17 11:06:16 - INFO - Registro insertado: Alimerka, 2025-04-27, Revolut, gasto=7.36, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-17 11:06:18 - INFO - Registro insertado: Librería Cervantes, 2025-04-27, Revolut, gasto=19.1, ingreso=None, subcategoria=None
+2025-07-17 11:06:19 - INFO - Registro insertado: Playtomic, 2025-05-01, Revolut, gasto=7.29, ingreso=None, subcategoria=None
+2025-07-17 11:06:19 - INFO - Registro insertado: Clinica Ruiz De Lara, 2025-05-06, Revolut, gasto=25.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:20 - INFO - Registro insertado: Bertys Burger Gijon, 2025-05-07, Revolut, gasto=40.9, ingreso=None, subcategoria=None
+2025-07-17 11:06:20 - INFO - Registro insertado: Emtusa Recarga Sede El, 2025-05-07, Revolut, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:21 - INFO - Registro insertado: Payment from Luis Millan Monte, 2025-05-08, Revolut, gasto=None, ingreso=3000.0, subcategoria=None
+2025-07-17 11:06:24 - INFO - Registro insertado: To Cuenta Remunerada, 2025-05-08, Revolut, gasto=3000.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:26 - INFO - Registro insertado: Casa De Estambul, 2025-05-14, Revolut, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:27 - INFO - Registro insertado: Orain, 2025-05-15, Revolut, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:27 - INFO - Registro insertado: Payment from Luis Millan Monte, 2025-05-19, Revolut, gasto=None, ingreso=3000.0, subcategoria=None
+2025-07-17 11:06:28 - INFO - Registro insertado: To Cuenta Remunerada, 2025-05-19, Revolut, gasto=2500.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:29 - INFO - Registro insertado: Havana, 2025-05-28, Revolut, gasto=47.7, ingreso=None, subcategoria=None
+2025-07-17 11:06:30 - INFO - Registro insertado: Taxi Asturias, 2025-05-29, Revolut, gasto=8.47, ingreso=None, subcategoria=None
+2025-07-17 11:06:30 - INFO - Registro insertado: Confiteria La Real, 2025-05-31, Revolut, gasto=3.8, ingreso=None, subcategoria=None
+2025-07-17 11:06:31 - INFO - Registro insertado: Primark, 2025-06-01, Revolut, gasto=56.8, ingreso=None, subcategoria=None
+2025-07-17 11:06:34 - INFO - Registro insertado: El café del parque, 2025-06-04, Revolut, gasto=9.5, ingreso=None, subcategoria=None
+2025-07-17 11:06:36 - INFO - Registro insertado: From Cuenta Remunerada, 2025-06-06, Revolut, gasto=None, ingreso=2500.0, subcategoria=None
+2025-07-17 11:06:37 - INFO - Registro insertado: Booking.com, 2025-06-07, Revolut, gasto=246.86, ingreso=None, subcategoria=None
+2025-07-17 11:06:37 - INFO - Registro insertado: Electromecanica Gijon, 2025-06-07, Revolut, gasto=150.52, ingreso=None, subcategoria=None
+2025-07-17 11:06:38 - INFO - Registro insertado: Emtusa Recarga Sede El, 2025-06-07, Revolut, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:41 - INFO - Registro insertado: Lufthansa, 2025-06-09, Revolut, gasto=1162.71, ingreso=None, subcategoria=None
+2025-07-17 11:06:42 - INFO - Registro insertado: Lufthansa, 2025-06-09, Revolut, gasto=1162.71, ingreso=None, subcategoria=None
+2025-07-17 11:06:43 - INFO - Registro insertado: Payment from Sarai Bonilla Perez, 2025-06-09, Revolut, gasto=None, ingreso=1162.71, subcategoria=None
+2025-07-17 11:06:44 - INFO - Registro insertado: To Cuenta Remunerada, 2025-06-09, Revolut, gasto=1100.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:44 - INFO - Registro insertado: Orain, 2025-06-11, Revolut, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-17 11:06:45 - INFO - Registro insertado: Springfield, 2025-06-12, Revolut, gasto=50.99, ingreso=None, subcategoria=None
+2025-07-17 11:06:45 - INFO - Registro insertado: Ambiente Oriental, 2025-06-14, Revolut, gasto=3.85, ingreso=None, subcategoria=None
+2025-07-17 11:06:51 - INFO - Registro insertado: G.h Ibaia Et Arramak, 2025-06-17, Revolut, gasto=278.72, ingreso=None, subcategoria=None
+2025-07-17 11:06:51 - INFO - Registro insertado: El café del parque, 2025-06-18, Revolut, gasto=9.5, ingreso=None, subcategoria=None
+2025-07-17 11:06:52 - INFO - Registro insertado: Payment from Luis Millan Monte, 2025-06-19, Revolut, gasto=None, ingreso=500.0, subcategoria=None
+2025-07-17 11:06:52 - ERROR - Error inesperado en el procesamiento: NaTType does not support strftime
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 83, in process_file
+    process_record(
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 36, in process_record
+    month = fecha.strftime('%Y-%m') if fecha is not None else None
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "nattype.pyx", line 54, in pandas._libs.tslibs.nattype._make_error_func.f
+ValueError: NaTType does not support strftime
+2025-07-17 11:18:38 - INFO - Aplicación iniciada.
+2025-07-17 11:18:43 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-04-01_2025-07-17_es_277bd9.csv
+2025-07-17 11:18:43 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-04-01_2025-07-17_es_277bd9.csv para banco: Revolut
+2025-07-17 11:18:43 - INFO - Archivo de Revolut leído correctamente con 163 registros.
+2025-07-17 11:18:43 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 11:18:43 - INFO - Reglas de categorización cargadas correctamente (14 reglas).
+2025-07-17 11:18:44 - INFO - Registros existentes en Notion leídos.
+2025-07-17 11:18:45 - INFO - Registro insertado: To Cuenta Remunerada, 2025-04-10, Revolut, gasto=None, ingreso=2500.0, subcategoria=None
+2025-07-17 11:18:46 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-11, Revolut, gasto=None, ingreso=0.09000000000000001, subcategoria=None
+2025-07-17 11:18:47 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-12, Revolut, gasto=None, ingreso=0.08, subcategoria=None
+2025-07-17 11:18:47 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-13, Revolut, gasto=None, ingreso=0.08, subcategoria=None
+2025-07-17 11:18:48 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-14, Revolut, gasto=None, ingreso=0.09, subcategoria=None
+2025-07-17 11:18:48 - INFO - Registro repetido (no insertado): To Cuenta Remunerada, 2025-04-14, Revolut, gasto=None, ingreso=15000.0
+2025-07-17 11:18:50 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-15, Revolut, gasto=None, ingreso=0.58, subcategoria=None
+2025-07-17 11:18:50 - INFO - Registro repetido (no insertado): To Cuenta Remunerada, 2025-04-15, Revolut, gasto=None, ingreso=7900.0
+2025-07-17 11:18:51 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-16, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:18:53 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-17, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:18:53 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-18, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:18:57 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-19, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:18:57 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-20, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:18:58 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-21, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:18:58 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-22, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:18:59 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-23, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:18:59 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-24, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:19:01 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-25, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:19:02 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-26, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:19:04 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-27, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:19:04 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-28, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:19:05 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-29, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:19:06 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-04-30, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:19:07 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-01, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:19:12 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-02, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:19:12 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-03, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:19:17 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-04, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:19:17 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-05, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:19:18 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-06, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:19:20 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-07, Revolut, gasto=None, ingreso=0.8500000000000001, subcategoria=None
+2025-07-17 11:19:24 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-05-08, Revolut, gasto=None, ingreso=0.8400000000000001, subcategoria=None
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): To Cuenta Remunerada, 2025-05-08, Revolut, gasto=None, ingreso=3000.0
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-09, Revolut, gasto=None, ingreso=0.95
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-10, Revolut, gasto=None, ingreso=0.94
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-11, Revolut, gasto=None, ingreso=0.95
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-12, Revolut, gasto=None, ingreso=0.95
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-13, Revolut, gasto=None, ingreso=0.94
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-14, Revolut, gasto=None, ingreso=0.95
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-15, Revolut, gasto=None, ingreso=0.94
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-16, Revolut, gasto=None, ingreso=0.95
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-17, Revolut, gasto=None, ingreso=0.95
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-18, Revolut, gasto=None, ingreso=0.94
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-19, Revolut, gasto=None, ingreso=0.95
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): To Cuenta Remunerada, 2025-05-19, Revolut, gasto=None, ingreso=2500.0
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-20, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-21, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-22, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-23, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-24, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-25, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-26, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-27, Revolut, gasto=None, ingreso=1.02
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-28, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-29, Revolut, gasto=None, ingreso=1.04
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-30, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-05-31, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-01, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-02, Revolut, gasto=None, ingreso=1.02
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-03, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-04, Revolut, gasto=None, ingreso=1.04
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-05, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-06, Revolut, gasto=None, ingreso=1.03
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): From Cuenta Remunerada, 2025-06-06, Revolut, gasto=2500.0, ingreso=None
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-07, Revolut, gasto=None, ingreso=0.95
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-08, Revolut, gasto=None, ingreso=0.94
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-09, Revolut, gasto=None, ingreso=0.95
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): To Cuenta Remunerada, 2025-06-09, Revolut, gasto=None, ingreso=1100.0
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-10, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-11, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-12, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-13, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-14, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-15, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-16, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-17, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-18, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-19, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-20, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-21, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-22, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-23, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-24, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-25, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-26, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-27, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-28, Revolut, gasto=None, ingreso=0.99
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-29, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:24 - INFO - Registro repetido (no insertado): Interest earned - Cuenta Remunerada, 2025-06-30, Revolut, gasto=None, ingreso=0.98
+2025-07-17 11:19:25 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-01, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:19:26 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-02, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:19:26 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-03, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:19:27 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-04, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:19:27 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-05, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:19:32 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-06, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:19:33 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-07, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:19:34 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-08, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:19:34 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-09, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:19:35 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-10, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:19:36 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-11, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:19:37 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-12, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:19:38 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-13, Revolut, gasto=None, ingreso=0.98, subcategoria=None
+2025-07-17 11:19:39 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-14, Revolut, gasto=None, ingreso=0.99, subcategoria=None
+2025-07-17 11:19:39 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-15, Revolut, gasto=None, ingreso=0.8200000000000001, subcategoria=None
+2025-07-17 11:19:40 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-16, Revolut, gasto=None, ingreso=0.8200000000000001, subcategoria=None
+2025-07-17 11:19:40 - INFO - Registro insertado: Interest earned - Cuenta Remunerada, 2025-07-17, Revolut, gasto=None, ingreso=0.8200000000000001, subcategoria=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Top-Up by *1447, 2025-04-10, Revolut, gasto=None, ingreso=26.99
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Card Delivery, 2025-04-10, Revolut, gasto=6.99, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Payment from Luis Millan Monte, 2025-04-10, Revolut, gasto=None, ingreso=3000.0
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): To Cuenta Remunerada, 2025-04-10, Revolut, gasto=2500.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Itv Gijon Granda, 2025-04-11, Revolut, gasto=43.23, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Payment from Sarai Bonilla Perez, 2025-04-14, Revolut, gasto=None, ingreso=15000.0
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): To Cuenta Remunerada, 2025-04-14, Revolut, gasto=15000.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Canivell Combustibles, 2025-04-14, Revolut, gasto=81.5, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Payment from Sarai Bonilla Perez, 2025-04-15, Revolut, gasto=None, ingreso=7900.0
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): To Cuenta Remunerada, 2025-04-15, Revolut, gasto=7900.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Lamundi Cordoba, 2025-04-20, Revolut, gasto=49.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Kebab Del Coto, 2025-04-26, Revolut, gasto=5.5, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Alimerka, 2025-04-27, Revolut, gasto=7.36, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Librería Cervantes, 2025-04-27, Revolut, gasto=19.1, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Playtomic, 2025-05-01, Revolut, gasto=7.29, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Clinica Ruiz De Lara, 2025-05-06, Revolut, gasto=25.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Bertys Burger Gijon, 2025-05-07, Revolut, gasto=40.9, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Emtusa Recarga Sede El, 2025-05-07, Revolut, gasto=5.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Payment from Luis Millan Monte, 2025-05-08, Revolut, gasto=None, ingreso=3000.0
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): To Cuenta Remunerada, 2025-05-08, Revolut, gasto=3000.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Casa De Estambul, 2025-05-14, Revolut, gasto=5.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Orain, 2025-05-15, Revolut, gasto=5.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Payment from Luis Millan Monte, 2025-05-19, Revolut, gasto=None, ingreso=3000.0
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): To Cuenta Remunerada, 2025-05-19, Revolut, gasto=2500.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Havana, 2025-05-28, Revolut, gasto=47.7, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Taxi Asturias, 2025-05-29, Revolut, gasto=8.47, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Confiteria La Real, 2025-05-31, Revolut, gasto=3.8, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Primark, 2025-06-01, Revolut, gasto=56.8, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): El café del parque, 2025-06-04, Revolut, gasto=9.5, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): From Cuenta Remunerada, 2025-06-06, Revolut, gasto=None, ingreso=2500.0
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Booking.com, 2025-06-07, Revolut, gasto=246.86, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Electromecanica Gijon, 2025-06-07, Revolut, gasto=150.52, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Emtusa Recarga Sede El, 2025-06-07, Revolut, gasto=5.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Lufthansa, 2025-06-09, Revolut, gasto=1162.71, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Lufthansa, 2025-06-09, Revolut, gasto=1162.71, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Payment from Sarai Bonilla Perez, 2025-06-09, Revolut, gasto=None, ingreso=1162.71
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): To Cuenta Remunerada, 2025-06-09, Revolut, gasto=1100.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Orain, 2025-06-11, Revolut, gasto=5.0, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Springfield, 2025-06-12, Revolut, gasto=50.99, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Ambiente Oriental, 2025-06-14, Revolut, gasto=3.85, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): G.h Ibaia Et Arramak, 2025-06-17, Revolut, gasto=278.72, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): El café del parque, 2025-06-18, Revolut, gasto=9.5, ingreso=None
+2025-07-17 11:19:40 - INFO - Registro repetido (no insertado): Payment from Luis Millan Monte, 2025-06-19, Revolut, gasto=None, ingreso=500.0
+2025-07-17 11:19:41 - INFO - Registro insertado: Kurdilo, 2025-06-22, Revolut, gasto=38.2, ingreso=None, subcategoria=None
+2025-07-17 11:19:41 - INFO - Registro insertado: Zadar, 2025-06-22, Revolut, gasto=7.8, ingreso=None, subcategoria=None
+2025-07-17 11:19:44 - INFO - Registro insertado: G.h Ibaia Et Arramak, 2025-06-22, Revolut, gasto=28.0, ingreso=None, subcategoria=None
+2025-07-17 11:19:44 - INFO - Registro insertado: Los Tánagos, 2025-06-23, Revolut, gasto=21.5, ingreso=None, subcategoria=None
+2025-07-17 11:19:45 - INFO - Registro insertado: Getyourguide, 2025-07-01, Revolut, gasto=152.05, ingreso=None, subcategoria=None
+2025-07-17 11:19:45 - INFO - Registro insertado: Steam, 2025-07-05, Revolut, gasto=7.79, ingreso=None, subcategoria=None
+2025-07-17 11:19:46 - INFO - Registro insertado: ZARA, 2025-07-09, Revolut, gasto=13.96, ingreso=None, subcategoria=None
+2025-07-17 11:19:47 - INFO - Registro insertado: Taxi 48 Gijon, 2025-07-11, Revolut, gasto=7.84, ingreso=None, subcategoria=None
+2025-07-17 11:19:47 - INFO - Registro insertado: Metro de Madrid, 2025-07-11, Revolut, gasto=4.3, ingreso=None, subcategoria=None
+2025-07-17 11:19:51 - INFO - Registro insertado: Serveo, 2025-07-11, Revolut, gasto=8.7, ingreso=None, subcategoria=None
+2025-07-17 11:19:51 - INFO - Registro insertado: Taxi Madrid Lc 7788, 2025-07-11, Revolut, gasto=33.0, ingreso=None, subcategoria=None
+2025-07-17 11:19:52 - INFO - Registro insertado: Aena, 2025-07-11, Revolut, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-17 11:19:53 - INFO - Registro insertado: Cafeteria Bulevar, 2025-07-11, Revolut, gasto=13.5, ingreso=None, subcategoria=None
+2025-07-17 11:19:54 - INFO - Registro insertado: Mercadona, 2025-07-13, Revolut, gasto=52.32, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-07-17 11:19:54 - INFO - Insertados exitosos por mes: {'2025-04': 21, '2025-05': 8, '2025-07': 27, '2025-06': 4}
+2025-07-17 11:19:54 - INFO - Registros repetidos por mes: {'2025-04': 16, '2025-05': 38, '2025-06': 48}
+2025-07-17 11:39:10 - INFO - Aplicación iniciada.
+2025-07-17 11:39:18 - INFO - Inicio de procesamiento para banco: Laboral Kutxa, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Laboral/movimientosCuenta.csv
+2025-07-17 11:39:18 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Laboral/movimientosCuenta.csv para banco: Laboral Kutxa
+2025-07-17 11:39:18 - INFO - Archivo de Laboral Kutxa leído correctamente con 82 registros.
+2025-07-17 11:39:18 - INFO - Cargando reglas de categorización desde: gastos/categorization_rules.xlsx
+2025-07-17 11:39:18 - INFO - Reglas de categorización cargadas correctamente (15 reglas).
+2025-07-17 11:39:21 - INFO - Registros existentes en Notion leídos.
+2025-07-17 11:39:22 - INFO - Registro insertado: Comida Lupulo, 2025-07-15 00:00:00, Laboral Kutxa, gasto=48.5, ingreso=None, subcategoria=None
+2025-07-17 11:39:22 - INFO - Registro insertado: NOMINA DE: TSK SUSTAINABILITY TECHN, 2025-07-15 00:00:00, Laboral Kutxa, gasto=None, ingreso=748.04, subcategoria=None
+2025-07-17 11:39:23 - INFO - Registro insertado: Regalo boda Luis y Sarai, 2025-07-14 00:00:00, Laboral Kutxa, gasto=400.0, ingreso=None, subcategoria=None
+2025-07-17 11:39:26 - INFO - Registro insertado: PRESTAMO 3634614742, 2025-07-05 00:00:00, Laboral Kutxa, gasto=470.7, ingreso=None, subcategoria=db27f81e-62df-40a7-b99e-fcecff99fd78
+2025-07-17 11:39:27 - INFO - Registro insertado: RBO CRUZ ROJA, 2025-07-04 00:00:00, Laboral Kutxa, gasto=30.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-07-17 11:39:27 - INFO - Registro insertado: Hotel SS, 2025-07-03 00:00:00, Laboral Kutxa, gasto=None, ingreso=140.0, subcategoria=None
+2025-07-17 11:39:28 - INFO - Registro insertado: TRAF. DE: SARAI BONILLA PEREZ, 2025-07-03 00:00:00, Laboral Kutxa, gasto=None, ingreso=300.0, subcategoria=None
+2025-07-17 11:39:28 - INFO - Registro insertado: CUOTA SERVICIO ALERTAS AL MOVIL, 2025-07-01 00:00:00, Laboral Kutxa, gasto=3.0, ingreso=None, subcategoria=None
+2025-07-17 11:39:29 - INFO - Registro insertado: Casco bici, 2025-07-02 00:00:00, Laboral Kutxa, gasto=20.0, ingreso=None, subcategoria=None
+2025-07-17 11:39:29 - INFO - Registro insertado: RBO ASOCIACION ESPANOLA CONTRA EL C, 2025-07-02 00:00:00, Laboral Kutxa, gasto=10.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-07-17 11:39:30 - INFO - Registro insertado: CUOTA SERVICIO ALERTAS AL MOVIL, 2025-07-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=3.0, subcategoria=None
+2025-07-17 11:39:31 - INFO - Registro insertado: RECAUD.100-363, 2025-07-01 00:00:00, Laboral Kutxa, gasto=352.33, ingreso=None, subcategoria=None
+2025-07-17 11:39:32 - INFO - Registro insertado: Aporte Indexa, 2025-07-01 00:00:00, Laboral Kutxa, gasto=921.7, ingreso=None, subcategoria=None
+2025-07-17 11:39:33 - INFO - Registro insertado: SpotifyES, 2025-06-30 00:00:00, Laboral Kutxa, gasto=17.99, ingreso=None, subcategoria=None
+2025-07-17 11:39:33 - INFO - Registro insertado: Julio Luis, 2025-06-28 00:00:00, Laboral Kutxa, gasto=165.0, ingreso=None, subcategoria=None
+2025-07-17 11:39:35 - INFO - Registro insertado: NOMINA DE: TSK SUSTAINABILITY TECHN, 2025-06-30 00:00:00, Laboral Kutxa, gasto=None, ingreso=2388.26, subcategoria=None
+2025-07-17 11:39:43 - INFO - Registro insertado: cerve Plaza, 2025-06-27 00:00:00, Laboral Kutxa, gasto=2.7, ingreso=None, subcategoria=None
+2025-07-17 11:39:44 - INFO - Registro insertado: Cena Salvatore Luis, 2025-06-27 00:00:00, Laboral Kutxa, gasto=24.3, ingreso=None, subcategoria=None
+2025-07-17 11:39:45 - INFO - Registro insertado: WWW.ELPAIS.COM, 2025-06-27 00:00:00, Laboral Kutxa, gasto=12.0, ingreso=None, subcategoria=None
+2025-07-17 11:39:45 - INFO - Registro insertado: Regalo de Luis y Sarai, 2025-06-21 00:00:00, Laboral Kutxa, gasto=400.0, ingreso=None, subcategoria=None
+2025-07-17 11:39:47 - INFO - Registro insertado: Empanada, 2025-06-22 00:00:00, Laboral Kutxa, gasto=None, ingreso=15.0, subcategoria=None
+2025-07-17 11:39:49 - INFO - Registro insertado: Tricount, 2025-06-23 00:00:00, Laboral Kutxa, gasto=None, ingreso=9.0, subcategoria=None
+2025-07-17 11:39:51 - INFO - Registro insertado: REPSOL WAYLET, 2025-06-20 00:00:00, Laboral Kutxa, gasto=83.4, ingreso=None, subcategoria=b527caba-092d-4a6a-b29a-513dc6b20841
+2025-07-17 11:39:52 - INFO - Registro insertado: Aporte Revolut, 2025-06-19 00:00:00, Laboral Kutxa, gasto=500.0, ingreso=None, subcategoria=None
+2025-07-17 11:39:53 - INFO - Registro insertado: PRESTACION DESEMPLEO, 2025-06-10 00:00:00, Laboral Kutxa, gasto=None, ingreso=382.61, subcategoria=None
+2025-07-17 11:39:53 - INFO - Registro insertado: tenis, 2025-06-08 00:00:00, Laboral Kutxa, gasto=None, ingreso=1.5, subcategoria=None
+2025-07-17 11:39:54 - INFO - Registro insertado: NOMINA DE: TSK SUSTAINABILITY TECHN, 2025-06-06 00:00:00, Laboral Kutxa, gasto=None, ingreso=62.47, subcategoria=None
+2025-07-17 11:39:54 - INFO - Registro insertado: Gym menos hotel Lugo, 2025-06-06 00:00:00, Laboral Kutxa, gasto=None, ingreso=55.0, subcategoria=None
+2025-07-17 11:39:55 - INFO - Registro insertado: Coche y boda, 2025-06-06 00:00:00, Laboral Kutxa, gasto=None, ingreso=275.0, subcategoria=None
+2025-07-17 11:39:55 - INFO - Registro insertado: PRESTAMO 3634614742, 2025-06-05 00:00:00, Laboral Kutxa, gasto=470.7, ingreso=None, subcategoria=db27f81e-62df-40a7-b99e-fcecff99fd78
+2025-07-17 11:39:56 - INFO - Registro insertado: RBO CRUZ ROJA, 2025-06-02 00:00:00, Laboral Kutxa, gasto=30.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-07-17 11:40:01 - INFO - Registro insertado: RBO ASOCIACION ESPANOLA CONTRA EL C, 2025-06-02 00:00:00, Laboral Kutxa, gasto=10.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-07-17 11:40:01 - INFO - Registro insertado: Junio Luis, 2025-06-02 00:00:00, Laboral Kutxa, gasto=165.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:06 - INFO - Registro insertado: Cena Marmio, 2025-05-31 00:00:00, Laboral Kutxa, gasto=30.5, ingreso=None, subcategoria=None
+2025-07-17 11:40:06 - INFO - Registro insertado: Primark, 2025-05-31 00:00:00, Laboral Kutxa, gasto=None, ingreso=22.0, subcategoria=None
+2025-07-17 11:40:07 - INFO - Registro insertado: SpotifyES, 2025-05-30 00:00:00, Laboral Kutxa, gasto=17.99, ingreso=None, subcategoria=None
+2025-07-17 11:40:09 - INFO - Registro insertado: Aporte Indexa, 2025-05-30 00:00:00, Laboral Kutxa, gasto=1000.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:09 - INFO - Registro insertado: NOMINA DE: TSK SUSTAINABILITY TECHN, 2025-05-29 00:00:00, Laboral Kutxa, gasto=None, ingreso=1595.27, subcategoria=None
+2025-07-17 11:40:10 - INFO - Registro insertado: Bocata puertollano, 2025-05-28 00:00:00, Laboral Kutxa, gasto=10.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:10 - INFO - Registro insertado: WWW.ELPAIS.COM, 2025-05-27 00:00:00, Laboral Kutxa, gasto=11.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:11 - INFO - Registro insertado: Cerve Puertollano, 2025-05-27 00:00:00, Laboral Kutxa, gasto=2.4, ingreso=None, subcategoria=None
+2025-07-17 11:40:12 - INFO - Registro insertado: Gonzalo TSK, 2025-05-27 00:00:00, Laboral Kutxa, gasto=None, ingreso=15.9, subcategoria=None
+2025-07-17 11:40:12 - INFO - Registro insertado: Cena Juan TSK, 2025-05-27 00:00:00, Laboral Kutxa, gasto=None, ingreso=15.9, subcategoria=None
+2025-07-17 11:40:13 - INFO - Registro insertado: telepizza, 2025-05-18 00:00:00, Laboral Kutxa, gasto=10.7, ingreso=None, subcategoria=None
+2025-07-17 11:40:13 - INFO - Registro insertado: carrera, 2025-05-17 00:00:00, Laboral Kutxa, gasto=None, ingreso=9.0, subcategoria=None
+2025-07-17 11:40:14 - INFO - Registro insertado: Aporte Revolut, 2025-05-16 00:00:00, Laboral Kutxa, gasto=3000.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:14 - INFO - Registro insertado: Aporte Indexa, 2025-05-14 00:00:00, Laboral Kutxa, gasto=3000.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:18 - INFO - Registro insertado: REPSOL WAYLET, 2025-05-13 00:00:00, Laboral Kutxa, gasto=76.45, ingreso=None, subcategoria=b527caba-092d-4a6a-b29a-513dc6b20841
+2025-07-17 11:40:20 - INFO - Registro insertado: Aporte Indexa, 2025-05-12 00:00:00, Laboral Kutxa, gasto=3000.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:20 - INFO - Registro insertado: Hotel Mallorca, 2025-05-12 00:00:00, Laboral Kutxa, gasto=159.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:21 - INFO - Registro insertado: Cuentas, 2025-05-12 00:00:00, Laboral Kutxa, gasto=12.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:21 - INFO - Registro insertado: PRESTACION DESEMPLEO, 2025-05-10 00:00:00, Laboral Kutxa, gasto=None, ingreso=1043.5, subcategoria=None
+2025-07-17 11:40:24 - INFO - Registro insertado: Aporte Indexa, 2025-05-09 00:00:00, Laboral Kutxa, gasto=3000.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:24 - INFO - Registro insertado: BIZUM YELMOBIZUM               POZU, 2025-05-09 00:00:00, Laboral Kutxa, gasto=11.7, ingreso=None, subcategoria=None
+2025-07-17 11:40:27 - INFO - Registro insertado: cine y doritos, 2025-05-09 00:00:00, Laboral Kutxa, gasto=None, ingreso=4.9, subcategoria=None
+2025-07-17 11:40:28 - INFO - Registro insertado: Gym, 2025-05-09 00:00:00, Laboral Kutxa, gasto=None, ingreso=100.0, subcategoria=None
+2025-07-17 11:40:29 - INFO - Registro insertado: Cine Sarai, 2025-05-09 00:00:00, Laboral Kutxa, gasto=None, ingreso=3.9, subcategoria=None
+2025-07-17 11:40:29 - INFO - Registro insertado: TRAF. DE: BANCO DE ESPA A.SALDOS DE, 2025-05-09 00:00:00, Laboral Kutxa, gasto=None, ingreso=9985.0, subcategoria=None
+2025-07-17 11:40:30 - INFO - Registro insertado: Entradas vibra mahou, 2025-05-08 00:00:00, Laboral Kutxa, gasto=80.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:30 - INFO - Registro insertado: Transferencia a Revolut, 2025-05-07 00:00:00, Laboral Kutxa, gasto=3000.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:31 - INFO - Registro insertado: Vibra Mahou, 2025-05-07 00:00:00, Laboral Kutxa, gasto=None, ingreso=80.0, subcategoria=None
+2025-07-17 11:40:32 - INFO - Registro insertado: Mayo Luis, 2025-05-06 00:00:00, Laboral Kutxa, gasto=165.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:32 - INFO - Registro insertado: PRESTAMO 3634614742, 2025-05-05 00:00:00, Laboral Kutxa, gasto=470.7, ingreso=None, subcategoria=db27f81e-62df-40a7-b99e-fcecff99fd78
+2025-07-17 11:40:33 - INFO - Registro insertado: RBO ASOCIACION ESPANOLA CONTRA EL C, 2025-05-05 00:00:00, Laboral Kutxa, gasto=10.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-07-17 11:40:33 - INFO - Registro insertado: RBO CRUZ ROJA, 2025-05-05 00:00:00, Laboral Kutxa, gasto=30.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-07-17 11:40:43 - INFO - Registro insertado: Canon plaza, 2025-05-02 00:00:00, Laboral Kutxa, gasto=3.5, ingreso=None, subcategoria=None
+2025-07-17 11:40:43 - INFO - Registro insertado: Media Luanco, 2025-05-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=9.0, subcategoria=None
+2025-07-17 11:40:49 - INFO - Registro insertado: Luanco, 2025-05-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=9.0, subcategoria=None
+2025-07-17 11:40:49 - INFO - Registro insertado: SpotifyES, 2025-04-30 00:00:00, Laboral Kutxa, gasto=17.99, ingreso=None, subcategoria=None
+2025-07-17 11:40:50 - INFO - Registro insertado: AVAIBOOK SPORTS, 2025-04-30 00:00:00, Laboral Kutxa, gasto=36.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:50 - INFO - Registro insertado: Alfombra, 2025-04-30 00:00:00, Laboral Kutxa, gasto=None, ingreso=25.0, subcategoria=None
+2025-07-17 11:40:51 - INFO - Registro insertado: Apple tv, 2025-04-27 00:00:00, Laboral Kutxa, gasto=5.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:51 - INFO - Registro insertado: WWW.ELPAIS.COM, 2025-04-27 00:00:00, Laboral Kutxa, gasto=3.0, ingreso=None, subcategoria=None
+2025-07-17 11:40:52 - INFO - Registro insertado: libro papa, 2025-04-26 00:00:00, Laboral Kutxa, gasto=None, ingreso=6.0, subcategoria=None
+2025-07-17 11:40:53 - INFO - Registro insertado: Devolucion mitad tenis, 2025-04-25 00:00:00, Laboral Kutxa, gasto=1.5, ingreso=None, subcategoria=None
+2025-07-17 11:40:59 - INFO - Registro insertado: tenis, 2025-04-25 00:00:00, Laboral Kutxa, gasto=None, ingreso=3.0, subcategoria=None
+2025-07-17 11:41:00 - INFO - Registro insertado: TRAF. DE: DEVOLUCIONES TRIBUTARIAS,, 2025-04-24 00:00:00, Laboral Kutxa, gasto=None, ingreso=49.38, subcategoria=None
+2025-07-17 11:41:00 - INFO - Registro insertado: TRAF. DE: DEVOLUCIONES TRIBUTARIAS,, 2025-04-24 00:00:00, Laboral Kutxa, gasto=None, ingreso=62.99, subcategoria=None
+2025-07-17 11:41:01 - INFO - Registro insertado: Spotify 2025, 2025-04-24 00:00:00, Laboral Kutxa, gasto=None, ingreso=45.0, subcategoria=None
+2025-07-17 11:41:01 - INFO - Registro insertado: Regalo Pilar, 2025-04-20 00:00:00, Laboral Kutxa, gasto=7.5, ingreso=None, subcategoria=None
+2025-07-17 11:41:02 - INFO - Registro insertado: METRO DE MADRID S.A., 2025-04-18 00:00:00, Laboral Kutxa, gasto=6.1, ingreso=None, subcategoria=None
+2025-07-17 11:41:03 - INFO - Registro insertado: BRIEF ATOCHA, 2025-04-19 00:00:00, Laboral Kutxa, gasto=2.81, ingreso=None, subcategoria=None
+2025-07-17 11:41:03 - INFO - Insertados exitosos por mes: {'2025-07': 13, '2025-06': 20, '2025-05': 35, '2025-04': 14}
+2025-07-17 11:41:03 - INFO - Registros repetidos por mes: {}
