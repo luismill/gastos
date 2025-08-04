@@ -2,7 +2,12 @@ import os
 import logging
 import pandas as pd
 from bank_config import BankConfig
-from notion_api import insert_notion_record, read_notion_records, record_exists
+from notion_api import (
+    insert_notion_record,
+    read_notion_records,
+    record_exists,
+    export_notion_to_csv,
+)
 from file_processing import read_bank_records
 from categorization import load_categorization_rules, categorize_record
 from gui import create_main_window
@@ -58,6 +63,27 @@ def process_record(
                 logging.info(f"Registro repetido (no insertado): {nombre}, {fecha}, {cuenta}, gasto={gasto}, ingreso={ingreso}")
     except Exception as e:
         logging.error(f"Error procesando el registro {record}: {e}", exc_info=True)
+
+
+def export_notion_data(file_path: str, status_label=None) -> None:
+    """Export existing Notion records to a CSV file."""
+    try:
+        logging.info("Inicio de exportación de datos de Notion.")
+        if status_label:
+            status_label.config(text="Exportando datos de Notion...")
+            status_label.update_idletasks()
+
+        success = export_notion_to_csv(file_path)
+
+        if status_label:
+            if success:
+                status_label.config(text=f"Datos exportados a {file_path}")
+            else:
+                status_label.config(text="Error exportando datos de Notion.")
+    except Exception as e:
+        logging.error(f"Error exportando datos de Notion: {e}", exc_info=True)
+        if status_label:
+            status_label.config(text=f"Error exportando datos de Notion: {e}")
 def process_file(bank_name: str, file_path: str, status_label=None) -> None:
     try:
         logging.info(f"Inicio de procesamiento para banco: {bank_name}, archivo: {file_path}")
@@ -107,6 +133,6 @@ def process_file(bank_name: str, file_path: str, status_label=None) -> None:
             status_label.config(text=f"Error inesperado en el procesamiento: {e}")
 
 if __name__ == "__main__":
-    root = create_main_window(process_file)
+    root = create_main_window(process_file, export_notion_data)
     logging.info("Aplicación iniciada.")
     root.mainloop()

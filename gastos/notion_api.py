@@ -3,34 +3,93 @@ from config import NOTION_API_URL, DATABASE_ID, HEADERS
 from tkinter import messagebox
 import pandas as pd
 
+
+def _parse_property_value(prop: dict):
+    """Convert a Notion property value into a basic Python datatype."""
+    prop_type = prop.get("type")
+
+    if prop_type == "title":
+        return "".join(part.get("plain_text", "") for part in prop.get("title", []))
+    if prop_type == "rich_text":
+        return "".join(part.get("plain_text", "") for part in prop.get("rich_text", []))
+    if prop_type == "number":
+        return prop.get("number")
+    if prop_type == "select":
+        selected = prop.get("select")
+        return selected.get("name") if selected else None
+    if prop_type == "multi_select":
+        return ", ".join(opt.get("name") for opt in prop.get("multi_select", []))
+    if prop_type == "date":
+        date = prop.get("date")
+        return date.get("start") if date else None
+    if prop_type == "checkbox":
+        return prop.get("checkbox")
+    if prop_type == "url":
+        return prop.get("url")
+    if prop_type == "email":
+        return prop.get("email")
+    if prop_type == "phone_number":
+        return prop.get("phone_number")
+    if prop_type == "relation":
+        return ", ".join(rel.get("id") for rel in prop.get("relation", []))
+    if prop_type == "people":
+        return ", ".join(person.get("name") or person.get("id") for person in prop.get("people", []))
+    if prop_type == "files":
+        return ", ".join(f.get("name") for f in prop.get("files", []))
+
+    # Fallback to raw string representation for unhandled types
+    return str(prop.get(prop_type))
+
+
 def read_notion_records():
+    """Fetch all records from the Notion database, returning every column."""
     query_url = NOTION_API_URL + "databases/" + DATABASE_ID + "/query"
     response = requests.post(query_url, headers=HEADERS)
-    
+
     if response.status_code != 200:
         messagebox.showerror("Error", f"Error consultando a Notion: {response.text}")
         print(f"Error consultando a Notion: {response.text}")
         return None
-    
+
     data = response.json().get("results", [])
-    
-    properties_data = []
+
+    records = []
     for record in data:
         properties = record.get("properties", {})
-        cuenta = properties.get("Cuenta", {}).get("select", {}).get("name") if properties.get("Cuenta", {}).get("select") else None
-        gasto = properties.get("Gasto", {}).get("number") if properties.get("Gasto") else None
-        ingreso = properties.get("Ingreso", {}).get("number") if properties.get("Ingreso") else None
-        fecha = properties.get("Fecha", {}).get("date", {}).get("start") if properties.get("Fecha", {}).get("date") else None
-        
-        filtered_properties = {
-            "Cuenta": cuenta,
-            "Gasto": gasto,
-            "Ingreso": ingreso,
-            "Fecha": fecha
-        }
-        properties_data.append(filtered_properties)
+        parsed_properties = {}
+        for name, prop in properties.items():
+            parsed_properties[name] = _parse_property_value(prop)
+        records.append(parsed_properties)
 
-    return properties_data
+    return records
+
+
+def export_notion_to_csv(csv_path: str) -> bool:
+    """Read records from Notion and export them to a CSV file.
+
+    Parameters
+    ----------
+    csv_path:
+        Destination path where the CSV will be saved.
+
+    Returns
+    -------
+    bool
+        ``True`` if the export was successful, ``False`` otherwise.
+    """
+
+    records = read_notion_records()
+    if records is None:
+        return False
+
+    df = pd.DataFrame(records)
+    try:
+        df.to_csv(csv_path, index=False)
+    except Exception as e:
+        messagebox.showerror("Error", f"No se pudo guardar el CSV: {e}")
+        return False
+
+    return True
 
 def insert_notion_record(nombre, fecha, cuenta, gasto=None, ingreso=None, subcategoria=None):
     url = NOTION_API_URL + "pages"
