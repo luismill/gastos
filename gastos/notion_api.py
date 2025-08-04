@@ -32,6 +32,34 @@ def read_notion_records():
 
     return properties_data
 
+
+def export_notion_to_csv(csv_path: str) -> bool:
+    """Read records from Notion and export them to a CSV file.
+
+    Parameters
+    ----------
+    csv_path:
+        Destination path where the CSV will be saved.
+
+    Returns
+    -------
+    bool
+        ``True`` if the export was successful, ``False`` otherwise.
+    """
+
+    records = read_notion_records()
+    if records is None:
+        return False
+
+    df = pd.DataFrame(records)
+    try:
+        df.to_csv(csv_path, index=False)
+    except Exception as e:
+        messagebox.showerror("Error", f"No se pudo guardar el CSV: {e}")
+        return False
+
+    return True
+
 def insert_notion_record(nombre, fecha, cuenta, gasto=None, ingreso=None, subcategoria=None):
     url = NOTION_API_URL + "pages"
     properties = {
