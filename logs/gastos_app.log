@@ -729,3 +729,14 @@ ValueError: NaTType does not support strftime
 2025-07-17 11:41:03 - INFO - Registro insertado: BRIEF ATOCHA, 2025-04-19 00:00:00, Laboral Kutxa, gasto=2.81, ingreso=None, subcategoria=None
 2025-07-17 11:41:03 - INFO - Insertados exitosos por mes: {'2025-07': 13, '2025-06': 20, '2025-05': 35, '2025-04': 14}
 2025-07-17 11:41:03 - INFO - Registros repetidos por mes: {}
+2025-08-06 19:22:48 - INFO - Aplicación iniciada.
+2025-08-06 19:22:54 - INFO - Inicio de exportación de datos de Notion.
+2025-08-06 19:23:12 - INFO - Aplicación iniciada.
+2025-08-06 19:23:16 - INFO - Inicio de exportación de datos de Notion.
+2025-08-06 19:29:09 - INFO - Aplicación iniciada.
+2025-08-06 19:29:13 - INFO - Inicio de exportación de datos de Notion.
+2025-08-06 19:31:18 - INFO - Aplicación iniciada.
+2025-08-06 19:31:23 - INFO - Inicio de exportación de datos de Notion.
+2025-08-12 17:20:10 - INFO - Aplicación iniciada.
+2025-08-12 17:20:16 - INFO - Inicio de exportación de datos de Notion.
+2025-08-12 17:25:28 - INFO - Inicio de exportación de datos de Notion.

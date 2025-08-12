@@ -2,20 +2,30 @@ import requests
 from config import NOTION_API_URL, DATABASE_ID, HEADERS
 from tkinter import messagebox
 import pandas as pd
+import json
 
 def read_notion_records():
     query_url = NOTION_API_URL + "databases/" + DATABASE_ID + "/query"
-    response = requests.post(query_url, headers=HEADERS)
-    
-    if response.status_code != 200:
-        messagebox.showerror("Error", f"Error consultando a Notion: {response.text}")
-        print(f"Error consultando a Notion: {response.text}")
-        return None
-    
-    data = response.json().get("results", [])
-    
+    all_records = []
+    has_more = True
+    next_cursor = None
+
+    while has_more:
+        payload = {}
+        if next_cursor:
+            payload["start_cursor"] = next_cursor
+        response = requests.post(query_url, headers=HEADERS, json=payload)
+        if response.status_code != 200:
+            messagebox.showerror("Error", f"Error consultando a Notion: {response.text}")
+            print(f"Error consultando a Notion: {response.text}")
+            return None
+        data = response.json()
+        all_records.extend(data.get("results", []))
+        has_more = data.get("has_more", False)
+        next_cursor = data.get("next_cursor", None)
+
     properties_data = []
-    for record in data:
+    for record in all_records:
         properties = record.get("properties", {})
         cuenta = properties.get("Cuenta", {}).get("select", {}).get("name") if properties.get("Cuenta", {}).get("select") else None
         gasto = properties.get("Gasto", {}).get("number") if properties.get("Gasto") else None
@@ -34,25 +44,66 @@ def read_notion_records():
 
 
 def export_notion_to_csv(csv_path: str) -> bool:
-    """Read records from Notion and export them to a CSV file.
+    """Exporta todos los registros de la base de datos Notion a un CSV con las columnas principales (paginación incluida)."""
+    query_url = NOTION_API_URL + "databases/" + DATABASE_ID + "/query"
+    all_records = []
+    has_more = True
+    next_cursor = None
 
-    Parameters
-    ----------
-    csv_path:
-        Destination path where the CSV will be saved.
+    while has_more:
+        payload = {}
+        if next_cursor:
+            payload["start_cursor"] = next_cursor
+        response = requests.post(query_url, headers=HEADERS, json=payload)
+        if response.status_code != 200:
+            messagebox.showerror("Error", f"Error consultando a Notion: {response.text}")
+            return False
+        data = response.json()
+        all_records.extend(data.get("results", []))
+        has_more = data.get("has_more", False)
+        next_cursor = data.get("next_cursor", None)
 
-    Returns
-    -------
-    bool
-        ``True`` if the export was successful, ``False`` otherwise.
-    """
-
-    records = read_notion_records()
-    if records is None:
-        return False
-
-    df = pd.DataFrame(records)
+    rows = []
+    for record in all_records:
+        props = record.get("properties", {})
+        row = {
+            "Nombre": (
+                props.get("Nombre", {}).get("title", [{}])[0].get("text", {}).get("content")
+                if props.get("Nombre", {}).get("title") else None
+            ),
+            "Fecha": (
+                props.get("Fecha", {}).get("date", {}).get("start")
+                if props.get("Fecha", {}).get("date") else None
+            ),
+            "Cuenta": (
+                props.get("Cuenta", {}).get("select", {}).get("name")
+                if props.get("Cuenta", {}).get("select") else None
+            ),
+            "Gasto": props.get("Gasto", {}).get("number"),
+            "Ingreso": props.get("Ingreso", {}).get("number"),
+            "Transferencias": props.get("Transferencias", {}).get("number"),
+            "Subcategoría": (
+                props.get("Subcategoría", {}).get("relation", [{}])[0].get("id")
+                if props.get("Subcategoría", {}).get("relation") else None
+            ),
+            "Categoría": (
+                props.get("Categoría", {}).get("rollup", {}).get("array", [{}])[0].get("title", [{}])[0].get("text", {}).get("content")
+                if props.get("Categoría", {}).get("rollup", {}).get("array") else None
+            ),
+            "Proyecto / Viaje": (
+                props.get("Proyecto / Viaje", {}).get("relation", [{}])[0].get("id")
+                if props.get("Proyecto / Viaje", {}).get("relation") else None
+            ),
+            "Script": props.get("Script", {}).get("checkbox"),
+            "Mes": (
+                props.get("Mes", {}).get("formula", {}).get("string")
+                if props.get("Mes", {}).get("formula") else None
+            ),
+            "url": record.get("url")
+        }
+        rows.append(row)
     try:
+        df = pd.DataFrame(rows)
         df.to_csv(csv_path, index=False)
     except Exception as e:
         messagebox.showerror("Error", f"No se pudo guardar el CSV: {e}")
