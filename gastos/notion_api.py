@@ -1,61 +1,78 @@
 import requests
-from config import NOTION_API_URL, DATABASE_ID, HEADERS
-from tkinter import messagebox, filedialog
+from urllib3.util.retry import Retry
+from requests.adapters import HTTPAdapter
+from settings import NOTION_API_URL, DATABASE_ID, HEADERS
 import pandas as pd
-import json
+from typing import List, Dict, Optional
 
-def read_notion_records():
+
+def _session_with_retries() -> requests.Session:
+    session = requests.Session()
+    retry = Retry(
+        total=5,
+        backoff_factor=1,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["POST", "GET"],
+        raise_on_status=False,
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+    return session
+
+
+def read_notion_records(timeout: int = 15) -> Optional[List[Dict]]:
     query_url = NOTION_API_URL + "databases/" + DATABASE_ID + "/query"
-    all_records = []
+    all_records: List[Dict] = []
     has_more = True
     next_cursor = None
+    session = _session_with_retries()
 
     while has_more:
         payload = {}
         if next_cursor:
             payload["start_cursor"] = next_cursor
-        response = requests.post(query_url, headers=HEADERS, json=payload)
+        response = session.post(query_url, headers=HEADERS, json=payload, timeout=timeout)
         if response.status_code != 200:
-            messagebox.showerror("Error", f"Error consultando a Notion: {response.text}")
-            print(f"Error consultando a Notion: {response.text}")
             return None
         data = response.json()
         all_records.extend(data.get("results", []))
         has_more = data.get("has_more", False)
         next_cursor = data.get("next_cursor", None)
 
-    properties_data = []
+    properties_data: List[Dict] = []
     for record in all_records:
         properties = record.get("properties", {})
         cuenta = properties.get("Cuenta", {}).get("select", {}).get("name") if properties.get("Cuenta", {}).get("select") else None
         gasto = properties.get("Gasto", {}).get("number") if properties.get("Gasto") else None
         ingreso = properties.get("Ingreso", {}).get("number") if properties.get("Ingreso") else None
         fecha = properties.get("Fecha", {}).get("date", {}).get("start") if properties.get("Fecha", {}).get("date") else None
-        
+
         filtered_properties = {
             "Cuenta": cuenta,
             "Gasto": gasto,
             "Ingreso": ingreso,
-            "Fecha": fecha
+            "Fecha": fecha,
         }
         properties_data.append(filtered_properties)
 
     return properties_data
 
-def export_notion_to_csv(csv_path: str) -> bool:
+
+def export_notion_to_csv(csv_path: str, timeout: int = 15) -> bool:
     """Exporta todos los registros de la base de datos Notion a un CSV con las columnas principales (paginación incluida)."""
     query_url = NOTION_API_URL + "databases/" + DATABASE_ID + "/query"
-    all_records = []
+    all_records: List[Dict] = []
     has_more = True
     next_cursor = None
+    session = _session_with_retries()
 
     while has_more:
         payload = {}
         if next_cursor:
             payload["start_cursor"] = next_cursor
-        response = requests.post(query_url, headers=HEADERS, json=payload)
+        response = session.post(query_url, headers=HEADERS, json=payload, timeout=timeout)
         if response.status_code != 200:
-            messagebox.showerror("Error", f"Error consultando a Notion: {response.text}")
             return False
         data = response.json()
         all_records.extend(data.get("results", []))
@@ -65,168 +82,152 @@ def export_notion_to_csv(csv_path: str) -> bool:
     rows = []
     for record in all_records:
         props = record.get("properties", {})
+
         def to_float(val):
             return float(val) if val is not None else None
 
         row = {
             "Nombre": (
                 props.get("Nombre", {}).get("title", [{}])[0].get("text", {}).get("content")
-                if props.get("Nombre", {}).get("title") else None
+                if props.get("Nombre", {}).get("title")
+                else None
             ),
             "Fecha": (
                 props.get("Fecha", {}).get("date", {}).get("start")
-                if props.get("Fecha", {}).get("date") else None
+                if props.get("Fecha", {}).get("date")
+                else None
             ),
             "Cuenta": (
                 props.get("Cuenta", {}).get("select", {}).get("name")
-                if props.get("Cuenta", {}).get("select") else None
+                if props.get("Cuenta", {}).get("select")
+                else None
             ),
             "Gasto": to_float(props.get("Gasto", {}).get("number")),
             "Ingreso": to_float(props.get("Ingreso", {}).get("number")),
             "Transferencias": to_float(props.get("Transferencias", {}).get("number")),
             "Subcategoría": (
                 props.get("Subcategoría", {}).get("relation", [{}])[0].get("id")
-                if props.get("Subcategoría", {}).get("relation") else None
+                if props.get("Subcategoría", {}).get("relation")
+                else None
             ),
             "Categoría": (
-                props.get("Categoría", {}).get("rollup", {}).get("array", [{}])[0].get("title", [{}])[0].get("text", {}).get("content")
-                if props.get("Categoría", {}).get("rollup", {}).get("array") else None
+                props.get("Categoría", {}).get("rollup", {}).get("array", [{}])[0]
+                .get("title", [{}])[0]
+                .get("text", {})
+                .get("content")
+                if props.get("Categoría", {}).get("rollup", {}).get("array")
+                else None
             ),
             "Proyecto / Viaje": (
                 props.get("Proyecto / Viaje", {}).get("relation", [{}])[0].get("id")
-                if props.get("Proyecto / Viaje", {}).get("relation") else None
+                if props.get("Proyecto / Viaje", {}).get("relation")
+                else None
             ),
             "Script": props.get("Script", {}).get("checkbox"),
             "Mes": (
                 props.get("Mes", {}).get("formula", {}).get("string")
-                if props.get("Mes", {}).get("formula") else None
+                if props.get("Mes", {}).get("formula")
+                else None
             ),
-            "url": record.get("url")
+            "url": record.get("url"),
         }
         rows.append(row)
     try:
         df = pd.DataFrame(rows)
-        df.to_csv(csv_path, index=False, decimal=',', sep=';')
-    except Exception as e:
-        messagebox.showerror("Error", f"No se pudo guardar el CSV: {e}")
+        df.to_csv(csv_path, index=False, decimal=",", sep=";")
+    except Exception:
         return False
 
     return True
 
-def insert_notion_record(nombre, fecha, cuenta, gasto=None, ingreso=None, subcategoria=None):
+
+def insert_notion_record(
+    nombre,
+    fecha,
+    cuenta,
+    gasto=None,
+    ingreso=None,
+    subcategoria=None,
+    timeout: int = 15,
+):
     url = NOTION_API_URL + "pages"
     properties = {
-        "Nombre": {
-            "title": [
-                {
-                    "text": {
-                        "content": nombre
-                    }
-                }
-            ]
-        },
-        "Fecha": {
-            "date": {
-                "start": fecha
-            }
-        },
-        "Cuenta": {
-            "select": {
-                "name": cuenta
-            }
-        },
-        "Script": {
-            "checkbox": True
-        }
+        "Nombre": {"title": [{"text": {"content": nombre}}]},
+        "Fecha": {"date": {"start": fecha}},
+        "Cuenta": {"select": {"name": cuenta}},
+        "Script": {"checkbox": True},
     }
-    
+
     if gasto is not None:
-        properties["Gasto"] = {
-            "number": gasto
-        }
-    
+        properties["Gasto"] = {"number": gasto}
+
     if ingreso is not None:
-        properties["Ingreso"] = {
-            "number": ingreso
-        }
-    
+        properties["Ingreso"] = {"number": ingreso}
+
     if subcategoria is not None:
-        properties["Subcategoría"] = {
-            "relation": [
-                {
-                    "id": subcategoria
-                }
-            ]
-        }
+        properties["Subcategoría"] = {"relation": [{"id": subcategoria}]}
 
-    data = {
-        "parent": {"database_id": DATABASE_ID},
-        "properties": properties
-    }
+    data = {"parent": {"database_id": DATABASE_ID}, "properties": properties}
 
-    url = "https://api.notion.com/v1/pages"
-    response = requests.post(url, headers=HEADERS, json=data)
-    
+    session = _session_with_retries()
+    response = session.post(url, headers=HEADERS, json=data, timeout=timeout)
     if response.status_code != 200:
-        messagebox.showerror("Error", f"Error insertando registro en Notion: {response.text}")
         return None
-    
+
     return response.json()
 
-def record_exists(records, fecha, cuenta, gasto=None, ingreso=None):
-    """
-    Check if a record with the same 'Fecha', 'Cuenta', 'Gasto', and 'Ingreso' already exists in the Notion database.
-    """
+
+def record_exists(
+    records: List[Dict],
+    fecha: str,
+    cuenta: str,
+    gasto: Optional[float] = None,
+    ingreso: Optional[float] = None,
+) -> bool:
+    """Comprueba si existe un registro con misma fecha/cuenta e importe (gasto o ingreso) con tolerancia de floats."""
+    from math import isclose
+
     for record in records:
-        if (
-            record['Fecha'] == fecha and
-            record['Cuenta'] == cuenta and
-            ((gasto is not None and record['Gasto'] == gasto) or
-             (ingreso is not None and record['Ingreso'] == ingreso))):
-            return True
+        if record.get("Fecha") != fecha or record.get("Cuenta") != cuenta:
+            continue
+
+        if gasto is not None and record.get("Gasto") is not None:
+            if isclose(float(record["Gasto"]), float(gasto), rel_tol=1e-09, abs_tol=0.001):
+                return True
+        if ingreso is not None and record.get("Ingreso") is not None:
+            if isclose(float(record["Ingreso"]), float(ingreso), rel_tol=1e-09, abs_tol=0.001):
+                return True
     return False
 
-def get_category_ids(category_database_id):
-    """
-    Get the IDs of the subcategories from the related database and store them in a csv file.
-    """
+
+def fetch_category_rows(category_database_id: str, timeout: int = 15):
+    """Obtiene ID y nombres de subcategorías y su categoría asociada."""
     url = NOTION_API_URL + "databases/" + category_database_id + "/query"
-    response = requests.post(url, headers=HEADERS)
-    
+    session = _session_with_retries()
+    response = session.post(url, headers=HEADERS, timeout=timeout)
     if response.status_code != 200:
-        print("Error consulting categories:", response.text)
         return None
-    
+
     data = response.json().get("results", [])
-    
     rows = []
     for record in data:
         properties = record.get("properties", {})
-        subcategoria = properties.get("Subcategoría", {}).get("title", [{}])[0].get("text", {}).get("content")
+        subcategoria = (
+            properties.get("Subcategoría", {}).get("title", [{}])[0].get("text", {}).get("content")
+        )
         select_obj = properties.get("Categoria", {}).get("select")
         categoria = select_obj.get("name") if select_obj else None
         subcategoria_id = record.get("id")
-        rows.append({
-            "subcategoria_id": subcategoria_id,
-            "subcategoria": subcategoria,
-            "categoria": categoria
-        })
+        rows.append(
+            {
+                "subcategoria_id": subcategoria_id,
+                "subcategoria": subcategoria,
+                "categoria": categoria,
+            }
+        )
 
-    # Pedir ubicación para guardar el CSV
-    file_path = filedialog.asksaveasfilename(
-        defaultextension=".csv",
-        filetypes=[("CSV", "*.csv")],
-        title="Guardar subcategorías como..."
-    )
-    if not file_path:
-        return None
-
-    df = pd.DataFrame(rows, columns=['subcategoria_id', 'subcategoria', 'categoria'])
-    df.to_csv(file_path, index=False)
-    
     return rows
 
+
 if __name__ == "__main__":
-    category_database_id = "abffbb24f06342558161af5162c82630"
-    category_ids = get_category_ids(category_database_id)
-    print("Category IDs:", category_ids)
+    pass

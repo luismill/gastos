@@ -2,7 +2,11 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
 
-def create_main_window(process_file_callback: callable, export_callback: callable, export_subcategorias_callback: callable) -> tk.Tk:
+def create_main_window(
+    process_file_callback: callable,
+    export_callback: callable,
+    export_subcategorias_callback: callable,
+) -> tk.Tk:
     root = tk.Tk()
     root.title("Procesador de gastos")
     root.geometry("700x350")
@@ -36,33 +40,38 @@ def create_main_window(process_file_callback: callable, export_callback: callabl
             if not bank_var.get():
                 messagebox.showwarning(
                     "Banco no seleccionado",
-                    "Por favor, selecciona un banco antes de procesar el fichero."
+                    "Por favor, selecciona un banco antes de procesar el fichero.",
                 )
                 return
             process_file_callback(bank_var.get(), file_path, status_label)
         else:
             messagebox.showwarning(
                 "Ningún fichero seleccionado",
-                "Por favor, selecciona un fichero para procesar."
+                "Por favor, selecciona un fichero para procesar.",
             )
 
     def export_notion():
         file_path = filedialog.asksaveasfilename(
             defaultextension=".csv",
-            filetypes=[("CSV", "*.csv")]
+            filetypes=[("CSV", "*.csv")],
         )
         if file_path:
             export_callback(file_path, status_label)
         else:
             messagebox.showwarning(
                 "Ningún fichero seleccionado",
-                "Por favor, selecciona un fichero para guardar."
+                "Por favor, selecciona un fichero para guardar.",
             )
 
     ttk.Button(root, text="Seleccionar fichero", command=select_file).pack(pady=20)
     ttk.Button(root, text="Exportar Notion a CSV", command=export_notion).pack()
-    ttk.Button(root, text="Exportar subcategorías a CSV", command=lambda: export_subcategorias_callback(None, status_label)).pack(pady=5)
+    ttk.Button(
+        root,
+        text="Exportar subcategorías a CSV",
+        command=lambda: export_subcategorias_callback(None, status_label),
+    ).pack(pady=5)
 
     status_label = ttk.Label(root, text="", style="Status.TLabel")
     status_label.pack(pady=10, fill="x")
     return root
+

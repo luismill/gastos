@@ -4,3 +4,4 @@ config.py
 *.txt
 *.csv
 logs/
+.env
