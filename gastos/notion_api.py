@@ -1,6 +1,6 @@
 import requests
 from config import NOTION_API_URL, DATABASE_ID, HEADERS
-from tkinter import messagebox
+from tkinter import messagebox, filedialog
 import pandas as pd
 import json
 
@@ -42,7 +42,6 @@ def read_notion_records():
 
     return properties_data
 
-
 def export_notion_to_csv(csv_path: str) -> bool:
     """Exporta todos los registros de la base de datos Notion a un CSV con las columnas principales (paginación incluida)."""
     query_url = NOTION_API_URL + "databases/" + DATABASE_ID + "/query"
@@ -66,6 +65,9 @@ def export_notion_to_csv(csv_path: str) -> bool:
     rows = []
     for record in all_records:
         props = record.get("properties", {})
+        def to_float(val):
+            return float(val) if val is not None else None
+
         row = {
             "Nombre": (
                 props.get("Nombre", {}).get("title", [{}])[0].get("text", {}).get("content")
@@ -79,9 +81,9 @@ def export_notion_to_csv(csv_path: str) -> bool:
                 props.get("Cuenta", {}).get("select", {}).get("name")
                 if props.get("Cuenta", {}).get("select") else None
             ),
-            "Gasto": props.get("Gasto", {}).get("number"),
-            "Ingreso": props.get("Ingreso", {}).get("number"),
-            "Transferencias": props.get("Transferencias", {}).get("number"),
+            "Gasto": to_float(props.get("Gasto", {}).get("number")),
+            "Ingreso": to_float(props.get("Ingreso", {}).get("number")),
+            "Transferencias": to_float(props.get("Transferencias", {}).get("number")),
             "Subcategoría": (
                 props.get("Subcategoría", {}).get("relation", [{}])[0].get("id")
                 if props.get("Subcategoría", {}).get("relation") else None
@@ -104,7 +106,7 @@ def export_notion_to_csv(csv_path: str) -> bool:
         rows.append(row)
     try:
         df = pd.DataFrame(rows)
-        df.to_csv(csv_path, index=False)
+        df.to_csv(csv_path, index=False, decimal=',', sep=';')
     except Exception as e:
         messagebox.showerror("Error", f"No se pudo guardar el CSV: {e}")
         return False
@@ -186,7 +188,7 @@ def record_exists(records, fecha, cuenta, gasto=None, ingreso=None):
 
 def get_category_ids(category_database_id):
     """
-    Get the IDs of the categories from the related database and store them in a csv file.
+    Get the IDs of the subcategories from the related database and store them in a csv file.
     """
     url = NOTION_API_URL + "databases/" + category_database_id + "/query"
     response = requests.post(url, headers=HEADERS)
@@ -197,17 +199,32 @@ def get_category_ids(category_database_id):
     
     data = response.json().get("results", [])
     
-    category_ids = {}
+    rows = []
     for record in data:
         properties = record.get("properties", {})
-        name = properties.get("Subcategoría", {}).get("title", [{}])[0].get("text", {}).get("content")
-        category_id = record.get("id")
-        if name and category_id:
-            category_ids[name] = category_id
-    df = pd.DataFrame(list(category_ids.items()), columns=['Categoria', 'ID'])
-    df.to_csv('subcategorias.csv', index=False)
+        subcategoria = properties.get("Subcategoría", {}).get("title", [{}])[0].get("text", {}).get("content")
+        select_obj = properties.get("Categoria", {}).get("select")
+        categoria = select_obj.get("name") if select_obj else None
+        subcategoria_id = record.get("id")
+        rows.append({
+            "subcategoria_id": subcategoria_id,
+            "subcategoria": subcategoria,
+            "categoria": categoria
+        })
+
+    # Pedir ubicación para guardar el CSV
+    file_path = filedialog.asksaveasfilename(
+        defaultextension=".csv",
+        filetypes=[("CSV", "*.csv")],
+        title="Guardar subcategorías como..."
+    )
+    if not file_path:
+        return None
+
+    df = pd.DataFrame(rows, columns=['subcategoria_id', 'subcategoria', 'categoria'])
+    df.to_csv(file_path, index=False)
     
-    return category_ids
+    return rows
 
 if __name__ == "__main__":
     category_database_id = "abffbb24f06342558161af5162c82630"

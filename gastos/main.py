@@ -7,10 +7,12 @@ from notion_api import (
     read_notion_records,
     record_exists,
     export_notion_to_csv,
+    get_category_ids,
 )
 from file_processing import read_bank_records
 from categorization import load_categorization_rules, categorize_record
 from gui import create_main_window
+from tkinter import messagebox
 
 # Crear carpeta logs si no existe
 os.makedirs("logs", exist_ok=True)
@@ -64,8 +66,8 @@ def process_record(
     except Exception as e:
         logging.error(f"Error procesando el registro {record}: {e}", exc_info=True)
 
-
 def export_notion_data(file_path: str, status_label=None) -> None:
+
     """Export existing Notion records to a CSV file."""
     try:
         logging.info("Inicio de exportación de datos de Notion.")
@@ -84,6 +86,20 @@ def export_notion_data(file_path: str, status_label=None) -> None:
         logging.error(f"Error exportando datos de Notion: {e}", exc_info=True)
         if status_label:
             status_label.config(text=f"Error exportando datos de Notion: {e}")
+
+def export_subcategorias(file_path: str, status_label=None) -> None:
+    """Exporta las subcategorías de Notion a un CSV."""
+    try:
+        category_database_id = "abffbb24f06342558161af5162c82630"  # Cambia por tu ID si es necesario
+        get_category_ids(category_database_id)
+        if status_label:
+            status_label.config(text=f"Subcategorías exportadas a subcategorias.csv")
+        messagebox.showinfo("Éxito", "Subcategorías exportadas a subcategorias.csv")
+    except Exception as e:
+        if status_label:
+            status_label.config(text=f"Error exportando subcategorías: {e}")
+        messagebox.showerror("Error", f"Error exportando subcategorías: {e}")
+
 def process_file(bank_name: str, file_path: str, status_label=None) -> None:
     try:
         logging.info(f"Inicio de procesamiento para banco: {bank_name}, archivo: {file_path}")
@@ -133,6 +149,6 @@ def process_file(bank_name: str, file_path: str, status_label=None) -> None:
             status_label.config(text=f"Error inesperado en el procesamiento: {e}")
 
 if __name__ == "__main__":
-    root = create_main_window(process_file, export_notion_data)
+    root = create_main_window(process_file, export_notion_data, export_subcategorias)
     logging.info("Aplicación iniciada.")
     root.mainloop()

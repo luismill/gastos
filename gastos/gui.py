@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
 
-def create_main_window(process_file_callback: callable, export_callback: callable) -> tk.Tk:
+def create_main_window(process_file_callback: callable, export_callback: callable, export_subcategorias_callback: callable) -> tk.Tk:
     root = tk.Tk()
     root.title("Procesador de gastos")
     root.geometry("700x350")
@@ -61,6 +61,7 @@ def create_main_window(process_file_callback: callable, export_callback: callabl
 
     ttk.Button(root, text="Seleccionar fichero", command=select_file).pack(pady=20)
     ttk.Button(root, text="Exportar Notion a CSV", command=export_notion).pack()
+    ttk.Button(root, text="Exportar subcategorías a CSV", command=lambda: export_subcategorias_callback(None, status_label)).pack(pady=5)
 
     status_label = ttk.Label(root, text="", style="Status.TLabel")
     status_label.pack(pady=10, fill="x")
