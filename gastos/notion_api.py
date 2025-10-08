@@ -56,7 +56,7 @@ def read_notion_records(timeout: int = 15) -> Optional[List[Dict]]:
         }
         properties_data.append(filtered_properties)
 
-    return records
+    return properties_data
 
 
 def export_notion_to_csv(csv_path: str) -> bool:
