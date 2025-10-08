@@ -26,14 +26,33 @@ def read_bank_records(bank_config, filename):
         return df
     elif bank_config.bank == "Revolut":
         df = pd.read_csv(filename, usecols=bank_config.column_names, delimiter=",")
-        df['Started Date'] = pd.to_datetime(df['Started Date'], format='%Y-%m-%d %H:%M:%S', errors='coerce').dt.date
-        df['Description'] = df['Description'].astype(str)
-        df['Amount'] = df['Amount'].astype(float) - df['Fee'].astype(float)
+
+        df['Fecha de inicio'] = pd.to_datetime(
+            df['Fecha de inicio'],
+            format='%Y-%m-%d %H:%M:%S',
+            errors='coerce'
+        ).dt.date
+        df['Descripción'] = df['Descripción'].astype(str)
+
+        def _to_float(value):
+            if pd.isna(value):
+                return 0.0
+            value = str(value).strip()
+            if not value:
+                return 0.0
+            value = value.replace('€', '').replace(' ', '')
+            if ',' in value:
+                value = value.replace('.', '').replace(',', '.')
+            return float(value)
+
+        df['Importe'] = df['Importe'].apply(_to_float)
+        df['Comisión'] = df['Comisión'].apply(_to_float)
+        df['Importe'] = df['Importe'] - df['Comisión']
         df['Cuenta'] = "Revolut"
         df.rename(columns={
-            'Started Date': 'Fecha',
-            'Description': 'Nombre',
-            'Amount': 'Gasto/Ingreso'
+            'Fecha de inicio': 'Fecha',
+            'Descripción': 'Nombre',
+            'Importe': 'Gasto/Ingreso'
         }, inplace=True)
         df = process_gasto_ingreso(df)
         logging.info(f"Archivo de Revolut leído correctamente con {len(df)} registros.")
