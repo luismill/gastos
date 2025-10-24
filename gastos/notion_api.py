@@ -108,11 +108,41 @@ def export_notion_to_csv(csv_path: str, timeout: int = 15) -> bool:
         next_cursor = data.get("next_cursor", None)
 
     rows = []
+
+    def to_float(val):
+        return float(val) if val is not None else None
+
+    def extract_rollup_value(rollup: Dict) -> Optional[str]:
+        if not rollup:
+            return None
+
+        array = rollup.get("array", [])
+        if not array:
+            return None
+
+        first_item = array[0]
+        item_type = first_item.get("type")
+
+        if item_type == "select":
+            return first_item.get("select", {}).get("name")
+
+        if item_type == "title":
+            titles = first_item.get("title", [])
+            if titles:
+                text = titles[0]
+                # ``plain_text`` is more broadly available than the deeply nested ``content``.
+                return text.get("plain_text") or text.get("text", {}).get("content")
+
+        if item_type == "rich_text":
+            texts = first_item.get("rich_text", [])
+            if texts:
+                return texts[0].get("plain_text") or texts[0].get("text", {}).get("content")
+
+        # Fallback to any stringified representation to avoid empty cells when data exists.
+        return str(first_item) if first_item else None
+
     for record in all_records:
         props = record.get("properties", {})
-
-        def to_float(val):
-            return float(val) if val is not None else None
 
         row = {
             "Nombre": (
@@ -138,13 +168,8 @@ def export_notion_to_csv(csv_path: str, timeout: int = 15) -> bool:
                 if props.get("Subcategoría", {}).get("relation")
                 else None
             ),
-            "Categoría": (
-                props.get("Categoría", {}).get("rollup", {}).get("array", [{}])[0]
-                .get("title", [{}])[0]
-                .get("text", {})
-                .get("content")
-                if props.get("Categoría", {}).get("rollup", {}).get("array")
-                else None
+            "Categoría": extract_rollup_value(
+                props.get("Categoría", {}).get("rollup", {})
             ),
             "Proyecto / Viaje": (
                 props.get("Proyecto / Viaje", {}).get("relation", [{}])[0].get("id")
