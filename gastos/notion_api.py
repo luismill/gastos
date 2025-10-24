@@ -141,8 +141,47 @@ def export_notion_to_csv(csv_path: str, timeout: int = 15) -> bool:
         # Fallback to any stringified representation to avoid empty cells when data exists.
         return str(first_item) if first_item else None
 
+    relation_title_cache: Dict[str, Optional[str]] = {}
+
+    def fetch_relation_title(page_id: str) -> Optional[str]:
+        if not page_id:
+            return None
+
+        if page_id in relation_title_cache:
+            return relation_title_cache[page_id]
+
+        page_url = NOTION_API_URL + "pages/" + page_id
+        response = session.get(page_url, headers=HEADERS, timeout=timeout)
+
+        title: Optional[str] = None
+        if response.status_code == 200:
+            properties = response.json().get("properties", {})
+            for prop in properties.values():
+                if prop.get("type") != "title":
+                    continue
+
+                titles = prop.get("title", [])
+                if not titles:
+                    continue
+
+                text = titles[0]
+                title = text.get("plain_text") or text.get("text", {}).get("content")
+                if title:
+                    break
+
+        relation_title_cache[page_id] = title
+        return title
+
     for record in all_records:
         props = record.get("properties", {})
+
+        proyecto_viaje_relations = props.get("Proyecto / Viaje", {}).get("relation") or []
+        proyecto_viaje_names = []
+        for relation in proyecto_viaje_relations:
+            related_page_id = relation.get("id")
+            name = fetch_relation_title(related_page_id)
+            if name:
+                proyecto_viaje_names.append(name)
 
         row = {
             "Nombre": (
@@ -171,11 +210,7 @@ def export_notion_to_csv(csv_path: str, timeout: int = 15) -> bool:
             "Categoría": extract_rollup_value(
                 props.get("Categoría", {}).get("rollup", {})
             ),
-            "Proyecto / Viaje": (
-                props.get("Proyecto / Viaje", {}).get("relation", [{}])[0].get("id")
-                if props.get("Proyecto / Viaje", {}).get("relation")
-                else None
-            ),
+            "Proyecto / Viaje": ", ".join(proyecto_viaje_names) if proyecto_viaje_names else None,
             "Script": props.get("Script", {}).get("checkbox"),
             "Mes": (
                 props.get("Mes", {}).get("formula", {}).get("string")
