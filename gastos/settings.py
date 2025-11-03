@@ -12,6 +12,8 @@ NOTION_TOKEN = os.environ.get("NOTION_TOKEN")
 DATABASE_ID = os.environ.get("NOTION_DATABASE_ID")
 # Optional: database for categories (subcategorías)
 CATEGORY_DATABASE_ID = os.environ.get("NOTION_CATEGORY_DATABASE_ID")
+# Optional: database for projects / trips (relation lookup)
+PROJECT_DATABASE_ID = os.environ.get("NOTION_PROJECT_DATABASE_ID")
 
 NOTION_API_URL = "https://api.notion.com/v1/"
 NOTION_VERSION = os.environ.get("NOTION_VERSION", "2022-06-28")

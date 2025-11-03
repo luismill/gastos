@@ -13,6 +13,7 @@ Configuración (variables de entorno)
 - `NOTION_TOKEN`: token de integración de Notion (Bearer)
 - `NOTION_DATABASE_ID`: ID de la base de datos principal de gastos
 - `NOTION_CATEGORY_DATABASE_ID` (opcional): ID de la BD de subcategorías
+- `NOTION_PROJECT_DATABASE_ID` (opcional): ID de la BD enlazada en "Proyecto/Viaje"
 - `NOTION_VERSION` (opcional): por defecto `2022-06-28`
 
 Ejemplo en PowerShell:
@@ -28,6 +29,7 @@ Alternativa: archivo .env
     - `NOTION_TOKEN=...`
     - `NOTION_DATABASE_ID=...`
     - `NOTION_CATEGORY_DATABASE_ID=...` (opcional)
+    - `NOTION_PROJECT_DATABASE_ID=...` (opcional)
 - `gastos/settings.py` carga automáticamente ese `.env`.
 
 Uso
