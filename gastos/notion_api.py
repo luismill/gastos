@@ -1,9 +1,16 @@
 import requests
 from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
-from settings import NOTION_API_URL, DATABASE_ID, HEADERS
+from typing import Dict, Iterable, List, Optional, Set, Tuple
+
 import pandas as pd
-from typing import List, Dict, Optional
+
+from settings import (
+    DATABASE_ID,
+    HEADERS,
+    NOTION_API_URL,
+    PROJECT_DATABASE_ID,
+)
 
 
 def _session_with_retries() -> requests.Session:
@@ -21,95 +28,148 @@ def _session_with_retries() -> requests.Session:
     return session
 
 
-def read_notion_records(timeout: int = 15) -> Optional[List[Dict]]:
-    query_url = NOTION_API_URL + "databases/" + DATABASE_ID + "/query"
-    all_records: List[Dict] = []
+def _normalize_property_name(name: str) -> str:
+    return name.lower().replace(" ", "")
+
+
+def _get_property(properties: Dict, target: str) -> Optional[Dict]:
+    normalized_target = _normalize_property_name(target)
+    for key, value in properties.items():
+        if _normalize_property_name(key) == normalized_target:
+            return value
+    return None
+
+
+def _extract_title_from_properties(properties: Dict) -> Optional[str]:
+    for prop in properties.values():
+        if prop.get("type") != "title":
+            continue
+
+        titles = prop.get("title", [])
+        for text in titles:
+            plain = text.get("plain_text")
+            if plain:
+                return plain
+            rich_text = text.get("text", {}).get("content")
+            if rich_text:
+                return rich_text
+    return None
+
+
+def _query_database(
+    database_id: str, session: requests.Session, timeout: int
+) -> Tuple[List[Dict], bool]:
+    query_url = f"{NOTION_API_URL}databases/{database_id}/query"
     has_more = True
-    next_cursor = None
-    session = _session_with_retries()
+    next_cursor: Optional[str] = None
+    results: List[Dict] = []
+    success = True
 
     while has_more:
-        payload = {}
+        payload: Dict = {}
         if next_cursor:
             payload["start_cursor"] = next_cursor
         response = session.post(query_url, headers=HEADERS, json=payload, timeout=timeout)
         if response.status_code != 200:
-            return None
+            success = False
+            break
         data = response.json()
-        all_records.extend(data.get("results", []))
+        results.extend(data.get("results", []))
         has_more = data.get("has_more", False)
-        next_cursor = data.get("next_cursor", None)
+        next_cursor = data.get("next_cursor")
 
-    properties_data: List[Dict] = []
-    for record in all_records:
+    return results, success
+
+
+def read_notion_records(timeout: int = 15) -> Optional[List[Dict]]:
+    session = _session_with_retries()
+    raw_records, success = _query_database(DATABASE_ID, session, timeout)
+    if not success:
+        return None
+
+    records: List[Dict] = []
+
+    for record in raw_records:
         properties = record.get("properties", {})
-        cuenta = properties.get("Cuenta", {}).get("select", {}).get("name") if properties.get("Cuenta", {}).get("select") else None
-        gasto = properties.get("Gasto", {}).get("number") if properties.get("Gasto") else None
-        ingreso = properties.get("Ingreso", {}).get("number") if properties.get("Ingreso") else None
-        fecha = properties.get("Fecha", {}).get("date", {}).get("start") if properties.get("Fecha", {}).get("date") else None
+        cuenta_select = properties.get("Cuenta", {}).get("select") if properties.get("Cuenta") else None
+        fecha_data = properties.get("Fecha", {}).get("date") if properties.get("Fecha") else None
 
-        filtered_properties = {
-            "Cuenta": cuenta,
-            "Gasto": gasto,
-            "Ingreso": ingreso,
-            "Fecha": fecha,
-        }
-        properties_data.append(filtered_properties)
+        records.append(
+            {
+                "Cuenta": cuenta_select.get("name") if cuenta_select else None,
+                "Gasto": properties.get("Gasto", {}).get("number"),
+                "Ingreso": properties.get("Ingreso", {}).get("number"),
+                "Fecha": fecha_data.get("start") if fecha_data else None,
+            }
+        )
 
-    return properties_data
+    return records
 
 
-def export_notion_to_csv(csv_path: str) -> bool:
-    """Read records from Notion and export them to a CSV file.
+def _collect_relation_ids(records: Iterable[Dict]) -> Set[str]:
+    relation_ids: Set[str] = set()
+    for record in records:
+        properties = record.get("properties", {})
+        relation_prop = _get_property(properties, "Proyecto/Viaje")
+        if not relation_prop:
+            continue
+        for relation in relation_prop.get("relation", []):
+            page_id = relation.get("id")
+            if page_id:
+                relation_ids.add(page_id)
+    return relation_ids
 
-    Parameters
-    ----------
-    csv_path:
-        Destination path where the CSV will be saved.
 
-    Returns
-    -------
-    bool
-        ``True`` if the export was successful, ``False`` otherwise.
-    """
+def _fetch_project_titles_from_database(
+    session: requests.Session, target_ids: Set[str], timeout: int
+) -> Dict[str, Optional[str]]:
+    if not PROJECT_DATABASE_ID or not target_ids:
+        return {}
 
-    records = read_notion_records()
-    if records is None:
-        return False
+    titles: Dict[str, Optional[str]] = {}
+    pages, success = _query_database(PROJECT_DATABASE_ID, session, timeout)
+    if not success:
+        return titles
 
-    df = pd.DataFrame(records)
-    try:
-        df.to_csv(csv_path, index=False)
-    except Exception as e:
-        messagebox.showerror("Error", f"No se pudo guardar el CSV: {e}")
-        return False
+    for page in pages:
+        page_id = page.get("id")
+        if page_id not in target_ids:
+            continue
+        title = _extract_title_from_properties(page.get("properties", {}))
+        titles[page_id] = title
+        if len(titles) == len(target_ids):
+            break
+    return titles
 
-    return True
+
+def _fetch_page_title(
+    session: requests.Session, page_id: str, timeout: int
+) -> Optional[str]:
+    if not page_id:
+        return None
+
+    page_url = f"{NOTION_API_URL}pages/{page_id}"
+    response = session.get(page_url, headers=HEADERS, timeout=timeout)
+    if response.status_code != 200:
+        return None
+
+    return _extract_title_from_properties(response.json().get("properties", {}))
 
 
 def export_notion_to_csv(csv_path: str, timeout: int = 15) -> bool:
-    """Exporta todos los registros de la base de datos Notion a un CSV con las columnas principales (paginación incluida)."""
-    query_url = NOTION_API_URL + "databases/" + DATABASE_ID + "/query"
-    all_records: List[Dict] = []
-    has_more = True
-    next_cursor = None
     session = _session_with_retries()
+    all_records, success = _query_database(DATABASE_ID, session, timeout)
+    if not success:
+        return False
 
-    while has_more:
-        payload = {}
-        if next_cursor:
-            payload["start_cursor"] = next_cursor
-        response = session.post(query_url, headers=HEADERS, json=payload, timeout=timeout)
-        if response.status_code != 200:
-            return False
-        data = response.json()
-        all_records.extend(data.get("results", []))
-        has_more = data.get("has_more", False)
-        next_cursor = data.get("next_cursor", None)
+    relation_ids = _collect_relation_ids(all_records)
+    relation_title_cache = _fetch_project_titles_from_database(
+        session, relation_ids, timeout
+    )
 
-    rows = []
+    rows: List[Dict[str, Optional[str]]] = []
 
-    def to_float(val):
+    def to_float(val: Optional[float]) -> Optional[float]:
         return float(val) if val is not None else None
 
     def extract_rollup_value(rollup: Dict) -> Optional[str]:
@@ -130,7 +190,6 @@ def export_notion_to_csv(csv_path: str, timeout: int = 15) -> bool:
             titles = first_item.get("title", [])
             if titles:
                 text = titles[0]
-                # ``plain_text`` is more broadly available than the deeply nested ``content``.
                 return text.get("plain_text") or text.get("text", {}).get("content")
 
         if item_type == "rich_text":
@@ -138,57 +197,26 @@ def export_notion_to_csv(csv_path: str, timeout: int = 15) -> bool:
             if texts:
                 return texts[0].get("plain_text") or texts[0].get("text", {}).get("content")
 
-        # Fallback to any stringified representation to avoid empty cells when data exists.
         return str(first_item) if first_item else None
-
-    relation_title_cache: Dict[str, Optional[str]] = {}
-
-    def fetch_relation_title(page_id: str) -> Optional[str]:
-        if not page_id:
-            return None
-
-        if page_id in relation_title_cache:
-            return relation_title_cache[page_id]
-
-        page_url = NOTION_API_URL + "pages/" + page_id
-        response = session.get(page_url, headers=HEADERS, timeout=timeout)
-
-        title: Optional[str] = None
-        if response.status_code == 200:
-            properties = response.json().get("properties", {})
-            for prop in properties.values():
-                if prop.get("type") != "title":
-                    continue
-
-                titles = prop.get("title", [])
-                if not titles:
-                    continue
-
-                text = titles[0]
-                title = text.get("plain_text") or text.get("text", {}).get("content")
-                if title:
-                    break
-
-        relation_title_cache[page_id] = title
-        return title
 
     for record in all_records:
         props = record.get("properties", {})
 
-        proyecto_viaje_relations = props.get("Proyecto / Viaje", {}).get("relation") or []
-        proyecto_viaje_names = []
-        for relation in proyecto_viaje_relations:
+        proyecto_prop = _get_property(props, "Proyecto/Viaje")
+        proyecto_relations = proyecto_prop.get("relation") if proyecto_prop else []
+        proyecto_names: List[str] = []
+        for relation in proyecto_relations or []:
             related_page_id = relation.get("id")
-            name = fetch_relation_title(related_page_id)
+            if not related_page_id:
+                continue
+            if related_page_id not in relation_title_cache:
+                relation_title_cache[related_page_id] = _fetch_page_title(session, related_page_id, timeout)
+            name = relation_title_cache.get(related_page_id)
             if name:
-                proyecto_viaje_names.append(name)
+                proyecto_names.append(name)
 
         row = {
-            "Nombre": (
-                props.get("Nombre", {}).get("title", [{}])[0].get("text", {}).get("content")
-                if props.get("Nombre", {}).get("title")
-                else None
-            ),
+            "Nombre": _extract_title_from_properties(props) or None,
             "Fecha": (
                 props.get("Fecha", {}).get("date", {}).get("start")
                 if props.get("Fecha", {}).get("date")
@@ -207,10 +235,8 @@ def export_notion_to_csv(csv_path: str, timeout: int = 15) -> bool:
                 if props.get("Subcategoría", {}).get("relation")
                 else None
             ),
-            "Categoría": extract_rollup_value(
-                props.get("Categoría", {}).get("rollup", {})
-            ),
-            "Proyecto / Viaje": ", ".join(proyecto_viaje_names) if proyecto_viaje_names else None,
+            "Categoría": extract_rollup_value(props.get("Categoría", {}).get("rollup", {})),
+            "Proyecto/Viaje": ", ".join(proyecto_names) if proyecto_names else None,
             "Script": props.get("Script", {}).get("checkbox"),
             "Mes": (
                 props.get("Mes", {}).get("formula", {}).get("string")
@@ -220,6 +246,7 @@ def export_notion_to_csv(csv_path: str, timeout: int = 15) -> bool:
             "url": record.get("url"),
         }
         rows.append(row)
+
     try:
         df = pd.DataFrame(rows)
         df.to_csv(csv_path, index=False, decimal=",", sep=";")
@@ -272,7 +299,6 @@ def record_exists(
     gasto: Optional[float] = None,
     ingreso: Optional[float] = None,
 ) -> bool:
-    """Comprueba si existe un registro con misma fecha/cuenta e importe (gasto o ingreso) con tolerancia de floats."""
     from math import isclose
 
     for record in records:
@@ -289,7 +315,6 @@ def record_exists(
 
 
 def fetch_category_rows(category_database_id: str, timeout: int = 15):
-    """Obtiene ID y nombres de subcategorías y su categoría asociada."""
     url = NOTION_API_URL + "databases/" + category_database_id + "/query"
     session = _session_with_retries()
     response = session.post(url, headers=HEADERS, timeout=timeout)
