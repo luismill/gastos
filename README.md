@@ -14,7 +14,7 @@ Configuración (variables de entorno)
 - `NOTION_DATABASE_ID`: ID de la base de datos principal de gastos
 - `NOTION_CATEGORY_DATABASE_ID` (opcional): ID de la BD de subcategorías
 - `NOTION_PROJECT_DATABASE_ID` (opcional): ID de la BD enlazada en "Proyecto/Viaje"
-- `NOTION_VERSION` (opcional): por defecto `2022-06-28`
+- `NOTION_VERSION` (opcional): por defecto `2025-09-03`
 
 Ejemplo en PowerShell:
 ```
