@@ -106,6 +106,32 @@ def read_notion_records(timeout: int = 15) -> Optional[List[Dict]]:
     return records
 
 
+def _extract_relation_ids_from_property(prop: Optional[Dict]) -> List[str]:
+    if not prop:
+        return []
+
+    relation_ids: List[str] = []
+    prop_type = prop.get("type")
+
+    if prop_type == "relation":
+        for relation in prop.get("relation", []) or []:
+            page_id = relation.get("id")
+            if page_id:
+                relation_ids.append(page_id)
+
+    elif prop_type == "rollup":
+        rollup = prop.get("rollup", {})
+        if rollup.get("type") == "array":
+            for item in rollup.get("array", []) or []:
+                if item.get("type") != "relation":
+                    continue
+                page_id = item.get("relation", {}).get("id")
+                if page_id:
+                    relation_ids.append(page_id)
+
+    return relation_ids
+
+
 def _collect_relation_ids(records: Iterable[Dict]) -> Set[str]:
     relation_ids: Set[str] = set()
     for record in records:
@@ -113,10 +139,8 @@ def _collect_relation_ids(records: Iterable[Dict]) -> Set[str]:
         relation_prop = _get_property(properties, "Proyecto/Viaje")
         if not relation_prop:
             continue
-        for relation in relation_prop.get("relation", []):
-            page_id = relation.get("id")
-            if page_id:
-                relation_ids.add(page_id)
+        for page_id in _extract_relation_ids_from_property(relation_prop):
+            relation_ids.add(page_id)
     return relation_ids
 
 
@@ -203,17 +227,48 @@ def export_notion_to_csv(csv_path: str, timeout: int = 15) -> bool:
         props = record.get("properties", {})
 
         proyecto_prop = _get_property(props, "Proyecto/Viaje")
-        proyecto_relations = proyecto_prop.get("relation") if proyecto_prop else []
         proyecto_names: List[str] = []
-        for relation in proyecto_relations or []:
-            related_page_id = relation.get("id")
-            if not related_page_id:
-                continue
+
+        relation_ids = _extract_relation_ids_from_property(proyecto_prop)
+        for related_page_id in relation_ids:
             if related_page_id not in relation_title_cache:
-                relation_title_cache[related_page_id] = _fetch_page_title(session, related_page_id, timeout)
+                relation_title_cache[related_page_id] = _fetch_page_title(
+                    session, related_page_id, timeout
+                )
             name = relation_title_cache.get(related_page_id)
             if name:
                 proyecto_names.append(name)
+
+        if not proyecto_names and proyecto_prop and proyecto_prop.get("type") == "rollup":
+            rollup = proyecto_prop.get("rollup", {})
+            if rollup.get("type") == "array":
+                for item in rollup.get("array", []) or []:
+                    item_type = item.get("type")
+                    if item_type == "title":
+                        titles = item.get("title", [])
+                        if titles:
+                            text = titles[0]
+                            value = text.get("plain_text") or text.get("text", {}).get("content")
+                            if value:
+                                proyecto_names.append(value)
+                    elif item_type == "rich_text":
+                        texts = item.get("rich_text", [])
+                        if texts:
+                            value = texts[0].get("plain_text") or texts[0].get("text", {}).get("content")
+                            if value:
+                                proyecto_names.append(value)
+                    elif item_type == "select":
+                        value = item.get("select", {}).get("name")
+                        if value:
+                            proyecto_names.append(value)
+                    elif item_type == "relation":
+                        # Relations handled above; ignore duplicates.
+                        continue
+
+            if not proyecto_names:
+                fallback_value = extract_rollup_value(rollup)
+                if fallback_value:
+                    proyecto_names.append(fallback_value)
 
         row = {
             "Nombre": _extract_title_from_properties(props) or None,
