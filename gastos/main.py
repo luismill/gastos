@@ -91,6 +91,11 @@ def export_notion_data(file_path: str, status_label=None) -> None:
                 status_label.config(text=f"Datos exportados a {file_path}")
             else:
                 status_label.config(text="Error exportando datos de Notion.")
+
+        if success:
+            logging.info(f"Exportación de datos de Notion finalizada. CSV guardado en {file_path}.")
+        else:
+            logging.error("La exportación de datos de Notion no se completó correctamente.")
     except Exception as e:
         logging.error(f"Error exportando datos de Notion: {e}", exc_info=True)
         if status_label:
