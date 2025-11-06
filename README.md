@@ -21,6 +21,7 @@ Ejemplo en PowerShell:
 $env:NOTION_TOKEN="secret_..."
 $env:NOTION_DATABASE_ID="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 $env:NOTION_CATEGORY_DATABASE_ID="yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+$env:NOTION_PROJECT_DATABASE_ID="zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
 ```
 
 Alternativa: archivo .env
