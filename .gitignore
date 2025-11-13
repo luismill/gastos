@@ -5,3 +5,5 @@ config.py
 *.csv
 logs/
 .env
+*.log
+*.pyc

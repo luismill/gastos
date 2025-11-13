@@ -756,3 +756,332 @@ ValueError: NaTType does not support strftime
 2025-08-12 18:45:51 - INFO - Aplicaci髇 iniciada.
 2025-08-12 18:53:06 - INFO - Aplicaci髇 iniciada.
 2025-08-12 18:58:34 - INFO - Aplicaci髇 iniciada.
+2025-09-09 19:39:00 - INFO - Aplicaci髇 iniciada.
+2025-09-09 19:39:46 - INFO - Inicio de exportaci髇 de datos de Notion.
+2025-10-08 12:22:16 - INFO - Aplicaci髇 iniciada.
+2025-10-08 12:22:23 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-10M-08D-12_20_12-趌timos movimientos.xlsx
+2025-10-08 12:22:23 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-10M-08D-12_20_12-趌timos movimientos.xlsx para banco: BBVA
+2025-10-08 12:22:23 - INFO - Archivo de BBVA le韉o correctamente con 120 registros.
+2025-10-08 12:22:23 - INFO - Cargando reglas de categorizaci髇 desde: gastos/categorization_rules.xlsx
+2025-10-08 12:22:23 - INFO - Reglas de categorizaci髇 cargadas correctamente (15 reglas).
+2025-10-08 12:22:43 - ERROR - Error inesperado en el procesamiento: name 'records' is not defined
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 156, in process_file
+    existing_records = read_notion_records()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\notion_api.py", line 59, in read_notion_records
+    return records
+           ^^^^^^^
+NameError: name 'records' is not defined. Did you mean: 'record'?
+2025-10-08 12:31:22 - INFO - Aplicaci髇 iniciada.
+2025-10-08 12:31:27 - INFO - Inicio de procesamiento para banco: BBVA, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-10M-08D-12_20_12-趌timos movimientos.xlsx
+2025-10-08 12:31:27 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/BBVA/2025Y-10M-08D-12_20_12-趌timos movimientos.xlsx para banco: BBVA
+2025-10-08 12:31:27 - INFO - Archivo de BBVA le韉o correctamente con 120 registros.
+2025-10-08 12:31:27 - INFO - Cargando reglas de categorizaci髇 desde: gastos/categorization_rules.xlsx
+2025-10-08 12:31:27 - INFO - Reglas de categorizaci髇 cargadas correctamente (15 reglas).
+2025-10-08 12:31:45 - INFO - Registros existentes en Notion le韉os.
+2025-10-08 12:31:46 - INFO - Registro insertado: Carrefour fresn          gijon/xixon  es, 2025-10-07 00:00:00, BBVA, gasto=5.16, ingreso=None, subcategoria=None
+2025-10-08 12:31:47 - INFO - Registro insertado: Adeudo totalenergies clientessau, 2025-10-07 00:00:00, BBVA, gasto=30.0, ingreso=None, subcategoria=None
+2025-10-08 12:31:48 - INFO - Registro insertado: Bizum: RECIBIDO: Sin concepto, 2025-10-06 00:00:00, BBVA, gasto=None, ingreso=9.0, subcategoria=None
+2025-10-08 12:31:48 - INFO - Registro insertado: Bizum: RECIBIDO: cocktail, 2025-10-05 00:00:00, BBVA, gasto=None, ingreso=9.0, subcategoria=None
+2025-10-08 12:31:49 - INFO - Registro insertado: Alquimistas d asturias, 2025-10-05 00:00:00, BBVA, gasto=36.0, ingreso=None, subcategoria=None
+2025-10-08 12:31:50 - INFO - Registro insertado: Bizum: ENVIADO: Marmio Luis y Sarai, 2025-10-04 00:00:00, BBVA, gasto=62.0, ingreso=None, subcategoria=None
+2025-10-08 12:31:51 - INFO - Registro insertado: Bizum: ENVIADO: Bodega Anchon, 2025-10-04 00:00:00, BBVA, gasto=5.0, ingreso=None, subcategoria=None
+2025-10-08 12:31:51 - INFO - Registro insertado: Transferencia: CUOTA LUIS MILLaN Y SARAI BONILLA, 2025-10-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-10-08 12:31:52 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-10-02 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-10-08 12:32:01 - INFO - Registro insertado: Degustabox.com, 2025-10-01 00:00:00, BBVA, gasto=38.99, ingreso=None, subcategoria=None
+2025-10-08 12:32:01 - INFO - Registro insertado: Transferencia: Sarai octubre, 2025-10-01 00:00:00, BBVA, gasto=None, ingreso=635.0, subcategoria=None
+2025-10-08 12:32:03 - INFO - Registro insertado: Transferencia: Octubre Luis, 2025-10-01 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-10-08 12:32:03 - INFO - Registro insertado: Primaprix gijon schultz, 2025-09-30 00:00:00, BBVA, gasto=9.37, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:32:04 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-09-30 00:00:00, BBVA, gasto=32.62, ingreso=None, subcategoria=None
+2025-10-08 12:32:05 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-09-30 00:00:00, BBVA, gasto=20.28, ingreso=None, subcategoria=None
+2025-10-08 12:32:05 - INFO - Registro insertado: Bizum: RECIBIDO: colchon, 2025-09-29 00:00:00, BBVA, gasto=None, ingreso=180.0, subcategoria=None
+2025-10-08 12:32:07 - INFO - Registro insertado: Amazon ufg*ya7fg6985, 2025-09-26 00:00:00, BBVA, gasto=99.78, ingreso=None, subcategoria=None
+2025-10-08 12:32:17 - INFO - Registro insertado: Www.groupon.es, 2025-09-27 00:00:00, BBVA, gasto=3.99, ingreso=None, subcategoria=None
+2025-10-08 12:32:18 - INFO - Registro insertado: Primark oviedo p.principa, 2025-09-26 00:00:00, BBVA, gasto=48.0, ingreso=None, subcategoria=None
+2025-10-08 12:32:21 - INFO - Registro insertado: Amazon ufg, 2025-09-26 00:00:00, BBVA, gasto=None, ingreso=1.79, subcategoria=None
+2025-10-08 12:32:22 - INFO - Registro insertado: Bizum: RECIBIDO: Sin concepto, 2025-09-29 00:00:00, BBVA, gasto=None, ingreso=20.0, subcategoria=None
+2025-10-08 12:32:22 - INFO - Registro insertado: Transferencia: Primark Sarai, 2025-09-29 00:00:00, BBVA, gasto=None, ingreso=34.0, subcategoria=None
+2025-10-08 12:32:29 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-09-29 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-10-08 12:32:31 - INFO - Registro insertado: Cocina japonesa ye, 2025-09-28 00:00:00, BBVA, gasto=55.5, ingreso=None, subcategoria=None
+2025-10-08 12:32:36 - INFO - Registro insertado: Bizum: ENVIADO: Que no te lo cuenten, 2025-09-28 00:00:00, BBVA, gasto=7.5, ingreso=None, subcategoria=None
+2025-10-08 12:32:37 - INFO - Registro insertado: Bilbao pk (v -prepago-web, 2025-09-27 00:00:00, BBVA, gasto=76.95, ingreso=None, subcategoria=None
+2025-10-08 12:32:37 - INFO - Registro insertado: El corte ingles costa ver, 2025-09-24 00:00:00, BBVA, gasto=17.62, ingreso=None, subcategoria=None
+2025-10-08 12:32:38 - INFO - Registro insertado: El corte ingles costa ver, 2025-09-24 00:00:00, BBVA, gasto=16.0, ingreso=None, subcategoria=None
+2025-10-08 12:32:39 - INFO - Registro insertado: Guppy.es, 2025-09-23 00:00:00, BBVA, gasto=0.05, ingreso=None, subcategoria=None
+2025-10-08 12:32:39 - INFO - Registro insertado: Kebab del coto, 2025-09-23 00:00:00, BBVA, gasto=9.5, ingreso=None, subcategoria=None
+2025-10-08 12:32:40 - INFO - Registro insertado: Bizum: RECIBIDO: Ibu, 2025-09-23 00:00:00, BBVA, gasto=None, ingreso=4.95, subcategoria=None
+2025-10-08 12:32:41 - INFO - Registro insertado: Farmacia roncal, 2025-09-23 00:00:00, BBVA, gasto=9.9, ingreso=None, subcategoria=aca1dec1-32e1-405d-86aa-3a4f9e9ad92c
+2025-10-08 12:32:41 - INFO - Registro insertado: Primaprix gijon schultz, 2025-09-23 00:00:00, BBVA, gasto=6.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:32:42 - INFO - Registro insertado: Farmacia viesques, 2025-09-22 00:00:00, BBVA, gasto=9.5, ingreso=None, subcategoria=aca1dec1-32e1-405d-86aa-3a4f9e9ad92c
+2025-10-08 12:32:42 - INFO - Registro insertado: Restaurante gaucho fierro, 2025-09-21 00:00:00, BBVA, gasto=82.0, ingreso=None, subcategoria=None
+2025-10-08 12:32:43 - INFO - Registro insertado: Flores clavel, 2025-09-21 00:00:00, BBVA, gasto=10.0, ingreso=None, subcategoria=None
+2025-10-08 12:32:44 - INFO - Registro insertado: Mercadona viesques, 2025-09-20 00:00:00, BBVA, gasto=16.98, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:32:44 - INFO - Registro insertado: Farmacia blanco, 2025-09-20 00:00:00, BBVA, gasto=17.7, ingreso=None, subcategoria=aca1dec1-32e1-405d-86aa-3a4f9e9ad92c
+2025-10-08 12:32:46 - INFO - Registro insertado: Netflix.com, 2025-09-18 00:00:00, BBVA, gasto=6.99, ingreso=None, subcategoria=None
+2025-10-08 12:32:46 - INFO - Registro insertado: Amazon ufg*i31kx6xk5, 2025-09-12 00:00:00, BBVA, gasto=94.52, ingreso=None, subcategoria=None
+2025-10-08 12:32:47 - INFO - Registro insertado: Manolo bakes menen perez, 2025-09-14 00:00:00, BBVA, gasto=5.4, ingreso=None, subcategoria=None
+2025-10-08 12:32:47 - INFO - Registro insertado: Fermento, 2025-09-14 00:00:00, BBVA, gasto=8.49, ingreso=None, subcategoria=None
+2025-10-08 12:32:53 - INFO - Registro insertado: Tonada de montevil, 2025-09-12 00:00:00, BBVA, gasto=10.5, ingreso=None, subcategoria=None
+2025-10-08 12:32:54 - INFO - Registro insertado: Cafe del parchis, 2025-09-12 00:00:00, BBVA, gasto=8.5, ingreso=None, subcategoria=None
+2025-10-08 12:32:54 - INFO - Registro insertado: Proper kebab, 2025-09-12 00:00:00, BBVA, gasto=18.0, ingreso=None, subcategoria=None
+2025-10-08 12:32:55 - INFO - Registro insertado: Tonada de montevil, 2025-09-12 00:00:00, BBVA, gasto=7.0, ingreso=None, subcategoria=None
+2025-10-08 12:32:56 - INFO - Registro insertado: Cafe del parchis, 2025-09-12 00:00:00, BBVA, gasto=6.0, ingreso=None, subcategoria=None
+2025-10-08 12:32:56 - INFO - Registro insertado: Oktoberfest gijon, 2025-09-12 00:00:00, BBVA, gasto=4.0, ingreso=None, subcategoria=None
+2025-10-08 12:32:57 - INFO - Registro insertado: Xianping ruan, 2025-09-12 00:00:00, BBVA, gasto=5.8, ingreso=None, subcategoria=None
+2025-10-08 12:32:58 - INFO - Registro insertado: Panris el llano, 2025-09-11 00:00:00, BBVA, gasto=1.1, ingreso=None, subcategoria=None
+2025-10-08 12:32:59 - INFO - Registro insertado: Primaprix gijon schultz, 2025-09-11 00:00:00, BBVA, gasto=5.4, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:33:00 - INFO - Registro insertado: Farmacia carlos checa pov, 2025-09-11 00:00:00, BBVA, gasto=6.74, ingreso=None, subcategoria=aca1dec1-32e1-405d-86aa-3a4f9e9ad92c
+2025-10-08 12:33:04 - INFO - Registro insertado: Adeudo de vodafone, 2025-09-10 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-10-08 12:33:05 - INFO - Registro insertado: Familia schultz-gijon, 2025-09-09 00:00:00, BBVA, gasto=10.21, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:33:08 - INFO - Registro insertado: Franprix        2989889, 2025-09-07 00:00:00, BBVA, gasto=6.26, ingreso=None, subcategoria=None
+2025-10-08 12:33:08 - INFO - Registro insertado: Au delice gourma, 2025-09-06 00:00:00, BBVA, gasto=3.9, ingreso=None, subcategoria=None
+2025-10-08 12:33:14 - INFO - Registro insertado: Temu.com, 2025-08-24 00:00:00, BBVA, gasto=None, ingreso=1.66, subcategoria=None
+2025-10-08 12:33:29 - INFO - Registro insertado: Temu.com, 2025-08-24 00:00:00, BBVA, gasto=None, ingreso=1.42, subcategoria=None
+2025-10-08 12:33:29 - INFO - Registro insertado: Primaprix gijon schultz, 2025-09-05 00:00:00, BBVA, gasto=8.8, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:33:30 - INFO - Registro insertado: Cp plus parking espa馻. o, 2025-09-04 00:00:00, BBVA, gasto=2.6, ingreso=None, subcategoria=None
+2025-10-08 12:33:30 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-09-04 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-10-08 12:33:31 - INFO - Registro insertado: Transferencia: CUOTA LUIS MILLaN Y SARAI BONILLA, 2025-09-02 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-10-08 12:33:37 - INFO - Registro insertado: Alimerka viesques, 2025-09-01 00:00:00, BBVA, gasto=4.22, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:33:37 - INFO - Registro insertado: Transferencia: Septiembre Luis, 2025-09-01 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-10-08 12:33:38 - INFO - Registro insertado: Transferencia: Sarai septiembre, 2025-09-01 00:00:00, BBVA, gasto=None, ingreso=635.0, subcategoria=None
+2025-10-08 12:33:40 - INFO - Registro insertado: Cp plus parking espa馻. o, 2025-09-01 00:00:00, BBVA, gasto=1.05, ingreso=None, subcategoria=None
+2025-10-08 12:33:41 - INFO - Registro insertado: Lidl gijon viesques, 2025-08-30 00:00:00, BBVA, gasto=60.08, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:33:43 - INFO - Registro insertado: Lidl gijon viesques, 2025-08-28 00:00:00, BBVA, gasto=7.71, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:33:46 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-08-28 00:00:00, BBVA, gasto=28.0, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-10-08 12:33:47 - INFO - Registro insertado: Cp plus parking espa馻. o, 2025-08-27 00:00:00, BBVA, gasto=1.0, ingreso=None, subcategoria=None
+2025-10-08 12:33:54 - INFO - Registro insertado: Temu.com, 2025-08-24 00:00:00, BBVA, gasto=26.0, ingreso=None, subcategoria=None
+2025-10-08 12:33:57 - INFO - Registro insertado: Primaprix gijon schultz, 2025-08-26 00:00:00, BBVA, gasto=None, ingreso=1.0, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:33:58 - INFO - Registro insertado: Primaprix gijon schultz, 2025-08-26 00:00:00, BBVA, gasto=14.45, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:34:00 - INFO - Registro insertado: Cp plus parking espa馻. o, 2025-08-25 00:00:00, BBVA, gasto=1.6, ingreso=None, subcategoria=None
+2025-10-08 12:34:00 - INFO - Registro insertado: Casadiella-cafe, 2025-08-25 00:00:00, BBVA, gasto=9.4, ingreso=None, subcategoria=None
+2025-10-08 12:34:02 - INFO - Registro insertado: Cideres panaderia pastele, 2025-08-24 00:00:00, BBVA, gasto=10.65, ingreso=None, subcategoria=None
+2025-10-08 12:34:03 - INFO - Registro insertado: Hotel garganta del cares, 2025-08-23 00:00:00, BBVA, gasto=1.0, ingreso=None, subcategoria=None
+2025-10-08 12:34:04 - INFO - Registro insertado: Hotel garganta del cares, 2025-08-23 00:00:00, BBVA, gasto=3.1, ingreso=None, subcategoria=None
+2025-10-08 12:34:04 - INFO - Registro insertado: Hotel garganta del cares, 2025-08-23 00:00:00, BBVA, gasto=12.1, ingreso=None, subcategoria=None
+2025-10-08 12:34:05 - INFO - Registro insertado: Amazon ufg, 2025-08-20 00:00:00, BBVA, gasto=None, ingreso=4.36, subcategoria=None
+2025-10-08 12:34:06 - INFO - Registro insertado: Amazon ufg*rm8ra7y34, 2025-08-18 00:00:00, BBVA, gasto=84.69, ingreso=None, subcategoria=None
+2025-10-08 12:34:06 - INFO - Registro insertado: Netflix.com, 2025-08-18 00:00:00, BBVA, gasto=6.99, ingreso=None, subcategoria=None
+2025-10-08 12:34:07 - INFO - Registro insertado: Amazon ufg, 2025-08-18 00:00:00, BBVA, gasto=None, ingreso=2.82, subcategoria=None
+2025-10-08 12:34:10 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-08-20 00:00:00, BBVA, gasto=34.86, ingreso=None, subcategoria=None
+2025-10-08 12:34:11 - INFO - Registro insertado: Forum sport gijon, 2025-08-19 00:00:00, BBVA, gasto=97.98, ingreso=None, subcategoria=None
+2025-10-08 12:34:12 - INFO - Registro insertado: Primaprix gijon schultz, 2025-08-18 00:00:00, BBVA, gasto=12.75, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:34:14 - INFO - Registro insertado: Manolo bakes menen perez, 2025-08-17 00:00:00, BBVA, gasto=5.8, ingreso=None, subcategoria=None
+2025-10-08 12:34:15 - INFO - Registro insertado: Alalos melero, 2025-08-14 00:00:00, BBVA, gasto=15.0, ingreso=None, subcategoria=None
+2025-10-08 12:34:16 - INFO - Registro insertado: The lord of burguer, 2025-08-10 00:00:00, BBVA, gasto=30.0, ingreso=None, subcategoria=None
+2025-10-08 12:34:18 - INFO - Registro insertado: Mercadona viesques, 2025-08-09 00:00:00, BBVA, gasto=116.72, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:34:19 - INFO - Registro insertado: Amazon* rf65y5og4, 2025-08-06 00:00:00, BBVA, gasto=5.99, ingreso=None, subcategoria=None
+2025-10-08 12:34:20 - INFO - Registro insertado: Adeudo de vodafone, 2025-08-08 00:00:00, BBVA, gasto=9.1, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-10-08 12:34:21 - INFO - Registro insertado: Amazon ufg*rv8ig12w4, 2025-08-05 00:00:00, BBVA, gasto=98.45, ingreso=None, subcategoria=None
+2025-10-08 12:34:30 - INFO - Registro insertado: Amazon ufg, 2025-08-05 00:00:00, BBVA, gasto=None, ingreso=7.61, subcategoria=None
+2025-10-08 12:34:31 - INFO - Registro insertado: Familia schultz-gijon, 2025-08-06 00:00:00, BBVA, gasto=10.4, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:34:32 - INFO - Registro insertado: Adeudo totalenergies clientessau, 2025-08-06 00:00:00, BBVA, gasto=30.0, ingreso=None, subcategoria=None
+2025-10-08 12:34:32 - INFO - Registro insertado: Transferencia: CUOTA LUIS MILLaN Y SARAI BONILLA, 2025-08-04 00:00:00, BBVA, gasto=20.0, ingreso=None, subcategoria=None
+2025-10-08 12:34:33 - INFO - Registro insertado: Adeudo com. prop. niort 14 - 16, 2025-08-04 00:00:00, BBVA, gasto=72.0, ingreso=None, subcategoria=58f6da67-5b76-48de-8877-37aa86d4ccab
+2025-10-08 12:34:33 - INFO - Registro insertado: Los jardines de d. juan, 2025-08-03 00:00:00, BBVA, gasto=9.0, ingreso=None, subcategoria=None
+2025-10-08 12:34:34 - INFO - Registro insertado: Moris beach club, 2025-08-03 00:00:00, BBVA, gasto=8.9, ingreso=None, subcategoria=None
+2025-10-08 12:34:35 - INFO - Registro insertado: Transferencia: Agosto Luis, 2025-08-01 00:00:00, BBVA, gasto=None, ingreso=165.0, subcategoria=None
+2025-10-08 12:34:36 - INFO - Registro insertado: Transferencia: Agosto Sarai, 2025-08-01 00:00:00, BBVA, gasto=None, ingreso=635.0, subcategoria=None
+2025-10-08 12:34:37 - INFO - Registro insertado: Familia schultz-gijon, 2025-07-30 00:00:00, BBVA, gasto=12.75, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:34:37 - INFO - Registro insertado: Yelmofilmsweb, 2025-07-30 00:00:00, BBVA, gasto=7.4, ingreso=None, subcategoria=None
+2025-10-08 12:34:38 - INFO - Registro insertado: Yelmofilmsapp, 2025-07-30 00:00:00, BBVA, gasto=14.8, ingreso=None, subcategoria=None
+2025-10-08 12:34:38 - INFO - Registro insertado: Adeudo digi spain telecom sl, 2025-07-30 00:00:00, BBVA, gasto=27.91, ingreso=None, subcategoria=23e13fac-7b60-4187-b1b9-6fb79fc43af9
+2025-10-08 12:34:40 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-07-30 00:00:00, BBVA, gasto=25.77, ingreso=None, subcategoria=None
+2025-10-08 12:34:40 - INFO - Registro insertado: Aena asturias, 2025-07-28 00:00:00, BBVA, gasto=1.5, ingreso=None, subcategoria=None
+2025-10-08 12:34:41 - INFO - Registro insertado: Lidl gijon viesques, 2025-07-26 00:00:00, BBVA, gasto=19.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:34:41 - INFO - Registro insertado: Primaprix gijon schultz, 2025-07-25 00:00:00, BBVA, gasto=22.35, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:34:42 - INFO - Registro insertado: Amazon* rs39l90i4, 2025-07-22 00:00:00, BBVA, gasto=39.0, ingreso=None, subcategoria=None
+2025-10-08 12:34:43 - INFO - Registro insertado: Lidl gijon viesques, 2025-07-21 00:00:00, BBVA, gasto=137.71, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:34:44 - INFO - Registro insertado: Portal ascendi, 2025-07-17 00:00:00, BBVA, gasto=17.86, ingreso=None, subcategoria=None
+2025-10-08 12:34:45 - INFO - Registro insertado: Adeudo baser comer. refer. sa, 2025-07-21 00:00:00, BBVA, gasto=33.2, ingreso=None, subcategoria=None
+2025-10-08 12:34:47 - INFO - Registro insertado: Tsunamixixon, 2025-07-17 00:00:00, BBVA, gasto=50.0, ingreso=None, subcategoria=None
+2025-10-08 12:34:48 - INFO - Registro insertado: Amazon ufg, 2025-07-11 00:00:00, BBVA, gasto=None, ingreso=8.15, subcategoria=None
+2025-10-08 12:34:49 - INFO - Registro insertado: Mercadona viesques, 2025-07-12 00:00:00, BBVA, gasto=22.15, ingreso=None, subcategoria=90c8e9e3-b1b1-47b0-94cf-447741441f3e
+2025-10-08 12:34:49 - INFO - Registro insertado: Amazon ufg*rc59s4gs4, 2025-07-08 00:00:00, BBVA, gasto=109.29, ingreso=None, subcategoria=None
+2025-10-08 12:34:50 - INFO - Registro insertado: Casa de estambul, 2025-07-09 00:00:00, BBVA, gasto=8.7, ingreso=None, subcategoria=None
+2025-10-08 12:34:50 - INFO - Registro insertado: Peces de madera, 2025-07-09 00:00:00, BBVA, gasto=10.6, ingreso=None, subcategoria=None
+2025-10-08 12:34:50 - INFO - Insertados exitosos por mes: {'2025-10': 12, '2025-09': 52, '2025-08': 38, '2025-07': 18}
+2025-10-08 12:34:50 - INFO - Registros repetidos por mes: {}
+2025-10-08 12:46:32 - INFO - Inicio de procesamiento para banco: Laboral Kutxa, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Laboral/movimientosCuenta.csv
+2025-10-08 12:46:32 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Laboral/movimientosCuenta.csv para banco: Laboral Kutxa
+2025-10-08 12:46:32 - INFO - Archivo de Laboral Kutxa le韉o correctamente con 91 registros.
+2025-10-08 12:46:32 - INFO - Cargando reglas de categorizaci髇 desde: gastos/categorization_rules.xlsx
+2025-10-08 12:46:32 - INFO - Reglas de categorizaci髇 cargadas correctamente (15 reglas).
+2025-10-08 12:47:10 - INFO - Registros existentes en Notion le韉os.
+2025-10-08 12:47:11 - INFO - Registro insertado: PRESTAMO 3634614742, 2025-10-05 00:00:00, Laboral Kutxa, gasto=470.7, ingreso=None, subcategoria=db27f81e-62df-40a7-b99e-fcecff99fd78
+2025-10-08 12:47:13 - INFO - Registro insertado: RECIBO CUENTA SEGURO 9085035, 2025-10-05 00:00:00, Laboral Kutxa, gasto=37.55, ingreso=None, subcategoria=None
+2025-10-08 12:47:15 - INFO - Registro insertado: Cena Gastrochigre Luis, 2025-10-04 00:00:00, Laboral Kutxa, gasto=30.0, ingreso=None, subcategoria=None
+2025-10-08 12:47:18 - INFO - Registro insertado: NOMINA DE: TSK SUSTAINABILITY TECHN, 2025-10-06 00:00:00, Laboral Kutxa, gasto=None, ingreso=53.6, subcategoria=None
+2025-10-08 12:47:20 - INFO - Registro insertado: RBO ASOCIACION ESPANOLA CONTRA EL C, 2025-10-01 00:00:00, Laboral Kutxa, gasto=10.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-10-08 12:47:21 - INFO - Registro insertado: RBO CRUZ ROJA, 2025-10-01 00:00:00, Laboral Kutxa, gasto=30.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-10-08 12:47:21 - INFO - Registro insertado: Octubre Luis, 2025-10-01 00:00:00, Laboral Kutxa, gasto=165.0, ingreso=None, subcategoria=None
+2025-10-08 12:47:22 - INFO - Registro insertado: Aporte Revolut, 2025-10-01 00:00:00, Laboral Kutxa, gasto=600.0, ingreso=None, subcategoria=None
+2025-10-08 12:47:23 - INFO - Registro insertado: Aporte Indexa, 2025-10-01 00:00:00, Laboral Kutxa, gasto=1327.33, ingreso=None, subcategoria=None
+2025-10-08 12:47:25 - INFO - Registro insertado: NOMINA DE: TSK SUSTAINABILITY TECHN, 2025-10-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=2347.41, subcategoria=None
+2025-10-08 12:47:26 - INFO - Registro insertado: SpotifyES, 2025-09-30 00:00:00, Laboral Kutxa, gasto=20.99, ingreso=None, subcategoria=None
+2025-10-08 12:47:29 - INFO - Registro insertado: Sin concepto, 2025-09-29 00:00:00, Laboral Kutxa, gasto=20.0, ingreso=None, subcategoria=None
+2025-10-08 12:47:30 - INFO - Registro insertado: colchon, 2025-09-29 00:00:00, Laboral Kutxa, gasto=180.0, ingreso=None, subcategoria=None
+2025-10-08 12:47:31 - INFO - Registro insertado: WWW.ELPAIS.COM, 2025-09-27 00:00:00, Laboral Kutxa, gasto=3.0, ingreso=None, subcategoria=None
+2025-10-08 12:47:31 - INFO - Registro insertado: NOMINA DE: TSK SUSTAINABILITY TECHN, 2025-09-29 00:00:00, Laboral Kutxa, gasto=None, ingreso=637.9, subcategoria=None
+2025-10-08 12:47:32 - INFO - Registro insertado: Empanaday Luis, 2025-09-26 00:00:00, Laboral Kutxa, gasto=5.0, ingreso=None, subcategoria=None
+2025-10-08 12:47:32 - INFO - Registro insertado: TRFI.DE:SARAI BONILLA PEREZ, 2025-09-24 00:00:00, Laboral Kutxa, gasto=None, ingreso=308.0, subcategoria=None
+2025-10-08 12:47:33 - INFO - Registro insertado: Aporte Revolut, 2025-09-15 00:00:00, Laboral Kutxa, gasto=400.0, ingreso=None, subcategoria=None
+2025-10-08 12:47:33 - INFO - Registro insertado: Gimnasio septiembre, 2025-09-12 00:00:00, Laboral Kutxa, gasto=None, ingreso=100.0, subcategoria=None
+2025-10-08 12:47:34 - INFO - Registro insertado: Despedida Tomas, 2025-09-10 00:00:00, Laboral Kutxa, gasto=None, ingreso=10.0, subcategoria=None
+2025-10-08 12:47:36 - INFO - Registro insertado: Tricount Sarai, 2025-09-09 00:00:00, Laboral Kutxa, gasto=None, ingreso=1.94, subcategoria=None
+2025-10-08 12:47:37 - INFO - Registro insertado: Tricount, 2025-09-09 00:00:00, Laboral Kutxa, gasto=None, ingreso=15.7, subcategoria=None
+2025-10-08 12:47:38 - INFO - Registro insertado: BANCS PUBLICS, 2025-09-07 00:00:00, Laboral Kutxa, gasto=113.0, ingreso=None, subcategoria=None
+2025-10-08 12:47:39 - INFO - Registro insertado: Aporte Indexa, 2025-09-08 00:00:00, Laboral Kutxa, gasto=2995.5, ingreso=None, subcategoria=None
+2025-10-08 12:47:40 - INFO - Registro insertado: PRESTAMO 3634614742, 2025-09-05 00:00:00, Laboral Kutxa, gasto=470.7, ingreso=None, subcategoria=db27f81e-62df-40a7-b99e-fcecff99fd78
+2025-10-08 12:47:41 - INFO - Registro insertado: TRAF. DE: BANCO DE ESPA A.SALDOS DE, 2025-09-05 00:00:00, Laboral Kutxa, gasto=None, ingreso=2995.5, subcategoria=None
+2025-10-08 12:47:41 - INFO - Registro insertado: Cena Guille, 2025-09-05 00:00:00, Laboral Kutxa, gasto=None, ingreso=7.5, subcategoria=None
+2025-10-08 12:47:42 - INFO - Registro insertado: Devo pase express, 2025-09-04 00:00:00, Laboral Kutxa, gasto=None, ingreso=98.0, subcategoria=None
+2025-10-08 12:47:43 - INFO - Registro insertado: pizzas, 2025-09-04 00:00:00, Laboral Kutxa, gasto=None, ingreso=21.0, subcategoria=None
+2025-10-08 12:47:44 - INFO - Registro insertado: Aldo pizzas, 2025-09-04 00:00:00, Laboral Kutxa, gasto=None, ingreso=21.0, subcategoria=None
+2025-10-08 12:47:45 - INFO - Registro insertado: RECAUD.791-363, 2025-09-03 00:00:00, Laboral Kutxa, gasto=10.51, ingreso=None, subcategoria=None
+2025-10-08 12:47:46 - INFO - Registro insertado: RBO ASOCIACION ESPANOLA CONTRA EL C, 2025-09-02 00:00:00, Laboral Kutxa, gasto=10.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-10-08 12:47:48 - INFO - Registro insertado: Compra TSK, 2025-09-02 00:00:00, Laboral Kutxa, gasto=207.92, ingreso=None, subcategoria=None
+2025-10-08 12:47:48 - INFO - Registro insertado: Extra Spotify, 2025-09-02 00:00:00, Laboral Kutxa, gasto=None, ingreso=5.0, subcategoria=None
+2025-10-08 12:47:52 - INFO - Registro insertado: Septiembre Luis, 2025-09-01 00:00:00, Laboral Kutxa, gasto=165.0, ingreso=None, subcategoria=None
+2025-10-08 12:47:53 - INFO - Registro insertado: Aporte Revolut, 2025-09-01 00:00:00, Laboral Kutxa, gasto=800.0, ingreso=None, subcategoria=None
+2025-10-08 12:47:54 - INFO - Registro insertado: Cena Los Agaves Luis, 2025-08-31 00:00:00, Laboral Kutxa, gasto=22.5, ingreso=None, subcategoria=None
+2025-10-08 12:47:54 - INFO - Registro insertado: SpotifyES, 2025-08-30 00:00:00, Laboral Kutxa, gasto=17.99, ingreso=None, subcategoria=None
+2025-10-08 12:47:55 - INFO - Registro insertado: RBO CRUZ ROJA, 2025-09-01 00:00:00, Laboral Kutxa, gasto=30.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-10-08 12:47:55 - INFO - Registro insertado: Cuentas Jap髇, 2025-08-30 00:00:00, Laboral Kutxa, gasto=284.33, ingreso=None, subcategoria=None
+2025-10-08 12:47:57 - INFO - Registro insertado: Aporte Indexa, 2025-09-01 00:00:00, Laboral Kutxa, gasto=927.87, ingreso=None, subcategoria=None
+2025-10-08 12:47:58 - INFO - Registro insertado: Cafeteria Lugones, 2025-08-31 00:00:00, Laboral Kutxa, gasto=None, ingreso=6.5, subcategoria=None
+2025-10-08 12:47:58 - INFO - Registro insertado: Subida Spotify sept 2025, 2025-09-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=2.4, subcategoria=None
+2025-10-08 12:47:59 - INFO - Registro insertado: NOMINA DE: TSK SUSTAINABILITY TECHN, 2025-09-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=2388.26, subcategoria=None
+2025-10-08 12:47:59 - INFO - Registro insertado: CUOTA TARJETA 450827******0003, 2025-09-01 00:00:00, Laboral Kutxa, gasto=35.0, ingreso=None, subcategoria=None
+2025-10-08 12:48:03 - INFO - Registro insertado: Ruedas, 2025-08-29 00:00:00, Laboral Kutxa, gasto=None, ingreso=105.0, subcategoria=None
+2025-10-08 12:48:05 - INFO - Registro insertado: Sin concepto, 2025-08-29 00:00:00, Laboral Kutxa, gasto=None, ingreso=33.4, subcategoria=None
+2025-10-08 12:48:06 - INFO - Registro insertado: Cena Sarai menos bebidas, 2025-08-29 00:00:00, Laboral Kutxa, gasto=None, ingreso=16.0, subcategoria=None
+2025-10-08 12:48:06 - INFO - Registro insertado: BONIF.CUOTA   450827******0003, 2025-09-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=35.0, subcategoria=None
+2025-10-08 12:48:07 - INFO - Registro insertado: OPEN SECRET SL, 2025-08-28 00:00:00, Laboral Kutxa, gasto=112.8, ingreso=None, subcategoria=None
+2025-10-08 12:48:08 - INFO - Registro insertado: Sin concepto, 2025-08-28 00:00:00, Laboral Kutxa, gasto=None, ingreso=30.0, subcategoria=None
+2025-10-08 12:48:14 - INFO - Registro insertado: comida, 2025-08-28 00:00:00, Laboral Kutxa, gasto=None, ingreso=30.0, subcategoria=None
+2025-10-08 12:48:15 - INFO - Registro insertado: Canis, 2025-08-28 00:00:00, Laboral Kutxa, gasto=None, ingreso=6.0, subcategoria=None
+2025-10-08 12:48:17 - INFO - Registro insertado: WWW.ELPAIS.COM, 2025-08-27 00:00:00, Laboral Kutxa, gasto=3.0, ingreso=None, subcategoria=None
+2025-10-08 12:48:17 - INFO - Registro insertado: Canon y aquarius, 2025-08-24 00:00:00, Laboral Kutxa, gasto=5.9, ingreso=None, subcategoria=None
+2025-10-08 12:48:18 - INFO - Registro insertado: Cena montesainz, 2025-08-16 00:00:00, Laboral Kutxa, gasto=None, ingreso=95.0, subcategoria=None
+2025-10-08 12:48:19 - INFO - Registro insertado: cena, 2025-08-16 00:00:00, Laboral Kutxa, gasto=None, ingreso=24.0, subcategoria=None
+2025-10-08 12:48:19 - INFO - Registro insertado: Cena Sarai, 2025-08-16 00:00:00, Laboral Kutxa, gasto=None, ingreso=22.0, subcategoria=None
+2025-10-08 12:48:20 - INFO - Registro insertado: Sin concepto, 2025-08-16 00:00:00, Laboral Kutxa, gasto=None, ingreso=47.2, subcategoria=None
+2025-10-08 12:48:20 - INFO - Registro insertado: Cena Pinocchio Luis, 2025-08-12 00:00:00, Laboral Kutxa, gasto=26.0, ingreso=None, subcategoria=None
+2025-10-08 12:48:21 - INFO - Registro insertado: gafas, 2025-08-09 00:00:00, Laboral Kutxa, gasto=None, ingreso=45.0, subcategoria=None
+2025-10-08 12:48:21 - INFO - Registro insertado: Comida verano Luis, 2025-08-07 00:00:00, Laboral Kutxa, gasto=5.0, ingreso=None, subcategoria=None
+2025-10-08 12:48:23 - INFO - Registro insertado: Gym Sarai, 2025-08-07 00:00:00, Laboral Kutxa, gasto=None, ingreso=50.0, subcategoria=None
+2025-10-08 12:48:24 - INFO - Registro insertado: PRESTAMO 3634614742, 2025-08-05 00:00:00, Laboral Kutxa, gasto=470.7, ingreso=None, subcategoria=db27f81e-62df-40a7-b99e-fcecff99fd78
+2025-10-08 12:48:25 - INFO - Registro insertado: Fantasy Luis, 2025-08-04 00:00:00, Laboral Kutxa, gasto=10.0, ingreso=None, subcategoria=None
+2025-10-08 12:48:25 - INFO - Registro insertado: Canas plaza, 2025-08-02 00:00:00, Laboral Kutxa, gasto=5.4, ingreso=None, subcategoria=None
+2025-10-08 12:48:26 - INFO - Registro insertado: BBVA Cashup, 2025-08-02 00:00:00, Laboral Kutxa, gasto=0.5, ingreso=None, subcategoria=None
+2025-10-08 12:48:28 - INFO - Registro insertado: Cena Zingara Luis, 2025-08-03 00:00:00, Laboral Kutxa, gasto=33.77, ingreso=None, subcategoria=None
+2025-10-08 12:48:29 - INFO - Registro insertado: Cine, 2025-08-03 00:00:00, Laboral Kutxa, gasto=None, ingreso=1.8, subcategoria=None
+2025-10-08 12:48:31 - INFO - Registro insertado: BBVA Cashup, 2025-08-02 00:00:00, Laboral Kutxa, gasto=None, ingreso=0.5, subcategoria=None
+2025-10-08 12:48:31 - INFO - Registro insertado: RBO CRUZ ROJA, 2025-08-01 00:00:00, Laboral Kutxa, gasto=30.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-10-08 12:48:32 - INFO - Registro insertado: RBO ASOCIACION ESPANOLA CONTRA EL C, 2025-08-01 00:00:00, Laboral Kutxa, gasto=10.0, ingreso=None, subcategoria=be124c3c-09b9-4976-b33c-f0ab61f52ab5
+2025-10-08 12:48:32 - INFO - Registro insertado: Agosto Luis, 2025-08-01 00:00:00, Laboral Kutxa, gasto=165.0, ingreso=None, subcategoria=None
+2025-10-08 12:48:33 - INFO - Registro insertado: Aporte Indexa, 2025-08-01 00:00:00, Laboral Kutxa, gasto=1777.35, ingreso=None, subcategoria=None
+2025-10-08 12:48:38 - INFO - Registro insertado: Cocacola, 2025-08-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=2.9, subcategoria=None
+2025-10-08 12:48:39 - INFO - Registro insertado: Bisolan de oro, 2025-08-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=2.9, subcategoria=None
+2025-10-08 12:48:39 - INFO - Registro insertado: Sin concepto, 2025-08-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=10.0, subcategoria=None
+2025-10-08 12:48:40 - INFO - Registro insertado: Agua, 2025-08-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=1.9, subcategoria=None
+2025-10-08 12:48:41 - INFO - Registro insertado: NOMINA DE: TSK SUSTAINABILITY TECHN, 2025-08-01 00:00:00, Laboral Kutxa, gasto=None, ingreso=2388.25, subcategoria=None
+2025-10-08 12:48:41 - INFO - Registro insertado: SpotifyES, 2025-07-30 00:00:00, Laboral Kutxa, gasto=17.99, ingreso=None, subcategoria=None
+2025-10-08 12:48:45 - INFO - Registro insertado: Canas Molinon, 2025-07-26 00:00:00, Laboral Kutxa, gasto=5.0, ingreso=None, subcategoria=None
+2025-10-08 12:48:51 - INFO - Registro insertado: WWW.ELPAIS.COM, 2025-07-27 00:00:00, Laboral Kutxa, gasto=12.0, ingreso=None, subcategoria=None
+2025-10-08 12:48:58 - INFO - Registro insertado: NOMINA DE: TSK SUSTAINABILITY TECHN, 2025-07-25 00:00:00, Laboral Kutxa, gasto=None, ingreso=90.14, subcategoria=None
+2025-10-08 12:48:58 - INFO - Registro insertado: Vuelos Par韘, 2025-07-23 00:00:00, Laboral Kutxa, gasto=198.0, ingreso=None, subcategoria=None
+2025-10-08 12:48:59 - INFO - Registro insertado: Aporte Revolut, 2025-07-21 00:00:00, Laboral Kutxa, gasto=500.0, ingreso=None, subcategoria=None
+2025-10-08 12:49:10 - INFO - Registro insertado: Paga, 2025-07-18 00:00:00, Laboral Kutxa, gasto=5.78, ingreso=None, subcategoria=None
+2025-10-08 12:49:11 - INFO - Registro insertado: parrillada javimaria, 2025-07-18 00:00:00, Laboral Kutxa, gasto=None, ingreso=16.86, subcategoria=None
+2025-10-08 12:49:11 - INFO - Registro insertado: Sin concepto, 2025-07-17 00:00:00, Laboral Kutxa, gasto=None, ingreso=17.03, subcategoria=None
+2025-10-08 12:49:11 - INFO - Registro repetido (no insertado): Comida Lupulo, 2025-07-15 00:00:00, Laboral Kutxa, gasto=48.5, ingreso=None
+2025-10-08 12:49:11 - INFO - Registro repetido (no insertado): NOMINA DE: TSK SUSTAINABILITY TECHN, 2025-07-15 00:00:00, Laboral Kutxa, gasto=None, ingreso=748.04
+2025-10-08 12:49:11 - INFO - Registro repetido (no insertado): Regalo boda Luis y Sarai, 2025-07-14 00:00:00, Laboral Kutxa, gasto=400.0, ingreso=None
+2025-10-08 12:49:11 - INFO - Insertados exitosos por mes: {'2025-10': 10, '2025-09': 32, '2025-08': 37, '2025-07': 9}
+2025-10-08 12:49:11 - INFO - Registros repetidos por mes: {'2025-07': 3}
+2025-10-08 12:51:56 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-10-08_es-es_bd3db8.csv
+2025-10-08 12:51:56 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-10-08_es-es_bd3db8.csv para banco: Revolut
+2025-10-08 12:51:56 - ERROR - Error inesperado en el procesamiento: Usecols do not match columns, columns expected but not found: ['Started Date', 'Fee', 'Description', 'Amount']
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 144, in process_file
+    data = read_bank_records(bank, file_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\file_processing.py", line 28, in read_bank_records
+    df = pd.read_csv(filename, usecols=bank_config.column_names, delimiter=",")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\base_parser.py", line 979, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['Started Date', 'Fee', 'Description', 'Amount']
+2025-10-08 13:01:38 - INFO - Aplicaci髇 iniciada.
+2025-10-08 13:01:49 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-10-08_es-es_bd3db8.csv
+2025-10-08 13:01:49 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-10-08_es-es_bd3db8.csv para banco: Revolut
+2025-10-08 13:01:49 - ERROR - Error inesperado en el procesamiento: Usecols do not match columns, columns expected but not found: ['Descripci贸n', 'Comisi贸n']
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 144, in process_file
+    data = read_bank_records(bank, file_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\file_processing.py", line 28, in read_bank_records
+    df = pd.read_csv(filename, usecols=bank_config.column_names, delimiter=",")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\io\parsers\base_parser.py", line 979, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['Descripci贸n', 'Comisi贸n']
+2025-10-08 13:04:38 - INFO - Aplicaci髇 iniciada.
+2025-10-08 13:04:48 - INFO - Inicio de procesamiento para banco: Revolut, archivo: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-10-08_es-es_bd3db8.csv
+2025-10-08 13:04:48 - INFO - Leyendo archivo bancario: C:/Users/Usuario/OneDrive/Dinero/Gastos/Revolut/account-statement_2025-07-01_2025-10-08_es-es_bd3db8.csv para banco: Revolut
+2025-10-08 13:04:48 - ERROR - Error inesperado en el procesamiento: 'Started Date'
+Traceback (most recent call last):
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Started Date'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\main.py", line 144, in process_file
+    data = read_bank_records(bank, file_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Usuario\Documents\Code\gastos\gastos\file_processing.py", line 29, in read_bank_records
+    df['Started Date'] = pd.to_datetime(df['Started Date'], format='%Y-%m-%d %H:%M:%S', errors='coerce').dt.date
+                                        ~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\anaconda3\envs\gastosenv\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Started Date'
